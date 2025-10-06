@@ -1,0 +1,25 @@
+---
+title: "04-class-03"
+output: html_document
+---
+
+# Week 3 {-}
+
+## Visualization with ggplot2
+
+## Slides
+[Download slides](slides/class03.pdf)
+
+## Video
+<iframe width="720" height="405" src="YOUR_VIDEO_LINK" title="Class 03" frameborder="0" allowfullscreen></iframe>
+
+## Code demo
+```{r}
+# ggplot2 demo
+library(ggplot2)
+ggplot(mtcars, aes(disp, mpg)) + geom_point()
+```
+
+## Exercise {-}
+- **Exercise 03**: [download Rmd](exercises/ex03/ex03.Rmd)  
+- Upload via **Assignments** page.

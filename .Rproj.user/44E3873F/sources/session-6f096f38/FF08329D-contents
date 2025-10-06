@@ -1,0 +1,17 @@
+
+book_filename: "winter-seminar"
+output_dir: "docs"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Class "
+# Control the order of pages (chapters). Add new Rmds here in the order you want them to appear.
+rmd_files:
+  - index.Rmd
+  - 01-syllabus.Rmd
+  - 02-class-01.Rmd
+  - 03-class-02.Rmd
+  - 04-class-03.Rmd
+  - 90-assignments.Rmd
+  - 91-datasets.Rmd
+  - 92-about.Rmd

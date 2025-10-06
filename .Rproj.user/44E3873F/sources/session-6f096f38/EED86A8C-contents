@@ -1,0 +1,12 @@
+---
+title: "Exercise 03 – ggplot2"
+output: html_document
+---
+
+1) Make a scatterplot of `mpg ~ disp` from `mtcars`.
+2) Map `hp` to color and add a smooth line.
+3) Save your code/results below.
+
+```{r}
+# your code here
+```

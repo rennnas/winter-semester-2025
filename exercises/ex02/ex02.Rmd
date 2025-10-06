@@ -1,0 +1,11 @@
+
+---
+title: "Exercise 02"
+output: html_document
+---
+
+Using `dplyr`, filter rows where `kwh > 120` and show the first 5 rows.
+
+```{r}
+# your code here
+```

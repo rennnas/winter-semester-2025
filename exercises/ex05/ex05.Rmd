@@ -1,0 +1,11 @@
+---
+title: "Exercise 05 – Diagnostics"
+output: html_document
+---
+
+1) Fit a linear model of your choice.
+2) Produce diagnostic plots and comment on assumptions.
+
+```{r}
+# your code here
+```

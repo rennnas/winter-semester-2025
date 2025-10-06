@@ -1,0 +1,12 @@
+
+# Assignments & Uploads {-}
+
+All deadlines appear in each Class page. Submit here:
+
+<div class="download-card">
+  <h3>Upload your exercise</h3>
+  <p>Use the form below. You will receive an automatic confirmation.</p>
+  <p><a class="btn btn-primary" href="https://forms.gle/YOUR_GOOGLE_FORM_ID" target="_blank">Open Upload Form</a></p>
+</div>
+
+> Alternative: GitHub Classroom or your LMS (Moodle/Canvas) for auto‑grading.

@@ -1,0 +1,24 @@
+
+# About & Publishing {-}
+
+## Contact
+
+- **Instructor:** Renan Magalhães  
+- **Email:** <magalhaes@kelso-institute-europe.de>
+
+## How to publish with GitHub Pages
+
+1. Create a private/public GitHub repository and push this project.  
+2. In `_bookdown.yml`, we already set `output_dir: "docs"`.  
+3. In R, run:
+
+```r
+bookdown::render_book("index.Rmd", "bookdown::bs4_book")
+```
+
+4. On GitHub, go to **Settings → Pages** and choose **Branch: `main`, Folder: `/docs`**.  
+5. Your course will be live at `https://<USER>.github.io/<REPO>/`.
+
+## Credits
+
+Built with **bookdown::bs4_book**.

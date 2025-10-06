@@ -1,0 +1,13 @@
+
+bookdown::bs4_book:
+  theme:
+    bootswatch: simplex
+  css: style.css
+  includes:
+    in_header: header.html
+  split_by: section
+  search: true
+  repo:
+    base: https://github.com/USER/REPO
+    branch: main
+  download: ["pdf", "epub"]

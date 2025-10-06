@@ -1,0 +1,13 @@
+---
+title: "Winter Site"
+output: html_document
+date: "2025-10-03"
+---
+
+```{r}
+bookdown::clean_book()
+unlink("docs", recursive = TRUE)  # removes output folder
+bookdown::render_book("index.Rmd", "bookdown::bs4_book")
+
+```
+

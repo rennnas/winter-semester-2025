@@ -1,0 +1,26 @@
+/* Primary accents */
+a, .nav-link, .book .book-summary a:hover { text-decoration: none; }
+.btn-primary, .badge-primary { background-color: #005BBB; border-color: #005BBB; }   /* primary */
+a { color: #005BBB; }
+a:hover { color: #003F7F; }
+
+/* Sidebar width & polish */
+.book .book-summary {
+  width: 300px;
+}
+.book .book-body {
+  left: 300px;
+}
+
+/* Navbar/header color */
+.navbar {
+  background-color: #0B132B !important;
+}
+.navbar .navbar-brand, .navbar .nav-link { color: white !important; }
+.navbar .nav-link:hover { opacity: .85; }
+
+/* Optional: section title style */
+h1, .h1 { letter-spacing: .2px; }
+
+/* sanity test */
+h1 { border-bottom: 4px solid yellow !important; }

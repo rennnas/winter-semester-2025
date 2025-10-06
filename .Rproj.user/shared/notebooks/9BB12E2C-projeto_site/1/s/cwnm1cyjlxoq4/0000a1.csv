@@ -1,0 +1,16 @@
+"0","bookdown::clean_book()"
+"2","G3;These files/dirs can probably be removed: 
+
+docs/
+
+You can set options(bookdown.clean_book = TRUE) to allow this function to always clean up the book directory for you.
+g"
+"0","unlink(""docs"", recursive = TRUE)  # removes output folder"
+"0","bookdown::render_book(""index.Rmd"", ""bookdown::bs4_book"")"
+"2","G3;
+
+processing file: Energy-Transitions.Rmd
+g"
+"1","  |                                                                                             "
+"1","  |                                                                                       |   0%  |                                                                                               |.......                                                                                |   8%                    |                                                                                               |.............                                                                          |  15% [setup]          "
+"1","  |                                                                                               |....................                                                                   |  23%                    |                                                                                               |...........................                                                            |  31% [dplyr-demo]     "

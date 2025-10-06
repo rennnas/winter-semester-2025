@@ -1,0 +1,28 @@
+
+# Week 1 {-}
+
+## R & RStudio Basics - Overview {-}
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+x <- 1:10
+summary(x)
+plot(x, x^2, main = "Sanity check", pch = 19)
+```
+
+## Slides {-}
+
+- Slides (PDF): **[download here](slides/class01.pdf)** *(put the file at `slides/class01.pdf`)*
+
+## Video {-}
+
+Embed a hosted video (e.g., YouTube, Panopto, Nextcloud link):
+
+<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 01 Recording" frameborder="0" allowfullscreen></iframe>
+
+## Exercise {-}
+
+- **Exercise 01**: **[download Rmd](exercises/ex01/ex01.Rmd)**  
+- Upload via **Assignments** page (Google Form link).
