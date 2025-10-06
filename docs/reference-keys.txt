@@ -1,4 +1,3 @@
 how-this-site-is-organized
 contact
-how-to-publish-with-github-pages
 credits
