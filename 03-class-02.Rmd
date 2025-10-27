@@ -1,27 +1,393 @@
 
-# Week 2 {-}
+---
+title: "Energy-Transitions"
+pagetitle: "Energy-Transitions — Class 2"
+author: "Renan Magalhães"
+output: bookdown::bs4_book
+---
 
-## Data Wrangling with dplyr {-}
 
-## Reading {-}
 
-- Wickham & Grolemund (2017), *R for Data Science*, ch. on dplyr
+# Session 2 {-}
 
-## Code demo {-}
+***
+## 1. Why Data Cleaning Is the Hardest (and Most Important) Step{-}
 
-```{r}
-#| label: dplyr-demo
-#| message: false
-#| warning: false
+<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 02 Recording" frameborder="0" allowfullscreen></iframe>
 
-library(dplyr)
+When researchers talk about “analysis,” they often imagine fancy models and colorful plots.
+In reality, most of the work happens before any model is fitted: cleaning, organizing, and validating the raw data. Raw data are almost never ready for analysis. Surveys come back with extra spaces, numbers formatted as text, spelling variations, and missing responses.
+If you skip the cleaning stage, every later step—summary statistics, regression, visualization—will quietly give misleading results.
 
-starwars %>%
-  filter(species == "Droid") %>%
-  select(name, height, mass) %>%
-  arrange(desc(height))
+**What “tidy” means**
+
+Hadley Wickham defines tidy data as having three rules:
+
+*1.*Each variable forms a column.
+*2.*Each observation forms a row.
+*3.*Each value forms a single cell.
+
+Once data satisfy these rules, they can easily be filtered, summarized, plotted, and joined.
+Most R packages (especially those in the tidyverse) assume data are tidy.
+The cleaning workflow we’ll follow mirrors the professional pipeline:
+
+
+
+```{r echo = FALSE}
+
+library(gt)
+
+workflow <- data.frame(
+  Step = c("Import", "Inspect", "Clean names/types", "Handle missingness",
+           "Recode", "Verify visually", "Save"),
+  Goal = c("Load raw data reliably",
+           "Understand structure",
+           "Make columns usable",
+           "Make absence explicit",
+           "Create consistent categories",
+           "Sanity-check patterns",
+           "Freeze a clean version"),
+  Example_Functions = c("read_csv()",
+                        "glimpse(), summary()",
+                        "janitor::clean_names(), mutate()",
+                        "is.na(), if_else()",
+                        "case_when(), fct_recode()",
+                        "ggplot()",
+                        "write_csv()")
+)
+
+workflow |>
+  gt() |>
+  tab_header(
+    title = "Data Cleaning Workflow in R"
+  ) |>
+  cols_label(
+    Step = "Step",
+    Goal = "Goal",
+    Example_Functions = "Example Functions"
+  ) |>
+  fmt_markdown(columns = everything())
 ```
 
-## Exercise {-}
 
-- **Exercise 02**: **[download Rmd](exercises/ex02/ex02.Rmd)**
+## 2. Importing and Inspecting the Dataset{-}
+
+We’ll use the same FinSESCo survey introduced in Session 1.
+This time we’ll pay close attention to its structure, not yet to its content.
+
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(here)
+finsesco <- read_csv(here::here("data", "finsesco_dirt.csv"))
+```
+
+
+**How R reads files**
+
+`read_csv()` (from readr) is faster and safer than base R’s `read.csv()`:
+
+- It assumes UTF-8 encoding (so German umlauts, € signs, etc. remain intact).
+- It guesses data types by scanning a sample of rows.
+- It reports parsing problems instead of silently converting to text.
+
+`here::here()` constructs file paths relative to your R Project root, which makes your script portable between computers and operating systems.
+
+
+Now look inside:
+
+```{r}
+glimpse(finsesco)
+summary(finsesco)
+```
+
+`glimpse()` prints one line per variable, showing type and first values; `summary()` gives numeric summaries or category counts.
+
+
+Rows: 2,585
+Columns: 45
+$ Age                <chr> "32", "45", "63", "28", …
+$ Income Range (€)   <chr> "2,500–4,000", "4,000–6,000", …
+$ Gender             <chr> "Female", "Male", …
+
+
+You can already you spot issues:
+
+- `Age` is stored as character, not numeric.
+- Column !!!!! contain spaces and symbols.
+- There are multiple inconsistent formats for `income`.
+
+Before cleaning, it helps to know what R thinks each type means:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+library(gt)
+library(tibble)
+
+types <- tibble(
+  `R Type` = c("character", "numeric", "integer", "factor", "logical"),
+  `What It Represents` = c("text", "decimal numbers", "whole numbers", "categorical labels", "TRUE/FALSE flags"),
+  `Common Problems` = c("numbers read as text", "missing decimals → integers", "rarely a problem", "wrong order or encoding", "blanks become NA")
+)
+
+types |>
+  gt() |>
+  tab_header(title = "Overview of R Data Types")
+```
+
+
+
+Check data types with `sapply(finsesco, class)` if you’re unsure.
+
+::: {.callout-tip}
+
+💡 Tip {-}
+
+R’s type system is strict: `"42"` (character) is not the same as `42` (numeric).
+Whenever arithmetic fails, first check the variable’s type.
+:::
+
+
+## 3. Cleaning Column Names and Correcting Types{-}
+
+
+**Why clean names?**
+
+Messy names make scripts fragile. Every time you use spaces or special characters, you have to surround the name with backticks, e.g. `Income Range (€)`.
+`janitor::clean_names()` automatically fixes this by converting all names to lower_snake_case and stripping illegal characters.
+
+
+
+```{r  message=FALSE, warning=FALSE}
+library(janitor)
+
+finsesco <- finsesco %>%
+  clean_names() %>%
+  mutate(age = as.integer(age),income_range = as.factor(income_range))
+
+```
+
+
+**Step-by-step explanation**
+
+- `clean_names()` renames columns like `Income Range (€)` → `income_range_eur`. It also ensures uniqueness—if two columns share the same label, it appends _2, _3, etc.
+- `mutate()` lets us change columns in-place.
+- `as.integer(age)` converts character digits into true numbers.
+- `as.factor(income_range)` tells R this is a categorical variable.
+
+Re-inspect:
+
+
+```{r}
+glimpse(finsesco)
+```
+
+If you now see age: int and income_range: fct, the cleaning worked.
+
+::: {.callout-important}
+
+🔴 Important {-}
+
+`as.numeric()` and `as.integer()` silently turn non-convertible text into `NA`.
+Always check how many missing values you introduced: `sum(is.na(finsesco$age))`
+
+:::
+
+
+## 4. The Logic of Pipes and dplyr Verbs{-}
+
+<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 02 Recording" frameborder="0" allowfullscreen></iframe>
+
+The pipe operator `%>%` passes the output of one function as the first argument of the next. This creates readable “sentences” of code.
+
+Example without pipes:
+
+`summarise(group_by(finsesco, income_range),
+          mean(index_1, na.rm = TRUE))`
+
+
+Example with pipes:
+
+```{r}
+finsesco %>%
+  group_by(income_range) %>%
+  summarise(mean_index_1 = mean(index_1, na.rm = TRUE))
+```
+
+The second version mirrors human thought: take data → group → summarise.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+library(gt)
+library(tibble)
+
+verbs <- tibble(
+  Verb = c(
+    "select()",
+    "filter()",
+    "mutate()",
+    "arrange()",
+    "summarise() + group_by()"
+  ),
+  `What it does` = c(
+    "choose columns",
+    "choose rows",
+    "add/modify columns",
+    "reorder rows",
+    "aggregate groups"
+  ),
+  Analogy = c(
+    "decide which questions to keep",
+    "choose which participants to include",
+    "compute new variables",
+    "sort by value",
+    "compute averages per category"
+  )
+)
+
+verbs |>
+  gt() |>
+  tab_header(title = "The Five Essential dplyr Verbs") |>
+  cols_label(
+    Verb = "Verb",
+    `What it does` = "What It Does",
+    Analogy = "Analogy"
+  )
+```
+
+
+
+Let’s apply them:
+
+
+```{r}
+mini <- finsesco %>%
+  select(age, gender, income_range, index_1) %>%
+  filter(!is.na(index_1)) %>%
+  mutate(high_invest_intent = index_1 >= quantile(index_1, 0.75, na.rm = TRUE)) %>%
+  arrange(desc(index_1))
+```
+
+Explanation:
+
+- `select()` keeps only relevant variables.
+- `filter(!is.na(index_1))` removes incomplete responses.
+- `quantile(index_1, 0.75)` finds the top 25 % cutoff.
+- `mutate()` creates a logical variable (TRUE/FALSE) indicating whether each person is in that top quartile.
+- `arrange()` orders the dataset so the highest scores appear first.
+
+```{r}
+head(mini)
+```
+
+Now you can see the structure: a concise, consistent table for further analysis.
+
+
+If you want to know all the other verbs from `dplyr`, you can download a *cheat sheet*, that serves as a manual for using it.
+
+[📄 Download the *dplyr Cheat Sheet* (PDF)](https://media.datacamp.com/legacy/image/upload/v1660300796/Marketing/Blog/Manipulating_Data_in_dplyr_Cheat_Sheet.pdf)
+
+
+## 5. Grouping, Summarizing, and Interpreting {-}
+
+Aggregating data is the first step toward understanding patterns.
+
+
+```{r}
+mini %>%
+  group_by(income_range) %>%
+  summarise(n = n(), 
+            mean_index_1 = mean(index_1, na.rm = TRUE),
+            sd_index_1 = sd(index_1, na.rm = TRUE),
+            share_high = mean(high_invest_intent))
+```
+
+- `group_by()` adds a “grouping” attribute without changing the data itself.
+- `summarise()` collapses each group to one row by computing summary statistics.
+- Because TRUE = 1 and FALSE = 0, `mean(high_invest_intent)` automatically yields the proportion of TRUEs.
+
+Interpretation example:
+
+Higher-income respondents show higher mean `index_1` and a larger share of high-intention investors, suggesting economic capacity plays a role in willingness to invest.
+
+**Be careful:** these are descriptive patterns, not causal effects!
+We haven’t yet controlled for age, ownership, education or other variables.
+
+
+
+## 6. Recoding and Creating Ordered Factors {-}
+
+Categorical variables should have intuitive labels and logical order.
+
+Re-labeling income groups
+
+```{r  message=FALSE, warning=FALSE}
+finsesco <- finsesco %>%
+  mutate(
+  income_range = fct_recode(income_range,
+  "Low" = "Under €1,500",
+  "Middle" = "€1,500–€4,000",
+  "High" = "Over €4,000") %>% 
+  fct_relevel("Low","Middle","High")
+)
+```
+
+
+- `fct_recode()` maps old labels to shorter ones.
+- `fct_relevel()` defines the order used in plots and summaries.
+- Without re-leveling, R might sort alphabetically, putting “Middle” before “Low”.
+
+Creating age groups
+
+
+```{r}
+finsesco <- finsesco %>%
+  mutate(
+  age_group = case_when(
+  age < 30 ~ "18–29",
+  age < 45 ~ "30–44",
+  age < 60 ~ "45–59",
+  age >= 60 ~ "60+",
+  TRUE ~ NA_character_) %>%
+  factor(levels = c("18–29","30–44","45–59","60+"))
+)
+```
+
+- `case_when()` checks each condition sequentially.
+- The pipe into `factor()` turns the string labels into an ordered categorical variable, ensuring that 18–29 appears before 30–44 in graphs.
+
+Why this matters: statistical models interpret factors based on their order—by defining it explicitly, you avoid misleading reference levels later.
+
+
+## 7. Saving and Versioning Clean Data {-}
+
+Never overwrite the raw file. Always save a new one that documents its lineage.
+
+```{r}
+clean <- finsesco %>%
+  select(age, age_group, gender,
+  income_range, index_1)
+```
+
+
+```{r}
+write_csv(clean, here::here("data", "finsesco_clean.csv"))
+```
+
+This becomes the baseline for all later sessions.
+If you later discover an error, you can regenerate the file from the same script rather than editing data manually.
+
+
+## 8. Conceptual Reflection {-}
+
+Cleaning data is not busywork—it’s modeling reality.
+When you decide that “under €1,500” means “Low-Income” you’re interpreting social categories. When you replace a missing `index_1` by the median, you’re making an assumption about the underlying distribution. Recognizing these choices makes you a transparent analyst.
+
+
+
+
+
+
+
+
+

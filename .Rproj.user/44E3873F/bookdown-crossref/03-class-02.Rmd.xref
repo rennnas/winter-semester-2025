@@ -1,6 +1,10 @@
-h1:week-2 Week 2
-h2:data-wrangling-with-dplyr Data Wrangling with dplyr
-h2:reading Reading
-h2:code-demo Code demo
-h2:exercise Exercise
+h1:session-2 Session 2
+h2:why-data-cleaning-is-the-hardest-and-most-important-step 1. Why Data Cleaning Is the Hardest (and Most Important) Step
+h2:importing-and-inspecting-the-dataset 2. Importing and Inspecting the Dataset
+h2:cleaning-column-names-and-correcting-types 3. Cleaning Column Names and Correcting Types
+h2:the-logic-of-pipes-and-dplyr-verbs 4. The Logic of Pipes and dplyr Verbs
+h2:grouping-summarizing-and-interpreting 5. Grouping, Summarizing, and Interpreting
+h2:recoding-and-creating-ordered-factors 6. Recoding and Creating Ordered Factors
+h2:saving-and-versioning-clean-data 7. Saving and Versioning Clean Data
+h2:conceptual-reflection 8. Conceptual Reflection
 

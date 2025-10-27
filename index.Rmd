@@ -29,3 +29,10 @@ bookdown::render_book("index.Rmd", "bookdown::bs4_book")
 ```
 
 To publish on GitHub Pages, push the repo and set Pages to serve from the `/docs` folder (see instructions on **About**).
+
+```{r setup, include=FALSE}
+# Global setup for all chapters / classes
+if (!requireNamespace("here", quietly = TRUE)) install.packages("here")
+knitr::opts_knit$set(root.dir = here::here())
+library(here)
+```

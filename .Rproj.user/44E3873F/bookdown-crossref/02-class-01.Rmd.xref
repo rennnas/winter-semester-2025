@@ -1,6 +1,18 @@
-h1:week-1 Week 1
-h2:r-rstudio-basics---overview R & RStudio Basics - Overview
-h2:slides Slides
-h2:video Video
+h1:session-1 Session 1
+h2:welcome-and-course-overview 1. Welcome and Course Overview
+h3:installing-r-and-rstudio Installing R and RStudio
+h3:installing-packages Installing Packages
+h3:working-directory Working Directory
+h2:variable-assignment-basic-data-types 2. Variable Assignment & Basic Data Types
+h2:working-with-r-objects 3. Working with R Objects
+tab:echo Basic Data Types in R
+h3:i-vectors i) Vectors
+h3:ii-matrices ii) Matrices
+h3:iii-factors iii) Factors
+h3:iv-data-frames iv) Data Frames
+h3:v-lists v) Lists
+h2:exploring-your-dataset 4. Exploring Your Dataset
+h2:descriptive-statistics 5. Descriptive Statistics
+h3:your-first-plot Your First Plot
 h2:exercise Exercise
 
