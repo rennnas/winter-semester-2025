@@ -58,7 +58,7 @@ RStudio shortcuts speed you up: *Run line* (`Ctrl + Enter`), *Comment/Uncomment*
 R’s power comes from **packages** — sets of functions you add to “base R.”  
 Use `install.packages("name_of_the_package")` **once** per machine to download it, and `library(name_of_the_package)` **each session** to load it.
 
-```{r, eval=FALSE}
+```{r}
 install.packages("tidyverse")   # only once
 library(tidyverse)              # every session
 ```

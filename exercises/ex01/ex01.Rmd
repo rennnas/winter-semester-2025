@@ -4,8 +4,36 @@ title: "Exercise 01"
 output: html_document
 ---
 
-Load the dataset and compute the mean of `kwh` by `household_size`.
+# 1. Create a new R Project in your course folder. 
+  Add subfolders: data/, outputs/, scripts/.
 
-```{r}
-# your code here
-```
+# 2. Install/load packages: 
+  tidyverse, readr, janitor.
+
+# 3. Import the dataset:
+  Read data/finsesco.csv into an object called finsesco.
+
+# 4. Get your bearings:
+  Print dim(), names(), and glimpse().
+
+# 5.Clean column names:
+  Use janitor::clean_names() and reassign.
+
+# 6. Select a working view:
+  Keep an ID and these variables (or closest equivalents you find):
+ age, gender, state, income_bracket, prosumer_status, behaviour_elec_scaled, v_40_1:v_40_6.
+
+# 7. Create tidy helper variables:
+  income_range collapsed into Low / Middle / High from income_bracket.
+  is_prosumer as a logical or factor from prosumer_status.
+
+# 8. Quick data quality check:
+  Count total rows, distinct IDs, and make a small NA summary for the selected columns.
+
+# 9. Make two quick plots:
+
+  Histogram of behaviour_elec_scaled.
+  Bar chart of income_range (ordered Low → Middle → High).
+
+# 10. Save a slim, clean object:
+  Write outputs/finsesco_s1.csv with only the selected/created columns.

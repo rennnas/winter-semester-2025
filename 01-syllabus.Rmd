@@ -4,3 +4,7 @@
 **University:** European University Viadrina  
 **Semester:** Winter 2025/26  
 **Instructor:** Renan Magalhães (<magalhaes@kelso-institute-europe.de>)
+
+You can download the file with the syllabus here:
+
+**Syllabus**: **[download Rmd](data/syllabus.pdf)**  

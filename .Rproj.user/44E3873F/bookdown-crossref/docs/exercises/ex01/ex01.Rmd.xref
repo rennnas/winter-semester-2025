@@ -1,2 +1,11 @@
-
+h1:create-a-new-r-project-in-your-course-folder. 1. Create a new R Project in your course folder.
+h1:installload-packages 2. Install/load packages:
+h1:import-the-dataset 3. Import the dataset:
+h1:get-your-bearings 4. Get your bearings:
+h1:clean-column-names 5.Clean column names:
+h1:select-a-working-view 6. Select a working view:
+h1:create-tidy-helper-variables 7. Create tidy helper variables:
+h1:quick-data-quality-check 8. Quick data quality check:
+h1:make-two-quick-plots 9. Make two quick plots:
+h1:save-a-slim-clean-object 10. Save a slim, clean object:
 

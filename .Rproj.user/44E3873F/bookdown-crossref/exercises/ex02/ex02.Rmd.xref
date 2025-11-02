@@ -1,2 +1,13 @@
-
+h1:load-tidyverse-and-import-the-file-you-saved-in-session-1 1. Load tidyverse and import the file you saved in Session 1:
+h1:filter-a-working-sample 2. Filter a working sample:
+h1:ensure-tidy-factor-orders 3. Ensure tidy factor orders:
+h1:build-a-motivation-index 3. Build a Motivation Index:
+h1:standardize-to-motivation_z-z-score. 4. Standardize to motivation_z (z-score).
+h1:descriptives-by-group 5. Descriptives by group:
+h1:cross-tab 6. Cross-tab:
+h1:visualization-1 7. Visualization #1:
+h1:visualization-2 8. Visualization #2:
+h1:nice-summary-table 9. Nice summary table:
+h1:save-outputs 10. Save outputs:
+h1:save-the-cross-tab-as-outputsprosumer_by_income.csv. 11. Save the cross-tab as outputs/prosumer_by_income.csv.
 
