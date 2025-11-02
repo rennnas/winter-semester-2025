@@ -387,7 +387,7 @@ When you decide that “under €1,500” means “Low-Income” you’re interp
 
 ## Exercise {-}
 
-- **Exercise 02**: **[download Rmd](exercises/ex02/ex02.Rmd)**  
+- **Exercise 02**: **[Download PDF](exercises/ex02/ex02.Rmd)**  
 - Upload via **Assignments** page on Moodle.
 
 

@@ -11,8 +11,9 @@ output: bookdown::bs4_book
 
 ***
 ## 1. Welcome and Course Overview {-}
+<iframe src="https://drive.google.com/file/d/1LDv4pGuqS8NqQPOBkuMcwBT6AKGMzL5g/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 01 Recording" frameborder="0" allowfullscreen></iframe>
 
 Welcome to the **Energy Transitions  Seminar**. This course is about learning to *think like a data analyst* in R while working with real data from the energy transition. Each week, we’ll alternate between short explanations and hands-on practice. When you see a new function or concept, try to understand two things: (1) **what** it does, and (2) **why** it’s the right tool for the job. By the end, you’ll be comfortable loading data, cleaning it, summarizing it, visualizing relationships, and fitting introductory econometric models.
 
@@ -91,7 +92,8 @@ Keep a clean structure like `data/`, `images/`, and `scripts/`. Load files with 
 
 ## 2. Variable Assignment & Basic Data Types {-}
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 01 Recording" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1zS_BqOwwUia5KGI53L7Pdh0BPBDmncn2/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 
 Everything in R is an **object**. You create or update objects by assignment (prefer the left-arrow `"<-"` because it is idiomatic and visually distinctive). For example, assign a number to `x`, a string to `name`, or a boolean to `sunny`.
@@ -155,7 +157,8 @@ as.factor(c("low", "high", "low"))
 
 ## 3. Working with R Objects {-}
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 01 Recording" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1y2HlvjYhx2xoVCNjC4JrloFAo454AyZg/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 
 R’s data structures are the building blocks of analysis:
@@ -285,7 +288,8 @@ person[[1]]      # first element of the list
 
 ## 4. Exploring Your Dataset {-}
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 01 Recording" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/17N_GEfsiJanlBLsWgYOSnRhj67r84d1W/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 
 Let’s import the FinSESCo dataset
@@ -338,7 +342,8 @@ You’ll get a sense of the variables — maybe `income_range`, `age`, `educatio
 
 ## 5. Descriptive Statistics {-}
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 01 Recording" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1tZVRFk8aZYcotOe-q6_UxiclnDOUQGFW/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 
 

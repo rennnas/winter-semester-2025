@@ -13,26 +13,13 @@ Welcome to the seminar! This site hosts **all materials**: syllabus, slides, R c
 
 > Tip: Use the **left sidebar** to navigate across classes and materials.
 
-## How this site is organized
+## How this site is organized {-}
 
-- **Syllabus** with course policies and schedule  
+- **Syllabus** with course info and schedule  
 - **Class pages** (Class 01, Class 02, …) with slides, notes, and code  
-- **Assignments** with deadlines and upload links  
+- **Assignments** with links to download the assignments
 - **Datasets** ready to download  
 - **About** with contact and credit
 
-To build this site locally, open R and run:
-
-```r
-install.packages(c("bookdown", "rmarkdown", "knitr"))
-bookdown::render_book("index.Rmd", "bookdown::bs4_book")
-```
 
 To publish on GitHub Pages, push the repo and set Pages to serve from the `/docs` folder (see instructions on **About**).
-
-```{r setup, include=FALSE}
-# Global setup for all chapters / classes
-if (!requireNamespace("here", quietly = TRUE)) install.packages("here")
-knitr::opts_knit$set(root.dir = here::here())
-library(here)
-```
