@@ -13,7 +13,8 @@ output: bookdown::bs4_book
 ***
 ## 1. Why Data Cleaning Is the Hardest (and Most Important) Step{-}
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 02 Recording" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1Y1CQ4xJTW3xfPGJFA0hOHpBUM7Fj_UPc/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 When researchers talk about “analysis,” they often imagine fancy models and colorful plots.
 In reality, most of the work happens before any model is fitted: cleaning, organizing, and validating the raw data. Raw data are almost never ready for analysis. Surveys come back with extra spaces, numbers formatted as text, spelling variations, and missing responses.
@@ -196,7 +197,9 @@ Always check how many missing values you introduced: `sum(is.na(finsesco$age))`
 
 ## 4. The Logic of Pipes and dplyr Verbs{-}
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 02 Recording" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/10VChBwFGMXbWcDmAySxzfCqog1hASXli/preview"
+        width="640" height="360" allow="autoplay"></iframe>
+
 
 The pipe operator `%>%` passes the output of one function as the first argument of the next. This creates readable “sentences” of code.
 

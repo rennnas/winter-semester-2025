@@ -7,4 +7,30 @@
 
 You can download the file with the syllabus here:
 
-**Syllabus**: **[download Rmd](data/syllabus.pdf)**  
+**Syllabus**: **[download PDF](data/syllabus.pdf)**  
+
+You can download the texts for the classes here. Please read them before our encounters.
+
+**Session 1**
+
+Jens Lowitzsch (2019). Introduction: The Challenge of Achieving the Energy Transition. In. Energy Transitions. **[download PDF](data/text_1_1.pdf)**  
+
+Jens Lowitzsch (2019). Conclusions: The Role of Consumer (Co-)Ownership in the Energy Transition. In. Energy Transitions. **[download PDF](data/text_1_2.pdf)**  
+
+Renan Magalhães, Federico Narracci and Jens Lowitzsch (2025). Crowdfunding and Energy Efficiency Contracting: Exploring New Pathways for Private Investment in Building Renovations. **[download PDF](data/text_1_3.pdf)**  
+
+Renan Magalhães, Jens Lowitzsch and Federico Narracci (2025). How (Co-)Ownership in Renewables Improves Heating Usage Behaviour and the Willingness to Adopt Energy-Efficient Technologies—Data from German Households. **[download PDF](data/text_1_4.pdf)**  
+
+
+**Session 2**
+
+Florian Hanke and Jens Lowitzsch (2021). Empowering Vulnerable Consumers to Join Renewable Energy Communities—Towards an Inclusive Design of the Clean Energy Package. **[download PDF](data/text_2_1.pdf)**
+
+Jens Lowitzsch, Monika Bucha and Sarah Lonsche (2025). From Access to Ownership Energy Communities & Social Inclusion in the EU’s Energy Transition. **[download PDF](data/text_2_2.pdf)**
+
+Christina E. Hoicka, Jens Lowitzsch, Marie Claire Brisbois, Ankit Kumar and Luis Ramirez Camargo (2021). Implementing a just renewable energy transition: Policy advice for transposing the new European rules for renewable energy communities. **[download PDF](data/text_2_3.pdf)**
+
+
+
+
+

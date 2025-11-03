@@ -94,7 +94,7 @@
 <div id="why-data-cleaning-is-the-hardest-and-most-important-step" class="section level2 unnumbered">
 <h2>1. Why Data Cleaning Is the Hardest (and Most Important) Step<a class="anchor" aria-label="anchor" href="#why-data-cleaning-is-the-hardest-and-most-important-step"><i class="fas fa-link"></i></a>
 </h2>
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 02 Recording" frameborder="0" allowfullscreen>
+<iframe src="https://drive.google.com/file/d/1Y1CQ4xJTW3xfPGJFA0hOHpBUM7Fj_UPc/preview" width="640" height="360" allow="autoplay">
 </iframe>
 <p>When researchers talk about “analysis,” they often imagine fancy models and colorful plots.
 In reality, most of the work happens before any model is fitted: cleaning, organizing, and validating the raw data. Raw data are almost never ready for analysis. Surveys come back with extra spaces, numbers formatted as text, spelling variations, and missing responses.
@@ -107,23 +107,23 @@ If you skip the cleaning stage, every later step—summary statistics, regressio
 <p>Once data satisfy these rules, they can easily be filtered, summarized, plotted, and joined.
 Most R packages (especially those in the tidyverse) assume data are tidy.
 The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
-<div id="xyfhhunwff" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xyfhhunwff table {
+<div id="cdxkdxarcj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cdxkdxarcj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xyfhhunwff thead, #xyfhhunwff tbody, #xyfhhunwff tfoot, #xyfhhunwff tr, #xyfhhunwff td, #xyfhhunwff th {
+#cdxkdxarcj thead, #cdxkdxarcj tbody, #cdxkdxarcj tfoot, #cdxkdxarcj tr, #cdxkdxarcj td, #cdxkdxarcj th {
   border-style: none;
 }
 
-#xyfhhunwff p {
+#cdxkdxarcj p {
   margin: 0;
   padding: 0;
 }
 
-#xyfhhunwff .gt_table {
+#cdxkdxarcj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -149,12 +149,12 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-left-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_caption {
+#cdxkdxarcj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xyfhhunwff .gt_title {
+#cdxkdxarcj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -166,7 +166,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-width: 0;
 }
 
-#xyfhhunwff .gt_subtitle {
+#cdxkdxarcj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -178,7 +178,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-top-width: 0;
 }
 
-#xyfhhunwff .gt_heading {
+#cdxkdxarcj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -190,13 +190,13 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_bottom_border {
+#cdxkdxarcj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_col_headings {
+#cdxkdxarcj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -211,7 +211,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_col_heading {
+#cdxkdxarcj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -231,7 +231,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   overflow-x: hidden;
 }
 
-#xyfhhunwff .gt_column_spanner_outer {
+#cdxkdxarcj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -243,15 +243,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 4px;
 }
 
-#xyfhhunwff .gt_column_spanner_outer:first-child {
+#cdxkdxarcj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xyfhhunwff .gt_column_spanner_outer:last-child {
+#cdxkdxarcj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xyfhhunwff .gt_column_spanner {
+#cdxkdxarcj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -263,11 +263,11 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   width: 100%;
 }
 
-#xyfhhunwff .gt_spanner_row {
+#cdxkdxarcj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xyfhhunwff .gt_group_heading {
+#cdxkdxarcj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -293,7 +293,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   text-align: left;
 }
 
-#xyfhhunwff .gt_empty_group_heading {
+#cdxkdxarcj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -308,15 +308,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   vertical-align: middle;
 }
 
-#xyfhhunwff .gt_from_md > :first-child {
+#cdxkdxarcj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xyfhhunwff .gt_from_md > :last-child {
+#cdxkdxarcj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xyfhhunwff .gt_row {
+#cdxkdxarcj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -335,7 +335,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   overflow-x: hidden;
 }
 
-#xyfhhunwff .gt_stub {
+#cdxkdxarcj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -348,7 +348,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#xyfhhunwff .gt_stub_row_group {
+#cdxkdxarcj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -362,15 +362,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   vertical-align: top;
 }
 
-#xyfhhunwff .gt_row_group_first td {
+#cdxkdxarcj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xyfhhunwff .gt_row_group_first th {
+#cdxkdxarcj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xyfhhunwff .gt_summary_row {
+#cdxkdxarcj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -380,16 +380,16 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#xyfhhunwff .gt_first_summary_row {
+#cdxkdxarcj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_first_summary_row.thick {
+#cdxkdxarcj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xyfhhunwff .gt_last_summary_row {
+#cdxkdxarcj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -399,7 +399,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_grand_summary_row {
+#cdxkdxarcj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -409,7 +409,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#xyfhhunwff .gt_first_grand_summary_row {
+#cdxkdxarcj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -419,7 +419,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-top-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_last_grand_summary_row_top {
+#cdxkdxarcj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -429,11 +429,11 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_striped {
+#cdxkdxarcj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xyfhhunwff .gt_table_body {
+#cdxkdxarcj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -442,7 +442,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_footnotes {
+#cdxkdxarcj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -456,7 +456,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_footnote {
+#cdxkdxarcj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -465,7 +465,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#xyfhhunwff .gt_sourcenotes {
+#cdxkdxarcj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -479,7 +479,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#xyfhhunwff .gt_sourcenote {
+#cdxkdxarcj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -487,72 +487,72 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#xyfhhunwff .gt_left {
+#cdxkdxarcj .gt_left {
   text-align: left;
 }
 
-#xyfhhunwff .gt_center {
+#cdxkdxarcj .gt_center {
   text-align: center;
 }
 
-#xyfhhunwff .gt_right {
+#cdxkdxarcj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xyfhhunwff .gt_font_normal {
+#cdxkdxarcj .gt_font_normal {
   font-weight: normal;
 }
 
-#xyfhhunwff .gt_font_bold {
+#cdxkdxarcj .gt_font_bold {
   font-weight: bold;
 }
 
-#xyfhhunwff .gt_font_italic {
+#cdxkdxarcj .gt_font_italic {
   font-style: italic;
 }
 
-#xyfhhunwff .gt_super {
+#cdxkdxarcj .gt_super {
   font-size: 65%;
 }
 
-#xyfhhunwff .gt_footnote_marks {
+#cdxkdxarcj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xyfhhunwff .gt_asterisk {
+#cdxkdxarcj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xyfhhunwff .gt_indent_1 {
+#cdxkdxarcj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xyfhhunwff .gt_indent_2 {
+#cdxkdxarcj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xyfhhunwff .gt_indent_3 {
+#cdxkdxarcj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xyfhhunwff .gt_indent_4 {
+#cdxkdxarcj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xyfhhunwff .gt_indent_5 {
+#cdxkdxarcj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xyfhhunwff .katex-display {
+#cdxkdxarcj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xyfhhunwff div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cdxkdxarcj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -735,23 +735,23 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
 <li>There are multiple inconsistent formats for <code>income</code>.</li>
 </ul>
 <p>Before cleaning, it helps to know what R thinks each type means:</p>
-<div id="pyyxdlxpra" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pyyxdlxpra table {
+<div id="frhwqqdpvp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#frhwqqdpvp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pyyxdlxpra thead, #pyyxdlxpra tbody, #pyyxdlxpra tfoot, #pyyxdlxpra tr, #pyyxdlxpra td, #pyyxdlxpra th {
+#frhwqqdpvp thead, #frhwqqdpvp tbody, #frhwqqdpvp tfoot, #frhwqqdpvp tr, #frhwqqdpvp td, #frhwqqdpvp th {
   border-style: none;
 }
 
-#pyyxdlxpra p {
+#frhwqqdpvp p {
   margin: 0;
   padding: 0;
 }
 
-#pyyxdlxpra .gt_table {
+#frhwqqdpvp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -777,12 +777,12 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-left-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_caption {
+#frhwqqdpvp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pyyxdlxpra .gt_title {
+#frhwqqdpvp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -794,7 +794,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-width: 0;
 }
 
-#pyyxdlxpra .gt_subtitle {
+#frhwqqdpvp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -806,7 +806,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-top-width: 0;
 }
 
-#pyyxdlxpra .gt_heading {
+#frhwqqdpvp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -818,13 +818,13 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_bottom_border {
+#frhwqqdpvp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_col_headings {
+#frhwqqdpvp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -839,7 +839,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_col_heading {
+#frhwqqdpvp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -859,7 +859,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   overflow-x: hidden;
 }
 
-#pyyxdlxpra .gt_column_spanner_outer {
+#frhwqqdpvp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -871,15 +871,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 4px;
 }
 
-#pyyxdlxpra .gt_column_spanner_outer:first-child {
+#frhwqqdpvp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pyyxdlxpra .gt_column_spanner_outer:last-child {
+#frhwqqdpvp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pyyxdlxpra .gt_column_spanner {
+#frhwqqdpvp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -891,11 +891,11 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   width: 100%;
 }
 
-#pyyxdlxpra .gt_spanner_row {
+#frhwqqdpvp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pyyxdlxpra .gt_group_heading {
+#frhwqqdpvp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -921,7 +921,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   text-align: left;
 }
 
-#pyyxdlxpra .gt_empty_group_heading {
+#frhwqqdpvp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -936,15 +936,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   vertical-align: middle;
 }
 
-#pyyxdlxpra .gt_from_md > :first-child {
+#frhwqqdpvp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pyyxdlxpra .gt_from_md > :last-child {
+#frhwqqdpvp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pyyxdlxpra .gt_row {
+#frhwqqdpvp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -963,7 +963,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   overflow-x: hidden;
 }
 
-#pyyxdlxpra .gt_stub {
+#frhwqqdpvp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -976,7 +976,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#pyyxdlxpra .gt_stub_row_group {
+#frhwqqdpvp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -990,15 +990,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   vertical-align: top;
 }
 
-#pyyxdlxpra .gt_row_group_first td {
+#frhwqqdpvp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pyyxdlxpra .gt_row_group_first th {
+#frhwqqdpvp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pyyxdlxpra .gt_summary_row {
+#frhwqqdpvp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1008,16 +1008,16 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#pyyxdlxpra .gt_first_summary_row {
+#frhwqqdpvp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_first_summary_row.thick {
+#frhwqqdpvp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pyyxdlxpra .gt_last_summary_row {
+#frhwqqdpvp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1027,7 +1027,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_grand_summary_row {
+#frhwqqdpvp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1037,7 +1037,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#pyyxdlxpra .gt_first_grand_summary_row {
+#frhwqqdpvp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1047,7 +1047,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-top-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_last_grand_summary_row_top {
+#frhwqqdpvp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1057,11 +1057,11 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_striped {
+#frhwqqdpvp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pyyxdlxpra .gt_table_body {
+#frhwqqdpvp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1070,7 +1070,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_footnotes {
+#frhwqqdpvp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1084,7 +1084,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_footnote {
+#frhwqqdpvp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1093,7 +1093,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#pyyxdlxpra .gt_sourcenotes {
+#frhwqqdpvp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1107,7 +1107,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#pyyxdlxpra .gt_sourcenote {
+#frhwqqdpvp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1115,72 +1115,72 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#pyyxdlxpra .gt_left {
+#frhwqqdpvp .gt_left {
   text-align: left;
 }
 
-#pyyxdlxpra .gt_center {
+#frhwqqdpvp .gt_center {
   text-align: center;
 }
 
-#pyyxdlxpra .gt_right {
+#frhwqqdpvp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pyyxdlxpra .gt_font_normal {
+#frhwqqdpvp .gt_font_normal {
   font-weight: normal;
 }
 
-#pyyxdlxpra .gt_font_bold {
+#frhwqqdpvp .gt_font_bold {
   font-weight: bold;
 }
 
-#pyyxdlxpra .gt_font_italic {
+#frhwqqdpvp .gt_font_italic {
   font-style: italic;
 }
 
-#pyyxdlxpra .gt_super {
+#frhwqqdpvp .gt_super {
   font-size: 65%;
 }
 
-#pyyxdlxpra .gt_footnote_marks {
+#frhwqqdpvp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pyyxdlxpra .gt_asterisk {
+#frhwqqdpvp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pyyxdlxpra .gt_indent_1 {
+#frhwqqdpvp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pyyxdlxpra .gt_indent_2 {
+#frhwqqdpvp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pyyxdlxpra .gt_indent_3 {
+#frhwqqdpvp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pyyxdlxpra .gt_indent_4 {
+#frhwqqdpvp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pyyxdlxpra .gt_indent_5 {
+#frhwqqdpvp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pyyxdlxpra .katex-display {
+#frhwqqdpvp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pyyxdlxpra div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#frhwqqdpvp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1303,7 +1303,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
 <div id="the-logic-of-pipes-and-dplyr-verbs" class="section level2 unnumbered">
 <h2>4. The Logic of Pipes and dplyr Verbs<a class="anchor" aria-label="anchor" href="#the-logic-of-pipes-and-dplyr-verbs"><i class="fas fa-link"></i></a>
 </h2>
-<iframe width="720" height="405" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Class 02 Recording" frameborder="0" allowfullscreen>
+<iframe src="https://drive.google.com/file/d/10VChBwFGMXbWcDmAySxzfCqog1hASXli/preview" width="640" height="360" allow="autoplay">
 </iframe>
 <p>The pipe operator <code>%&gt;%</code> passes the output of one function as the first argument of the next. This creates readable “sentences” of code.</p>
 <p>Example without pipes:</p>
@@ -1314,23 +1314,23 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">income_range</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_index_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">index_1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>The second version mirrors human thought: take data → group → summarise.</p>
-<div id="vrrxphzcvx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vrrxphzcvx table {
+<div id="afuthmhkbm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#afuthmhkbm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vrrxphzcvx thead, #vrrxphzcvx tbody, #vrrxphzcvx tfoot, #vrrxphzcvx tr, #vrrxphzcvx td, #vrrxphzcvx th {
+#afuthmhkbm thead, #afuthmhkbm tbody, #afuthmhkbm tfoot, #afuthmhkbm tr, #afuthmhkbm td, #afuthmhkbm th {
   border-style: none;
 }
 
-#vrrxphzcvx p {
+#afuthmhkbm p {
   margin: 0;
   padding: 0;
 }
 
-#vrrxphzcvx .gt_table {
+#afuthmhkbm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1356,12 +1356,12 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-left-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_caption {
+#afuthmhkbm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vrrxphzcvx .gt_title {
+#afuthmhkbm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1373,7 +1373,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-width: 0;
 }
 
-#vrrxphzcvx .gt_subtitle {
+#afuthmhkbm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1385,7 +1385,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-top-width: 0;
 }
 
-#vrrxphzcvx .gt_heading {
+#afuthmhkbm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1397,13 +1397,13 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_bottom_border {
+#afuthmhkbm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_col_headings {
+#afuthmhkbm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1418,7 +1418,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_col_heading {
+#afuthmhkbm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1438,7 +1438,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   overflow-x: hidden;
 }
 
-#vrrxphzcvx .gt_column_spanner_outer {
+#afuthmhkbm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1450,15 +1450,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 4px;
 }
 
-#vrrxphzcvx .gt_column_spanner_outer:first-child {
+#afuthmhkbm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vrrxphzcvx .gt_column_spanner_outer:last-child {
+#afuthmhkbm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vrrxphzcvx .gt_column_spanner {
+#afuthmhkbm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1470,11 +1470,11 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   width: 100%;
 }
 
-#vrrxphzcvx .gt_spanner_row {
+#afuthmhkbm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vrrxphzcvx .gt_group_heading {
+#afuthmhkbm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1500,7 +1500,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   text-align: left;
 }
 
-#vrrxphzcvx .gt_empty_group_heading {
+#afuthmhkbm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1515,15 +1515,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   vertical-align: middle;
 }
 
-#vrrxphzcvx .gt_from_md > :first-child {
+#afuthmhkbm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vrrxphzcvx .gt_from_md > :last-child {
+#afuthmhkbm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vrrxphzcvx .gt_row {
+#afuthmhkbm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1542,7 +1542,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   overflow-x: hidden;
 }
 
-#vrrxphzcvx .gt_stub {
+#afuthmhkbm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1555,7 +1555,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#vrrxphzcvx .gt_stub_row_group {
+#afuthmhkbm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1569,15 +1569,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   vertical-align: top;
 }
 
-#vrrxphzcvx .gt_row_group_first td {
+#afuthmhkbm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vrrxphzcvx .gt_row_group_first th {
+#afuthmhkbm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vrrxphzcvx .gt_summary_row {
+#afuthmhkbm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1587,16 +1587,16 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#vrrxphzcvx .gt_first_summary_row {
+#afuthmhkbm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_first_summary_row.thick {
+#afuthmhkbm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vrrxphzcvx .gt_last_summary_row {
+#afuthmhkbm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1606,7 +1606,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_grand_summary_row {
+#afuthmhkbm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1616,7 +1616,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#vrrxphzcvx .gt_first_grand_summary_row {
+#afuthmhkbm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1626,7 +1626,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-top-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_last_grand_summary_row_top {
+#afuthmhkbm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1636,11 +1636,11 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_striped {
+#afuthmhkbm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vrrxphzcvx .gt_table_body {
+#afuthmhkbm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1649,7 +1649,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_footnotes {
+#afuthmhkbm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1663,7 +1663,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_footnote {
+#afuthmhkbm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1672,7 +1672,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#vrrxphzcvx .gt_sourcenotes {
+#afuthmhkbm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1686,7 +1686,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#vrrxphzcvx .gt_sourcenote {
+#afuthmhkbm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1694,72 +1694,72 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#vrrxphzcvx .gt_left {
+#afuthmhkbm .gt_left {
   text-align: left;
 }
 
-#vrrxphzcvx .gt_center {
+#afuthmhkbm .gt_center {
   text-align: center;
 }
 
-#vrrxphzcvx .gt_right {
+#afuthmhkbm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vrrxphzcvx .gt_font_normal {
+#afuthmhkbm .gt_font_normal {
   font-weight: normal;
 }
 
-#vrrxphzcvx .gt_font_bold {
+#afuthmhkbm .gt_font_bold {
   font-weight: bold;
 }
 
-#vrrxphzcvx .gt_font_italic {
+#afuthmhkbm .gt_font_italic {
   font-style: italic;
 }
 
-#vrrxphzcvx .gt_super {
+#afuthmhkbm .gt_super {
   font-size: 65%;
 }
 
-#vrrxphzcvx .gt_footnote_marks {
+#afuthmhkbm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vrrxphzcvx .gt_asterisk {
+#afuthmhkbm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vrrxphzcvx .gt_indent_1 {
+#afuthmhkbm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vrrxphzcvx .gt_indent_2 {
+#afuthmhkbm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vrrxphzcvx .gt_indent_3 {
+#afuthmhkbm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vrrxphzcvx .gt_indent_4 {
+#afuthmhkbm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vrrxphzcvx .gt_indent_5 {
+#afuthmhkbm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vrrxphzcvx .katex-display {
+#afuthmhkbm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vrrxphzcvx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#afuthmhkbm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
