@@ -43,7 +43,7 @@ When you open RStudio, you’ll see four panels:
 3. **Environment / History** (top-right): lists your objects.  
 4. **Files / Plots / Packages / Help** (bottom-right): navigation and tools.
 
-![RStudio Interface](images/rstudio_panels.png)
+![RStudio Interface](data/interface.png)
 
 ::: {.callout-tip}
 #### 💡 Tip {-}
