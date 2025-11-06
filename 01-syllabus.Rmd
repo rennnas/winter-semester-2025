@@ -11,6 +11,9 @@ You can download the file with the syllabus here:
 
 You can download the texts for the classes here. Please read them before our encounters.
 
+
+FULL BOOK: Lowitzsch (2019). Energy Transition - Financing Consumer Co-Ownership.**[download PDF](data/text_general.pdf)** 
+
 **Session 1**
 
 Jens Lowitzsch (2019). Introduction: The Challenge of Achieving the Energy Transition. In. Energy Transitions. **[download PDF](data/text_1_1.pdf)**  
@@ -31,6 +34,9 @@ Jens Lowitzsch, Monika Bucha and Sarah Lonsche (2025). From Access to Ownership 
 Christina E. Hoicka, Jens Lowitzsch, Marie Claire Brisbois, Ankit Kumar and Luis Ramirez Camargo (2021). Implementing a just renewable energy transition: Policy advice for transposing the new European rules for renewable energy communities. **[download PDF](data/text_2_3.pdf)**
 
 
+## WATCH: Electricity System: an overview
+<iframe src="https://drive.google.com/file/d/14b2cZH0DO4aa2UYZPSXXXOMKhVFkvz6H/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 
 

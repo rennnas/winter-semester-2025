@@ -153,6 +153,19 @@ Use <code>install.packages("name_of_the_package")</code> <strong>once</strong> p
 <pre><code>## Error in install.packages : Updating loaded packages</code></pre>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>              <span class="co"># every session</span></span></code></pre></div>
+<pre><code>## Warning: package 'stringr' was built under R version 4.5.1</code></pre>
+<pre><code>## Warning: package 'forcats' was built under R version 4.5.1</code></pre>
+<pre><code>## Warning: package 'lubridate' was built under R version 4.5.1</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ────────────────────────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.1     ✔ stringr   1.5.2
+## ✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.4     
+## ── Conflicts ──────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <p>For example, the <code>tidyverse</code> bundle gives you: <code>dplyr</code> (data manipulation), <code>ggplot2</code> (visualization), and <code>readr</code> (fast import). You’ll see them often because they standardize syntax and make code readable.</p>
 <div id="tip-1" class="section level4 unnumbered callout-tip">
 <h4>💡 Tip<a class="anchor" aria-label="anchor" href="#tip-1"><i class="fas fa-link"></i></a>
@@ -181,7 +194,7 @@ setwd() -&gt; set your own path</p>
 <iframe src="https://drive.google.com/file/d/1zS_BqOwwUia5KGI53L7Pdh0BPBDmncn2/preview" width="640" height="360" allow="autoplay">
 </iframe>
 <p>Everything in R is an <strong>object</strong>. You create or update objects by assignment (prefer the left-arrow <code>"&lt;-"</code> because it is idiomatic and visually distinctive). For example, assign a number to <code>x</code>, a string to <code>name</code>, or a boolean to <code>sunny</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">30</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="st">'50'</span> <span class="co"># character on purpose</span></span>
 <span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Renan"</span></span>
@@ -194,17 +207,17 @@ setwd() -&gt; set your own path</p>
 - <strong>factor</strong> for labeled categories (internally stored as integers + levels).</p>
 <p>You can inspect types with <code>class(x)</code> (high-level label) and <code>typeof(x)</code> (internal storage).<br>
 You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">as.character()</a></code>, <code><a href="https://rdrr.io/r/base/logical.html">as.logical()</a></code>, or <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code>. This is called <strong>coercion</strong> and is essential when cleaning survey data that might come in as text.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "numeric"</code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "character"</code></pre>
 <p>While inspecting the variables, you see that <code>y</code> is a character. Therefore you get an error while making operations with it. It is considered a text, not a number as <code>x</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">+</span> <span class="va">y</span></span></code></pre></div>
 <pre><code>## Error in x + y: non-numeric argument to binary operator</code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span>
 <span><span class="va">z</span> <span class="op">&lt;-</span> <span class="va">x</span> <span class="op">+</span> <span class="va">y_1</span></span>
 <span><span class="va">z</span></span></code></pre></div>
@@ -216,18 +229,18 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 <p>R is <strong>case-sensitive</strong>: <code>Income</code> and <code>income</code> are different objects. Prefer lower_case_names for names (e.g., <code>mean_income</code>).</p>
 </div>
 <p>Try it yourself:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">temperature</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>, <span class="fl">20</span>, <span class="fl">23</span>, <span class="fl">21</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="va">temperature</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Type conversion:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="st">"5"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "123"</code></pre>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"low"</span>, <span class="st">"high"</span>, <span class="st">"low"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] low  high low 
 ## Levels: high low</code></pre>
@@ -291,39 +304,39 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 <h3>i) Vectors<a class="anchor" aria-label="anchor" href="#i-vectors"><i class="fas fa-link"></i></a>
 </h3>
 <p>A <strong>vector</strong> is a one-dimensional collection of elements of the <strong>same type</strong>. Vectors are the fundamental building block of R.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Creating numeric, character, and logical vectors</span></span>
 <span><span class="va">v_num</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span><span class="op">)</span></span>
 <span><span class="va">v_chr</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"east"</span>, <span class="st">"west"</span>, <span class="st">"north"</span><span class="op">)</span></span>
 <span><span class="va">v_log</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v_num</span></span></code></pre></div>
 <pre><code>## [1] 10 20 30 40</code></pre>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v_chr</span></span></code></pre></div>
 <pre><code>## [1] "east"  "west"  "north"</code></pre>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v_log</span></span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE  TRUE</code></pre>
 <p>You can access elements by <strong>position</strong> (1-based indexing) and perform <strong>vectorized operations</strong>:</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Indexing (1-based)</span></span>
 <span><span class="va">v_num</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>          <span class="co"># first element</span></span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v_num</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>        <span class="co"># elements 2 through 3</span></span></code></pre></div>
 <pre><code>## [1] 20 30</code></pre>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v_num</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">4</span><span class="op">)</span><span class="op">]</span>    <span class="co"># elements 1 and 4</span></span></code></pre></div>
 <pre><code>## [1] 10 40</code></pre>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Vectorized math</span></span>
 <span><span class="va">v_num</span> <span class="op">+</span> <span class="fl">5</span></span></code></pre></div>
 <pre><code>## [1] 15 25 35 45</code></pre>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v_num</span> <span class="op">*</span> <span class="fl">2</span></span></code></pre></div>
 <pre><code>## [1] 20 40 60 80</code></pre>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v_num</span> <span class="op">/</span> <span class="va">v_num</span>     <span class="co"># element-wise division</span></span></code></pre></div>
 <pre><code>## [1] 1 1 1 1</code></pre>
 </div>
@@ -331,14 +344,14 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 <h3>ii) Matrices<a class="anchor" aria-label="anchor" href="#ii-matrices"><i class="fas fa-link"></i></a>
 </h3>
 <p>A matrix is a 2D collection (rows × columns) of the same type.</p>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, nrow <span class="op">=</span> <span class="fl">3</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">m</span></span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2    3
 ## [2,]    4    5    6
 ## [3,]    7    8    9</code></pre>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">m</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">3</span><span class="op">]</span>     <span class="co"># element in row 2, column 3</span></span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 </div>
@@ -346,11 +359,11 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 <h3>iii) Factors<a class="anchor" aria-label="anchor" href="#iii-factors"><i class="fas fa-link"></i></a>
 </h3>
 <p>Factors represent categorical variables (with levels).</p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gender</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "Female" "Male"</code></pre>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## gender
 ## Female   Male 
@@ -360,7 +373,7 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 <h3>iv) Data Frames<a class="anchor" aria-label="anchor" href="#iv-data-frames"><i class="fas fa-link"></i></a>
 </h3>
 <p>A data frame is a table where each column is a vector of equal length.</p>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
 <span>  id <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,</span>
 <span>  income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2000</span>, <span class="fl">3500</span>, <span class="fl">2800</span><span class="op">)</span>,</span>
@@ -372,22 +385,22 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 ##  $ id    : int  1 2 3
 ##  $ income: num  2000 3500 2800
 ##  $ region: chr  "East" "West" "West"</code></pre>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">###Basic subsetting:</span></span>
 <span></span>
 <span><span class="va">df</span><span class="op">$</span><span class="va">income</span></span></code></pre></div>
 <pre><code>## [1] 2000 3500 2800</code></pre>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">[</span> , <span class="st">"region"</span><span class="op">]</span></span></code></pre></div>
 <pre><code>## [1] "East" "West" "West"</code></pre>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">[</span> <span class="va">df</span><span class="op">$</span><span class="va">income</span> <span class="op">&gt;</span> <span class="fl">2500</span>, <span class="op">]</span></span></code></pre></div>
 </div>
 <div id="v-lists" class="section level3 unnumbered">
 <h3>v) Lists<a class="anchor" aria-label="anchor" href="#v-lists"><i class="fas fa-link"></i></a>
 </h3>
 <p>A list can store elements of different types (useful for model results).</p>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">person</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
 <span>  name <span class="op">=</span> <span class="st">"Renan"</span>,</span>
 <span>  age <span class="op">=</span> <span class="fl">31</span>,</span>
@@ -395,7 +408,7 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 <span><span class="op">)</span></span>
 <span><span class="va">person</span><span class="op">$</span><span class="va">instruments</span></span></code></pre></div>
 <pre><code>## [1] "Guitar" "Bass"</code></pre>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">person</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>      <span class="co"># first element of the list</span></span></code></pre></div>
 <pre><code>## [1] "Renan"</code></pre>
 </div>
@@ -407,7 +420,7 @@ You can also convert types with <code><a href="https://rdrr.io/r/base/numeric.ht
 </iframe>
 <p>Let’s import the FinSESCo dataset
 (Once you’ve downloaded the <code>.csv</code> file from the course repository.)</p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">finsesco</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html">here</a></span><span class="op">(</span><span class="st">"data"</span>, <span class="st">"finSESCo_sample.csv"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>In our seminar, we’ll analyze a curated sample of the <strong>FinSESCo</strong> survey. This dataset was collected by the survey company <strong>Norstat</strong> between <strong>28 Aug 2023</strong> and <strong>23 Nov 2023</strong> to study <strong>energy-efficiency behaviors</strong>, <strong>demand-side flexibility</strong>, and <strong>(co-)ownership</strong> patterns among German households. The design intentionally broadened the representation of <strong>female</strong> and <strong>low-income</strong> prosumers relative to earlier waves, aiming for a more balanced view across demographics. While the panel sampling approach means national proportions of prosumers cannot be inferred, the survey targeted representativeness by <strong>age</strong>, <strong>gender</strong>, and <strong>state population distributions</strong>, with adjustments later in fieldwork to reach specific groups of interest. :contentReference<span index="0">oaicite:0</span></p>
 <p><strong>Sample size:</strong> 2,585 completed questionnaires<br><strong>Prosumers:</strong> 925 individuals (including 464 women)<br>
@@ -430,7 +443,7 @@ For survey data, expect <strong>missing values</strong> (<code>NA</code>). Many 
 <p>A variable might <em>look</em> numeric but be stored as <strong>character</strong> (e.g., due to non-standard entries). Check with <code><a href="https://rdrr.io/r/base/class.html">class()</a></code> and coerce thoughtfully with <code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code> after cleaning.</p>
 </div>
 <p>Start by exploring the structure:</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## spc_tbl_ [299 × 32] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
@@ -502,107 +515,99 @@ For survey data, expect <strong>missing values</strong> (<code>NA</code>). Many 
 ##   ..   monitor = col_double()
 ##   .. )
 ##  - attr(*, "problems")=&lt;externalptr&gt;</code></pre>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Rows: 299
 ## Columns: 32
-## $ id                 [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m2 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m6 [38;5;246m,  [39m7 [38;5;246m,  [39m8 [38;5;246m,  [39m9 [38;5;246m,  [39m10 [38;5;246m,  [39m11 [38;5;246m,  [39m12 [38;5;246m,  [39m13 [38;5;246m,  [39m14 [38;5;246m,  [39m15 [38;5;246m,  [39m16 [38;5;246m,  [39m1…
-## $ income_range       [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"L…
-## $ co_ownership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ ownership          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ index_1            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m4.2 [38;5;246m,  [39m3.0 [38;5;246m,  [39m3.0 [38;5;246m,  [39m5…
-## $ index_2            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3.571429 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.714286 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.8571…
-## $ index_3            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m5 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m…
-## $ index_4            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m, [39m…
-## $ index_5            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m…
-## $ index_6            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.333333 [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3.666667 [38;5;246m,  [39m [31mNA [39m…
-## $ gender             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ age                [3m [38;5;246m&lt;dbl&gt; [39m [23m 21.5 [38;5;246m,  [39m63.0 [38;5;246m,  [39m21.5 [38;5;246m,  [39m58.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63…
-## $ age_factor         [3m [38;5;246m&lt;chr&gt; [39m [23m "18-25" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"18-25" [38;5;246m,  [39m"56-60" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"5…
-## $ academic           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ income_group       [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"L…
-## $ use_finsesco       [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mN [39m…
-## $ index_finsesco     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0.7299988 [38;5;246m,  [39m1.1276756 [38;5;246m,  [39m0.9498817 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.729998…
-## $ p_flat             [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ p_apartment        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ p_house            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ home_ownership     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ finsesco_familiar  [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ crowd_yes          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ crowd_own          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ income_low         [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ income_med         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ income_high        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ prosumership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ social_benefit     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ control            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ interact           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ monitor            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…</code></pre>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+## $ id                &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,…
+## $ income_range      &lt;chr&gt; "Low", "Low", "High", "Medium", "Low", "High", "Low", "Low", "High", "…
+## $ co_ownership      &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1…
+## $ ownership         &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1…
+## $ index_1           &lt;dbl&gt; 4.4, 5.0, 3.4, 5.0, 3.6, 5.0, 5.0, 3.6, 4.2, 3.0, 3.0, 5.0, 5.0, 5.0, …
+## $ index_2           &lt;dbl&gt; 3.571429, 5.000000, 3.714286, 5.000000, 3.000000, 3.857143, NA, 4.1428…
+## $ index_3           &lt;dbl&gt; 4, 5, 2, 5, NA, 3, NA, 3, 5, 1, 1, 5, 4, 4, 3, 2, 5, 5, 3, 5, 3, 3, 1,…
+## $ index_4           &lt;dbl&gt; 3, 5, 3, 5, NA, 1, NA, 4, 4, 1, 1, 5, 5, 5, 4, 4, 5, NA, 2, 5, 4, 2, 1…
+## $ index_5           &lt;dbl&gt; 4, 4, 5, 1, NA, 3, NA, 4, 2, 1, 1, 4, 4, 5, 3, 4, 1, 5, 5, 5, 3, 2, 5,…
+## $ index_6           &lt;dbl&gt; 4.333333, 4.666667, 3.000000, 3.000000, NA, 3.666667, NA, 4.666667, 3.…
+## $ gender            &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0…
+## $ age               &lt;dbl&gt; 21.5, 63.0, 21.5, 58.0, 63.0, 53.0, 53.0, 63.0, 53.0, 63.0, 38.0, 53.0…
+## $ age_factor        &lt;chr&gt; "18-25", "61-65", "18-25", "56-60", "61-65", "51-55", "51-55", "61-65"…
+## $ academic          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0…
+## $ income_group      &lt;chr&gt; "Low", "Low", "High", "Medium", "Low", "High", "Low", "Low", "High", "…
+## $ use_finsesco      &lt;dbl&gt; 1, 4, 2, 1, NA, 1, NA, 1, 1, 1, NA, 1, 1, NA, 1, 1, 1, NA, 1, NA, 1, N…
+## $ index_finsesco    &lt;dbl&gt; 0.7299988, 1.1276756, 0.9498817, 0.7299988, NA, 0.7299988, NA, 0.72999…
+## $ p_flat            &lt;dbl&gt; 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1…
+## $ p_apartment       &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0…
+## $ p_house           &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0…
+## $ home_ownership    &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1…
+## $ finsesco_familiar &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+## $ crowd_yes         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…
+## $ crowd_own         &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0…
+## $ income_low        &lt;dbl&gt; 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1…
+## $ income_med        &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0…
+## $ income_high       &lt;dbl&gt; 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0…
+## $ prosumership      &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1…
+## $ social_benefit    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+## $ control           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1…
+## $ interact          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1…
+## $ monitor           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1…</code></pre>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##        id        income_range        co_ownership      ownership    
-##  Min.   :  1.0   Length:299         Min.   :0.0000   Min.   :0.000  
-##  1st Qu.: 75.5   Class :character   1st Qu.:0.0000   1st Qu.:0.000  
-##  Median :150.0   Mode  :character   Median :0.0000   Median :0.000  
-##  Mean   :150.0                      Mean   :0.1104   Mean   :0.194  
-##  3rd Qu.:224.5                      3rd Qu.:0.0000   3rd Qu.:0.000  
-##  Max.   :299.0                      Max.   :1.0000   Max.   :1.000  
-##                                                                     
-##     index_1         index_2         index_3         index_4         index_5     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:4.000   1st Qu.:3.286   1st Qu.:3.000   1st Qu.:2.000   1st Qu.:3.000  
-##  Median :4.400   Median :3.857   Median :4.000   Median :3.000   Median :4.000  
-##  Mean   :4.281   Mean   :3.752   Mean   :3.503   Mean   :3.217   Mean   :3.515  
-##  3rd Qu.:5.000   3rd Qu.:4.286   3rd Qu.:5.000   3rd Qu.:5.000   3rd Qu.:5.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##                  NA's   :3       NA's   :5       NA's   :23      NA's   :6      
-##     index_6          gender            age         age_factor       
-##  Min.   :1.000   Min.   :0.0000   Min.   :21.50   Length:299        
-##  1st Qu.:2.500   1st Qu.:0.0000   1st Qu.:43.00   Class :character  
-##  Median :3.333   Median :0.0000   Median :53.00   Mode  :character  
-##  Mean   :3.249   Mean   :0.4983   Mean   :51.63                     
-##  3rd Qu.:4.333   3rd Qu.:1.0000   3rd Qu.:63.00                     
-##  Max.   :5.000   Max.   :1.0000   Max.   :68.00                     
-##  NA's   :6                                                          
-##     academic     income_group        use_finsesco   index_finsesco  
-##  Min.   :0.000   Length:299         Min.   :1.000   Min.   :0.7300  
-##  1st Qu.:0.000   Class :character   1st Qu.:1.000   1st Qu.:0.7300  
-##  Median :0.000   Mode  :character   Median :1.000   Median :0.7300  
-##  Mean   :0.311                      Mean   :1.539   Mean   :0.8187  
-##  3rd Qu.:1.000                      3rd Qu.:2.000   3rd Qu.:0.9499  
-##  Max.   :1.000                      Max.   :4.000   Max.   :1.1277  
-##                                     NA's   :82      NA's   :82      
-##      p_flat        p_apartment        p_house       home_ownership 
-##  Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.000  
-##  1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000  
-##  Median :0.0000   Median :0.0000   Median :0.0000   Median :0.000  
-##  Mean   :0.4448   Mean   :0.2241   Mean   :0.3177   Mean   :0.404  
-##  3rd Qu.:1.0000   3rd Qu.:0.0000   3rd Qu.:1.0000   3rd Qu.:1.000  
-##  Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.000  
-##                                                     NA's   :2      
-##  finsesco_familiar   crowd_yes         crowd_own       income_low    
-##  Min.   :0.00000   Min.   :0.00000   Min.   :0.000   Min.   :0.0000  
-##  1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.000   1st Qu.:0.0000  
-##  Median :0.00000   Median :0.00000   Median :0.000   Median :0.0000  
-##  Mean   :0.05724   Mean   :0.01684   Mean   :0.138   Mean   :0.2843  
-##  3rd Qu.:0.00000   3rd Qu.:0.00000   3rd Qu.:0.000   3rd Qu.:1.0000  
-##  Max.   :1.00000   Max.   :1.00000   Max.   :1.000   Max.   :1.0000  
-##  NA's   :2         NA's   :2         NA's   :2                       
-##    income_med      income_high      prosumership   social_benefit  
-##  Min.   :0.0000   Min.   :0.0000   Min.   :0.000   Min.   :0.0000  
-##  1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.0000  
-##  Median :0.0000   Median :0.0000   Median :0.000   Median :0.0000  
-##  Mean   :0.3411   Mean   :0.2508   Mean   :0.194   Mean   :0.1137  
-##  3rd Qu.:1.0000   3rd Qu.:0.5000   3rd Qu.:0.000   3rd Qu.:0.0000  
-##  Max.   :1.0000   Max.   :1.0000   Max.   :1.000   Max.   :1.0000  
-##                                                                    
-##     control          interact        monitor      
-##  Min.   :0.0000   Min.   :0.000   Min.   :0.0000  
-##  1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.0000  
-##  Median :0.0000   Median :0.000   Median :0.0000  
-##  Mean   :0.1137   Mean   :0.107   Mean   :0.1338  
-##  3rd Qu.:0.0000   3rd Qu.:0.000   3rd Qu.:0.0000  
-##  Max.   :1.0000   Max.   :1.000   Max.   :1.0000  
+<pre><code>##        id        income_range        co_ownership      ownership        index_1     
+##  Min.   :  1.0   Length:299         Min.   :0.0000   Min.   :0.000   Min.   :1.000  
+##  1st Qu.: 75.5   Class :character   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:4.000  
+##  Median :150.0   Mode  :character   Median :0.0000   Median :0.000   Median :4.400  
+##  Mean   :150.0                      Mean   :0.1104   Mean   :0.194   Mean   :4.281  
+##  3rd Qu.:224.5                      3rd Qu.:0.0000   3rd Qu.:0.000   3rd Qu.:5.000  
+##  Max.   :299.0                      Max.   :1.0000   Max.   :1.000   Max.   :5.000  
+##                                                                                     
+##     index_2         index_3         index_4         index_5         index_6          gender      
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :0.0000  
+##  1st Qu.:3.286   1st Qu.:3.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:2.500   1st Qu.:0.0000  
+##  Median :3.857   Median :4.000   Median :3.000   Median :4.000   Median :3.333   Median :0.0000  
+##  Mean   :3.752   Mean   :3.503   Mean   :3.217   Mean   :3.515   Mean   :3.249   Mean   :0.4983  
+##  3rd Qu.:4.286   3rd Qu.:5.000   3rd Qu.:5.000   3rd Qu.:5.000   3rd Qu.:4.333   3rd Qu.:1.0000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :1.0000  
+##  NA's   :3       NA's   :5       NA's   :23      NA's   :6       NA's   :6                       
+##       age         age_factor           academic     income_group        use_finsesco  
+##  Min.   :21.50   Length:299         Min.   :0.000   Length:299         Min.   :1.000  
+##  1st Qu.:43.00   Class :character   1st Qu.:0.000   Class :character   1st Qu.:1.000  
+##  Median :53.00   Mode  :character   Median :0.000   Mode  :character   Median :1.000  
+##  Mean   :51.63                      Mean   :0.311                      Mean   :1.539  
+##  3rd Qu.:63.00                      3rd Qu.:1.000                      3rd Qu.:2.000  
+##  Max.   :68.00                      Max.   :1.000                      Max.   :4.000  
+##                                                                        NA's   :82     
+##  index_finsesco       p_flat        p_apartment        p_house       home_ownership 
+##  Min.   :0.7300   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.000  
+##  1st Qu.:0.7300   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000  
+##  Median :0.7300   Median :0.0000   Median :0.0000   Median :0.0000   Median :0.000  
+##  Mean   :0.8187   Mean   :0.4448   Mean   :0.2241   Mean   :0.3177   Mean   :0.404  
+##  3rd Qu.:0.9499   3rd Qu.:1.0000   3rd Qu.:0.0000   3rd Qu.:1.0000   3rd Qu.:1.000  
+##  Max.   :1.1277   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.000  
+##  NA's   :82                                                          NA's   :2      
+##  finsesco_familiar   crowd_yes         crowd_own       income_low       income_med    
+##  Min.   :0.00000   Min.   :0.00000   Min.   :0.000   Min.   :0.0000   Min.   :0.0000  
+##  1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.0000  
+##  Median :0.00000   Median :0.00000   Median :0.000   Median :0.0000   Median :0.0000  
+##  Mean   :0.05724   Mean   :0.01684   Mean   :0.138   Mean   :0.2843   Mean   :0.3411  
+##  3rd Qu.:0.00000   3rd Qu.:0.00000   3rd Qu.:0.000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+##  Max.   :1.00000   Max.   :1.00000   Max.   :1.000   Max.   :1.0000   Max.   :1.0000  
+##  NA's   :2         NA's   :2         NA's   :2                                        
+##   income_high      prosumership   social_benefit      control          interact    
+##  Min.   :0.0000   Min.   :0.000   Min.   :0.0000   Min.   :0.0000   Min.   :0.000  
+##  1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000  
+##  Median :0.0000   Median :0.000   Median :0.0000   Median :0.0000   Median :0.000  
+##  Mean   :0.2508   Mean   :0.194   Mean   :0.1137   Mean   :0.1137   Mean   :0.107  
+##  3rd Qu.:0.5000   3rd Qu.:0.000   3rd Qu.:0.0000   3rd Qu.:0.0000   3rd Qu.:0.000  
+##  Max.   :1.0000   Max.   :1.000   Max.   :1.0000   Max.   :1.0000   Max.   :1.000  
+##                                                                                    
+##     monitor      
+##  Min.   :0.0000  
+##  1st Qu.:0.0000  
+##  Median :0.0000  
+##  Mean   :0.1338  
+##  3rd Qu.:0.0000  
+##  Max.   :1.0000  
 ## </code></pre>
 <p>You’ll get a sense of the variables — maybe <code>income_range</code>, <code>age</code>, <code>education</code>, etc.</p>
 <p>💡 <strong>Tip</strong>: When you see NA, it means “missing data.” You can remove or ignore them with na.rm = TRUE in most functions.</p>
@@ -619,24 +624,24 @@ For survey data, expect <strong>missing values</strong> (<code>NA</code>). Many 
 - <strong>Counts and proportions</strong>: <code><a href="https://rdrr.io/r/base/table.html">table()</a></code> for factors; grouped summaries for categories.</p>
 <p>With <code>dplyr</code>, the flow is:<br><strong>group</strong> → <strong>summarise</strong> → <strong>arrange</strong> (optionally <strong>mutate</strong> to compute new columns).<br>
 For example, you might compute the <strong>average energy spending</strong> by <strong>income group</strong> or the <strong>share of respondents</strong> who report a specific behavior by <strong>ownership type</strong>—these are the first steps toward answering research questions.</p>
-<div id="interpretation-mindset" class="section level4 callout-note" number="0.0.0.1">
+<div id="interpretation-mindset" class="section level4 callout-note" number="0.1.0.1">
 <h4>
-<span class="header-section-number">0.0.0.1</span> 📝 Interpretation mindset<a class="anchor" aria-label="anchor" href="#interpretation-mindset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">0.1.0.1</span> 📝 Interpretation mindset<a class="anchor" aria-label="anchor" href="#interpretation-mindset"><i class="fas fa-link"></i></a>
 </h4>
 <p>When two groups differ in means, ask: <em>Is this difference large enough to matter? Stable across subgroups? Driven by outliers?</em> Plotting complements tables by revealing distribution shape and potential leverage points.</p>
 </div>
 <p>Let’s compute some simple summaries.</p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">$</span><span class="va">index_1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 4.281382</code></pre>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">$</span><span class="va">index_1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 4.4</code></pre>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">$</span><span class="va">index_1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.7211005</code></pre>
 <p>Using <code>dplyr</code>, we can do this by group:</p>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">finsesco</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">income_range</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_index_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">index_1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -649,7 +654,7 @@ For example, you might compute the <strong>average energy spending</strong> by <
 - <strong>Bar chart</strong> (counts or summary statistics): proportions or aggregated metrics across categories.</p>
 <p>In later weeks, we’ll refine these by adding confidence intervals, transforming axes (e.g., log scale), and layering multiple aesthetics to compare subgroups (e.g., income by ownership).</p>
 <p>We’ll use <code>ggplot2</code> (included in <code>tidyverse</code>) to visualize the relationship between income group and <code>index_1</code>, that calculates the willingness to invest in energy efficiency measures.</p>
-<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">finsesco</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">index_1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
