@@ -1,1 +1,357 @@
 # Session 4 {-}
+
+# Basic Statistics for Energy Research {-}
+
+Up to now, you learned how to explore a dataset, inspect variables, filter, select, and visualise data. In this session, we move into basic statistics, which form the backbone of any data-driven research in the energy transition.
+
+Basic statistics help you answer questions such as:
+
+- What does my data look like? Are there patterns?
+- Are different prosumer groups behaving differently?
+- Is a difference large enough to be meaningful or just random noise?
+- Are two variables related in a systematic way?
+- Do ownership types behave differently in electricity or heating?
+
+This session gives you the “core toolkit” you need before moving into more advanced methods like ANCOVA and regression. Everything you learn here will be used again later in the seminar.
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(DescTools)
+```
+
+
+---
+
+# 1. Why Basic Statistics Matter {-}
+
+Before you build any model — regression, ANCOVA, or machine learning — you must understand your data as it is. If you skip this step, it becomes very easy to misinterpret results or to overlook basic data quality problems.
+
+Basic statistics help you:
+
+- **Detect errors early**  
+  Strange means, impossible minimum or maximum values, or odd spikes in the distribution can indicate coding errors, wrong units, or inconsistent data entry.
+
+- **Understand the shape of behaviour**  
+  Energy behaviour, consumption, and investment willingness rarely follow a perfect bell-shaped (normal) distribution. They often show skewness, heavy tails, or clusters for specific subgroups (e.g., high-income prosumers).
+
+- **Ask more precise questions**  
+  Instead of asking only “Do prosumers behave differently?”, you can refine the question to “Which types of prosumers differ, and by how much, in which behaviours?”
+
+In short: descriptive statistics are not a “preliminary step” you rush through. They are part of the analysis and help you build a credible story from the data.
+
+---
+
+# 2. Central Tendency {-}
+
+Central tendency measures describe where the “middle” of the data lies. Each measure emphasises a different aspect of that middle.
+
+```{r}
+mean(data_extended$behaviour_elec, na.rm = TRUE)
+median(data_extended$behaviour_elec, na.rm = TRUE)
+Mode(data_extended$behaviour_elec, na.rm = TRUE)
+```
+
+
+- **Mean (average)**  
+  Add up all values and divide by the number of observations. It is intuitive and widely used, but very sensitive to extreme values (outliers).
+
+- **Median**  
+  The value that sits exactly in the middle when you sort the data from smallest to largest. The median is robust to outliers and thus often more informative for skewed variables such as income, energy bills, or certain behavioural indices.
+
+- **Mode**  
+  The most frequent value. This measure is useful for categorical variables (e.g. most common ownership type) and for variables where a particular score is especially common.
+
+In the FinSESCo dataset, you will often see that the mean and median differ. When the mean is considerably higher than the median, it suggests a right-skewed distribution with a minority of very high values.
+
+---
+
+# 3. Measures of Spread {-}
+
+Central tendency tells you about the centre of the distribution, but not how spread out the data are around that centre. Two groups can have the same mean but very different patterns in terms of dispersion.
+
+```{r}
+sd(data_extended$behaviour_heat, na.rm = TRUE)
+
+IQR(data_extended$behaviour_heat, na.rm = TRUE)
+
+range(data_extended$behaviour_heat, na.rm = TRUE)
+```
+
+
+Key measures of spread include:
+
+- **Standard Deviation (SD)**  
+  Indicates how far, on average, observations lie from the mean. A small SD means values are tightly clustered; a large SD means values are more spread out.
+
+- **Interquartile Range (IQR)**  
+  The difference between the 75th and 25th percentile. It focuses on the “middle 50%” of the data and is robust to extreme outliers, making it particularly useful for skewed or noisy variables.
+
+- **Range (minimum and maximum)**  
+  The simplest measure: the smallest and largest values in the dataset. Helpful to quickly spot obvious errors (e.g., negative household size, or impossible index values).
+
+For energy behaviour variables, spread is important because it reveals whether behaviour is relatively homogeneous across households or whether there is a lot of heterogeneity that later models will need to explain.
+
+---
+
+# 4. Distributions {-}
+
+A distribution describes how often each possible value of a variable occurs. Looking at distributions is crucial for understanding the shape and structure of your data.
+
+Two simple and powerful visual tools are:
+
+- **Histograms**  
+  They show how many observations fall into each “bin” of values. From a histogram, you can see whether a variable is symmetric, skewed, unimodal, or multimodal.
+  
+
+```{r, message=FALSE, warning=FALSE}
+data_extended %>%
+  ggplot(aes(x = behaviour_elec)) +
+  geom_histogram(bins = 30, fill = "#0072B2", alpha = 0.8) +
+  labs(
+    title = "Distribution of Electricity Behaviour Index",
+    x = "Electricity Behaviour Index",
+    y = "Count of Households"
+  ) +
+  theme_minimal()
+```
+
+- **Boxplots**  
+  They summarise the distribution using median, quartiles, and potential outliers. Boxplots are compact, making them useful for comparing several groups side by side.
+  
+```{r, message=FALSE, warning=FALSE}
+ggplot(data_extended, aes(y = behaviour_elec)) +
+  geom_boxplot(fill = "#0072B2", alpha = 0.8) +
+  labs(
+    title = "Boxplot of Electricity Behaviour Index",
+    y = "Electricity Behaviour Index"
+  ) +
+  theme_minimal()
+```
+
+Typical patterns in this context:
+
+- Behaviour and consumption variables are often **right-skewed** (many households with moderate values, fewer with very high values), in this case see the contrary!
+- Index variables based on survey responses can be **clumped** around specific values (e.g., many people agreeing or strongly agreeing).
+
+Understanding the distribution helps you decide whether certain transformations or robust methods might be needed later and whether particular values should be examined more closely.
+
+---
+
+# 5. Grouped Descriptive Statistics {-}
+
+Group summaries allow you to compare basic statistics across categories such as ownership type, gender, income group, or region.
+
+Typical questions:
+
+- How does the mean electricity behaviour differ across ownership types?
+- Is the standard deviation higher for non-owners than for prosumers?
+- Are sample sizes balanced, or is one group much smaller?
+
+```{r}
+data_extended %>%
+  group_by(ownership_type) %>%
+  summarise(
+    mean_elec = mean(behaviour_elec, na.rm = TRUE),
+    sd_elec   = sd(behaviour_elec, na.rm = TRUE),
+    n         = sum(!is.na(behaviour_elec))
+  )
+```
+
+
+By computing grouped means, standard deviations, and counts, you can:
+
+- Identify which groups behave similarly or differently.
+- Check whether some categories are under-represented.
+- Build intuition for later hypothesis tests (t-tests, ANOVA, ANCOVA).
+
+In practice, you might find that certain prosumer categories show both higher mean engagement and lower variability, indicating a more consistently engaged group.
+
+---
+
+# 6. Cross-tabulations {-}
+
+Cross-tabulations (or contingency tables) are used for summarising the relationship between two categorical variables.
+
+Examples from FinSESCo:
+
+- Gender by ownership type  
+- Income group by prosumer status  
+- Region by type of heating system
+
+```{r}
+tab_gender_own <- table(data_extended$gender, data_extended$ownership_type)
+tab_gender_own
+
+prop.table(tab_gender_own, margin = 2)
+```
+
+A cross-tabulation table shows counts, and proportions can be added to make comparisons easier. For example, proportions by column help you answer questions such as:
+
+- Within each ownership type, what share of respondents are women?
+- Within each prosumer category, what proportion belongs to a specific income bracket?
+
+This is important because later differences in behaviour between groups might partly reflect differences in composition. If one prosumer group is heavily male and another heavily female, gender could be a confounding factor in behavioural comparisons.
+
+---
+
+# 7. Correlation {-}
+
+Correlation measures how strongly two numeric variables move together in a linear fashion.
+
+- A **positive correlation** means higher values of one variable tend to be associated with higher values of the other.
+- A **negative correlation** means higher values of one variable tend to be associated with lower values of the other.
+- A value near **zero** suggests little or no linear relationship.
+
+```{r}
+cor(
+  data_extended$behaviour_elec,
+  data_extended$inv_ee_elec_scaled_2,
+  use = "complete.obs"
+)
+```
+
+Correlation is very useful as a first diagnostic tool to see which variables appear related. In the context of energy research, you might explore correlations between:
+
+- Behavioural indices for electricity vs heating,
+- Behavioural indices and income or education,
+- Investment willingness and past energy-related actions.
+
+```{r}
+data_extended %>%
+  select(behaviour_elec, behaviour_heat, inv_ee_elec_scaled_2) %>%
+  cor(use = "pairwise.complete.obs")
+
+```
+
+
+
+However, it is important to remember: **correlation does not imply causation**. A strong correlation can be driven by an underlying third variable (e.g., income, age, or dwelling type). Correlation is a starting point to formulate hypotheses, not the final proof of a causal effect.
+
+---
+
+# 8. Comparing Two Groups: t-test {-}
+
+The t-test is used when you want to compare the means of **two** groups on a numeric variable. It answers the question:
+
+> Are the average values in Group A and Group B genuinely different, or could the difference be explained by random variation?
+
+You typically use an independent-samples t-test when:
+
+- The independent variable has exactly two categories (e.g. men vs women, owners vs non-owners).
+- The dependent variable is numeric (e.g. an index of energy behaviour or willingness to invest).
+
+In energy research, typical examples include:
+
+- Comparing average electricity behaviour between men and women.
+- Comparing average heating behaviour between owners and tenants.
+- Comparing investment willingness between prosumers and non-prosumers.
+
+The t-test output provides:
+
+- The estimated difference between group means.
+- A p-value indicating whether this difference is statistically significant.
+- A confidence interval showing the range of plausible values for the difference.
+
+```{r}
+t.test(behaviour_elec ~ gender, data = data_extended)
+```
+
+
+If the p-value is below a chosen threshold (commonly 0.05) and the confidence interval does not include zero, you conclude that the two groups differ in their average behaviour.
+
+You should not use a t-test when you have more than two groups, when the outcome is categorical, or when samples are extremely small and unbalanced. In those cases, other methods (e.g. ANOVA or chi-square tests) are more appropriate.
+
+---
+
+# 9. Comparing More Than Two Groups: ANOVA {-}
+
+When you want to compare the means of **three or more** groups on a numeric outcome, the standard approach is **ANOVA** (Analysis of Variance).
+
+Typical use cases in this seminar include questions such as:
+
+- Do different ownership categories (e.g. non-owners, sellers, self-consumers, consumer-sellers) exhibit different levels of electricity behaviour?
+- Does investment willingness differ across several income groups?
+- Are heating behaviour scores different across education categories?
+
+Conceptually, ANOVA tests whether the variability **between** group means is large relative to the variability **within** groups. If the between-group variation is much larger, it suggests that group membership is associated with meaningful differences in the outcome.
+
+```{r}
+anova_model <- aov(behaviour_elec ~ ownership_type, data = data_extended)
+summary(anova_model)
+```
+
+
+The key result in ANOVA is an F-test with a corresponding p-value:
+
+- If the p-value is below your threshold (e.g. 0.05), you conclude that at least one group mean differs from the others.
+- If the p-value is above the threshold, you conclude that any observed differences between group means are compatible with random variation.
+
+ANOVA itself tells you that “somewhere” among the groups there is a difference, but not exactly **which** pairs of groups differ. For that, you use post-hoc tests such as Tukey’s HSD, which compare group means pairwise while controlling for multiple comparisons.
+
+```{r}
+TukeyHSD(anova_model)
+```
+
+You use ANOVA rather than a series of t-tests because running many t-tests inflates the probability of false positives. ANOVA provides a single, coherent test for the overall group effect.
+
+---
+
+# 10. Visualising Group Differences {-}
+
+Numerical outputs are important, but visualisations often make group differences easier to grasp and communicate.
+
+A common approach is to plot:
+
+- The **mean** of the outcome for each group as a bar or point.
+- **Error bars** representing uncertainty around the mean, often using standard errors or confidence intervals.
+
+```{r}
+data_extended %>%
+  group_by(ownership_type) %>%
+  summarise(
+    m  = mean(inv_ee_elec_scaled, na.rm = TRUE),
+    se = sd(inv_ee_elec_scaled, na.rm = TRUE) / sqrt(sum(!is.na(inv_ee_elec_scaled)))
+  ) %>%
+  ggplot(aes(x = ownership_type, y = m)) +
+    geom_col(fill = "#0072B2", alpha = 0.8) +
+    geom_errorbar(aes(ymin = m - se, ymax = m + se), width = 0.2) +
+    labs(
+      title = "Willingness to invest in electricity efficiency measures by Ownership Type",
+      x = "Ownership Type",
+      y = "Mean Investment Behaviour (± SE)"
+    ) +
+    theme_minimal()
+```
+
+
+Such plots help you answer visually:
+
+- Which groups appear higher or lower on the outcome?
+- Do uncertainty intervals overlap strongly, suggesting small or uncertain differences?
+- Are some groups based on very small sample sizes (indicated by wide bars or very few points)?
+
+In an energy-behaviour context, you might show mean electricity behaviour by ownership group with error bars. Even without looking at the detailed ANOVA output, the plot will give a quick sense of whether policies or interventions might need to target specific groups.
+
+---
+
+# 11. Interpretation Checklist {-}
+
+Whenever you interpret statistical results (t-test, ANOVA, or correlations), it helps to follow a simple checklist:
+
+1. **Is the result statistically significant?**  
+   Look at the p-value, but also understand that significance depends on sample size.
+
+2. **Is the effect size meaningful?**  
+   A tiny difference can be statistically significant in very large samples but might not be relevant in practice.
+
+3. **Are group sizes balanced?**  
+   Unequal group sizes can make some tests more sensitive or more fragile, especially if one group is very small.
+
+4. **Are there obvious confounding factors?**  
+   Differences between groups might be partly driven by other variables (e.g. age, income, dwelling type). These will be handled more explicitly by ANCOVA and regression later on.
+
+5. **Does the result make substantive sense?**  
+   Do the findings fit with theory, previous research, and plausible behavioural mechanisms?
+
+This checklist keeps you from over-interpreting single numbers and helps keep your analysis grounded in context.

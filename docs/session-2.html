@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Session 2 | Energy-Transitions — Class 2</title>
+<title>Session 2 | Energy-Transitions — Class 3</title>
 <meta name="author" content="Renan Magalhães">
 <meta name="description" content="1. Why Data Cleaning Is the Hardest (and Most Important) Step  When researchers talk about “analysis,” they often imagine fancy models and colorful plots. In reality, most of the work happens...">
 <meta name="generator" content="bookdown 0.45 with bs4_book()">
-<meta property="og:title" content="Session 2 | Energy-Transitions — Class 2">
+<meta property="og:title" content="Session 2 | Energy-Transitions — Class 3">
 <meta property="og:type" content="book">
 <meta property="og:description" content="1. Why Data Cleaning Is the Hardest (and Most Important) Step  When researchers talk about “analysis,” they often imagine fancy models and colorful plots. In reality, most of the work happens...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Session 2 | Energy-Transitions — Class 2">
+<meta name="twitter:title" content="Session 2 | Energy-Transitions — Class 3">
 <meta name="twitter:description" content="1. Why Data Cleaning Is the Hardest (and Most Important) Step  When researchers talk about “analysis,” they often imagine fancy models and colorful plots. In reality, most of the work happens...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -76,6 +76,18 @@
 <li><a class="active" href="session-2.html">Session 2</a></li>
 <li><a class="" href="session-3.html">Session 3</a></li>
 <li><a class="" href="session-4.html">Session 4</a></li>
+<li><a class="" href="basic-statistics-for-energy-research.html">Basic Statistics for Energy Research</a></li>
+<li><a class="" href="why-basic-statistics-matter.html">1. Why Basic Statistics Matter</a></li>
+<li><a class="" href="central-tendency.html">2. Central Tendency</a></li>
+<li><a class="" href="measures-of-spread.html">3. Measures of Spread</a></li>
+<li><a class="" href="distributions.html">4. Distributions</a></li>
+<li><a class="" href="grouped-descriptive-statistics.html">5. Grouped Descriptive Statistics</a></li>
+<li><a class="" href="cross-tabulations.html">6. Cross-tabulations</a></li>
+<li><a class="" href="correlation.html">7. Correlation</a></li>
+<li><a class="" href="comparing-two-groups-t-test.html">8. Comparing Two Groups: t-test</a></li>
+<li><a class="" href="comparing-more-than-two-groups-anova.html">9. Comparing More Than Two Groups: ANOVA</a></li>
+<li><a class="" href="visualising-group-differences.html">10. Visualising Group Differences</a></li>
+<li><a class="" href="interpretation-checklist.html">11. Interpretation Checklist</a></li>
 <li><a class="" href="session-5.html">Session 5</a></li>
 <li><a class="" href="assignments-uploads.html">Assignments &amp; Uploads</a></li>
 <li><a class="" href="datasets.html">Datasets</a></li>
@@ -107,23 +119,23 @@ If you skip the cleaning stage, every later step—summary statistics, regressio
 <p>Once data satisfy these rules, they can easily be filtered, summarized, plotted, and joined.
 Most R packages (especially those in the tidyverse) assume data are tidy.
 The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
-<div id="zrcqdlzpnt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zrcqdlzpnt table {
+<div id="qbfhewwnox" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qbfhewwnox table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zrcqdlzpnt thead, #zrcqdlzpnt tbody, #zrcqdlzpnt tfoot, #zrcqdlzpnt tr, #zrcqdlzpnt td, #zrcqdlzpnt th {
+#qbfhewwnox thead, #qbfhewwnox tbody, #qbfhewwnox tfoot, #qbfhewwnox tr, #qbfhewwnox td, #qbfhewwnox th {
   border-style: none;
 }
 
-#zrcqdlzpnt p {
+#qbfhewwnox p {
   margin: 0;
   padding: 0;
 }
 
-#zrcqdlzpnt .gt_table {
+#qbfhewwnox .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -149,12 +161,12 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-left-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_caption {
+#qbfhewwnox .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zrcqdlzpnt .gt_title {
+#qbfhewwnox .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -166,7 +178,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-width: 0;
 }
 
-#zrcqdlzpnt .gt_subtitle {
+#qbfhewwnox .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -178,7 +190,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-top-width: 0;
 }
 
-#zrcqdlzpnt .gt_heading {
+#qbfhewwnox .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -190,13 +202,13 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_bottom_border {
+#qbfhewwnox .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_col_headings {
+#qbfhewwnox .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -211,7 +223,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_col_heading {
+#qbfhewwnox .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -231,7 +243,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   overflow-x: hidden;
 }
 
-#zrcqdlzpnt .gt_column_spanner_outer {
+#qbfhewwnox .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -243,15 +255,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 4px;
 }
 
-#zrcqdlzpnt .gt_column_spanner_outer:first-child {
+#qbfhewwnox .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zrcqdlzpnt .gt_column_spanner_outer:last-child {
+#qbfhewwnox .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zrcqdlzpnt .gt_column_spanner {
+#qbfhewwnox .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -263,11 +275,11 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   width: 100%;
 }
 
-#zrcqdlzpnt .gt_spanner_row {
+#qbfhewwnox .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zrcqdlzpnt .gt_group_heading {
+#qbfhewwnox .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -293,7 +305,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   text-align: left;
 }
 
-#zrcqdlzpnt .gt_empty_group_heading {
+#qbfhewwnox .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -308,15 +320,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   vertical-align: middle;
 }
 
-#zrcqdlzpnt .gt_from_md > :first-child {
+#qbfhewwnox .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zrcqdlzpnt .gt_from_md > :last-child {
+#qbfhewwnox .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zrcqdlzpnt .gt_row {
+#qbfhewwnox .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -335,7 +347,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   overflow-x: hidden;
 }
 
-#zrcqdlzpnt .gt_stub {
+#qbfhewwnox .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -348,7 +360,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#zrcqdlzpnt .gt_stub_row_group {
+#qbfhewwnox .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -362,15 +374,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   vertical-align: top;
 }
 
-#zrcqdlzpnt .gt_row_group_first td {
+#qbfhewwnox .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zrcqdlzpnt .gt_row_group_first th {
+#qbfhewwnox .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zrcqdlzpnt .gt_summary_row {
+#qbfhewwnox .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -380,16 +392,16 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#zrcqdlzpnt .gt_first_summary_row {
+#qbfhewwnox .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_first_summary_row.thick {
+#qbfhewwnox .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zrcqdlzpnt .gt_last_summary_row {
+#qbfhewwnox .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -399,7 +411,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_grand_summary_row {
+#qbfhewwnox .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -409,7 +421,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#zrcqdlzpnt .gt_first_grand_summary_row {
+#qbfhewwnox .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -419,7 +431,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-top-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_last_grand_summary_row_top {
+#qbfhewwnox .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -429,11 +441,11 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_striped {
+#qbfhewwnox .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zrcqdlzpnt .gt_table_body {
+#qbfhewwnox .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -442,7 +454,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_footnotes {
+#qbfhewwnox .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -456,7 +468,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_footnote {
+#qbfhewwnox .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -465,7 +477,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#zrcqdlzpnt .gt_sourcenotes {
+#qbfhewwnox .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -479,7 +491,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#zrcqdlzpnt .gt_sourcenote {
+#qbfhewwnox .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -487,72 +499,72 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#zrcqdlzpnt .gt_left {
+#qbfhewwnox .gt_left {
   text-align: left;
 }
 
-#zrcqdlzpnt .gt_center {
+#qbfhewwnox .gt_center {
   text-align: center;
 }
 
-#zrcqdlzpnt .gt_right {
+#qbfhewwnox .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zrcqdlzpnt .gt_font_normal {
+#qbfhewwnox .gt_font_normal {
   font-weight: normal;
 }
 
-#zrcqdlzpnt .gt_font_bold {
+#qbfhewwnox .gt_font_bold {
   font-weight: bold;
 }
 
-#zrcqdlzpnt .gt_font_italic {
+#qbfhewwnox .gt_font_italic {
   font-style: italic;
 }
 
-#zrcqdlzpnt .gt_super {
+#qbfhewwnox .gt_super {
   font-size: 65%;
 }
 
-#zrcqdlzpnt .gt_footnote_marks {
+#qbfhewwnox .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zrcqdlzpnt .gt_asterisk {
+#qbfhewwnox .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zrcqdlzpnt .gt_indent_1 {
+#qbfhewwnox .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zrcqdlzpnt .gt_indent_2 {
+#qbfhewwnox .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zrcqdlzpnt .gt_indent_3 {
+#qbfhewwnox .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zrcqdlzpnt .gt_indent_4 {
+#qbfhewwnox .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zrcqdlzpnt .gt_indent_5 {
+#qbfhewwnox .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zrcqdlzpnt .katex-display {
+#qbfhewwnox .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zrcqdlzpnt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qbfhewwnox div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -629,98 +641,82 @@ This time we’ll pay close attention to its structure, not yet to its content.<
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Rows: 299
 ## Columns: 34
-## $ id                 &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,…
-## $ income_range       &lt;chr&gt; "Low", "Low", "High", "Medium", "Low", "High", "Low", "Low", "High…
-## $ co_ownership       &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, …
-## $ ownership          &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, …
-## $ index_1            &lt;dbl&gt; 4.4, 5.0, 3.4, 5.0, 3.6, 5.0, 5.0, 3.6, 4.2, 3.0, 3.0, 5.0, 5.0, 5…
-## $ index_2            &lt;dbl&gt; 3.571429, 5.000000, 3.714286, 5.000000, 3.000000, 3.857143, NA, 4.…
-## $ index_3            &lt;dbl&gt; 4, 5, 2, 5, NA, 3, NA, 3, 5, 1, 1, 5, 4, 4, 3, 2, 5, 5, 3, 5, 3, 3…
-## $ index_4            &lt;dbl&gt; 3, 5, 3, 5, NA, 1, NA, 4, 4, 1, 1, 5, 5, 5, 4, 4, 5, NA, 2, 5, 4, …
-## $ index_5            &lt;dbl&gt; 4, 4, 5, 1, NA, 3, NA, 4, 2, 1, 1, 4, 4, 5, 3, 4, 1, 5, 5, 5, 3, 2…
-## $ index_6            &lt;dbl&gt; 4.333333, 4.666667, 3.000000, 3.000000, NA, 3.666667, NA, 4.666667…
-## $ gender             &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, …
-## $ age                &lt;dbl&gt; 21.5, 63.0, 21.5, 58.0, 63.0, 53.0, 53.0, 63.0, 53.0, 63.0, 38.0, …
-## $ age_factor         &lt;chr&gt; "18-25", "61-65", "18-25", "56-60", "61-65", "51-55", "51-55", "61…
-## $ academic           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, …
-## $ income_group       &lt;chr&gt; "Low", "Low", "High", "Medium", "Low", "High", "Low", "Low", "High…
-## $ use_finsesco       &lt;dbl&gt; 1, 4, 2, 1, NA, 1, NA, 1, 1, 1, NA, 1, 1, NA, 1, 1, 1, NA, 1, NA, …
-## $ index_finsesco     &lt;dbl&gt; 0.7299988, 1.1276756, 0.9498817, 0.7299988, NA, 0.7299988, NA, 0.7…
-## $ p_flat             &lt;dbl&gt; 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, …
-## $ p_apartment        &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, …
-## $ p_house            &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, …
-## $ home_ownership     &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, …
-## $ finsesco_familiar  &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-## $ crowd_yes          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, …
-## $ crowd_own          &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, …
-## $ income_low         &lt;dbl&gt; 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, …
-## $ income_med         &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, …
-## $ income_high        &lt;dbl&gt; 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, …
-## $ prosumership       &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, …
-## $ social_benefit     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-## $ control            &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, …
-## $ interact           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, …
-## $ monitor            &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, …
-## $ `Income Range`     &lt;dbl&gt; 1143.789, 1394.153, 4948.919, NA, 1470.234, 5273.978, 1264.053, 14…
-## $ `Income Range (€)` &lt;dbl&gt; 1143.789, 1394.153, 4948.919, NA, 1470.234, 5273.978, 1264.053, 14…</code></pre>
+## $ id                  [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m2 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m6 [38;5;246m,  [39m7 [38;5;246m,  [39m8 [38;5;246m,  [39m9 [38;5;246m,  [39m10 [38;5;246m,  [39m11 [38;5;246m,  [39m12 [38;5;246m,  [39m13 [38;5;246m,  [39m14 [38;5;246m,  [39m15 [38;5;246m,  [39m16 [38;5;246m,  [39m17 [38;5;246m,  [39m18 [38;5;246m,  [39m19 [38;5;246m,  [39m20 [38;5;246m,  [39m21 [38;5;246m,  [39m22 [38;5;246m,  [39m23 [38;5;246m,  [39m24 [38;5;246m,  [39m25 [38;5;246m,  [39m26 [38;5;246m,  [39m27 [38;5;246m, [39m…
+## $ income_range        [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Hig…
+## $ co_ownership        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ ownership           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ index_1             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m4.2 [38;5;246m,  [39m3.0 [38;5;246m,  [39m3.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.8 [38;5;246m,  [39m4.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m4.8 [38;5;246m,  [39m4.4…
+## $ index_2             [3m [38;5;246m&lt;dbl&gt; [39m [23m 3.571429 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.714286 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.857143 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.142857 [38;5;246m,  [39m4.000000 [38;5;246m,  [39m3.571429 [38;5;246m,  [39m3.00…
+## $ index_3             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m5 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m…
+## $ index_4             [3m [38;5;246m&lt;dbl&gt; [39m [23m 3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3…
+## $ index_5             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m…
+## $ index_6             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.333333 [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3.666667 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.333333 [38;5;246m,  [39m2.333333 [38;5;246m,  [39m1.000000 [38;5;246m,  [39m…
+## $ gender              [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ age                 [3m [38;5;246m&lt;dbl&gt; [39m [23m 21.5 [38;5;246m,  [39m63.0 [38;5;246m,  [39m21.5 [38;5;246m,  [39m58.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m38.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m68.0 [38;5;246m,  [39m21.5 [38;5;246m,  [39m28.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m48…
+## $ age_factor          [3m [38;5;246m&lt;chr&gt; [39m [23m "18-25" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"18-25" [38;5;246m,  [39m"56-60" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"36-40" [38;5;246m, [39m…
+## $ academic            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ income_group        [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Hig…
+## $ use_finsesco        [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m3 [38;5;246m, [39m…
+## $ index_finsesco      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0.7299988 [38;5;246m,  [39m1.1276756 [38;5;246m,  [39m0.9498817 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m…
+## $ p_flat              [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ p_apartment         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ p_house             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ home_ownership      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ finsesco_familiar   [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ crowd_yes           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ crowd_own           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ income_low          [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ income_med          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ income_high         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ prosumership        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ social_benefit      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
+## $ control             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ interact            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ monitor             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
+## $ `Income Range`      [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323…
+## $ `Income Range (€)`  [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323…</code></pre>
 <div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##        id        income_range        co_ownership      ownership        index_1     
-##  Min.   :  1.0   Length:299         Min.   :0.0000   Min.   :0.000   Min.   :1.000  
-##  1st Qu.: 75.5   Class :character   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:4.000  
-##  Median :150.0   Mode  :character   Median :0.0000   Median :0.000   Median :4.400  
-##  Mean   :150.0                      Mean   :0.1104   Mean   :0.194   Mean   :4.281  
-##  3rd Qu.:224.5                      3rd Qu.:0.0000   3rd Qu.:0.000   3rd Qu.:5.000  
-##  Max.   :299.0                      Max.   :1.0000   Max.   :1.000   Max.   :5.000  
-##                                                                                     
-##     index_2         index_3         index_4         index_5         index_6     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:3.286   1st Qu.:3.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:2.500  
-##  Median :3.857   Median :4.000   Median :3.000   Median :4.000   Median :3.333  
-##  Mean   :3.752   Mean   :3.503   Mean   :3.217   Mean   :3.515   Mean   :3.249  
-##  3rd Qu.:4.286   3rd Qu.:5.000   3rd Qu.:5.000   3rd Qu.:5.000   3rd Qu.:4.333  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##  NA's   :3       NA's   :5       NA's   :23      NA's   :6       NA's   :6      
-##      gender            age         age_factor           academic     income_group      
-##  Min.   :0.0000   Min.   :21.50   Length:299         Min.   :0.000   Length:299        
-##  1st Qu.:0.0000   1st Qu.:43.00   Class :character   1st Qu.:0.000   Class :character  
-##  Median :0.0000   Median :53.00   Mode  :character   Median :0.000   Mode  :character  
-##  Mean   :0.4983   Mean   :51.63                      Mean   :0.311                     
-##  3rd Qu.:1.0000   3rd Qu.:63.00                      3rd Qu.:1.000                     
-##  Max.   :1.0000   Max.   :68.00                      Max.   :1.000                     
-##                                                                                        
-##   use_finsesco   index_finsesco       p_flat        p_apartment        p_house      
-##  Min.   :1.000   Min.   :0.7300   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
-##  1st Qu.:1.000   1st Qu.:0.7300   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000  
-##  Median :1.000   Median :0.7300   Median :0.0000   Median :0.0000   Median :0.0000  
-##  Mean   :1.539   Mean   :0.8187   Mean   :0.4448   Mean   :0.2241   Mean   :0.3177  
-##  3rd Qu.:2.000   3rd Qu.:0.9499   3rd Qu.:1.0000   3rd Qu.:0.0000   3rd Qu.:1.0000  
-##  Max.   :4.000   Max.   :1.1277   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
-##  NA's   :82      NA's   :82                                                         
-##  home_ownership  finsesco_familiar   crowd_yes         crowd_own       income_low    
-##  Min.   :0.000   Min.   :0.00000   Min.   :0.00000   Min.   :0.000   Min.   :0.0000  
-##  1st Qu.:0.000   1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.000   1st Qu.:0.0000  
-##  Median :0.000   Median :0.00000   Median :0.00000   Median :0.000   Median :0.0000  
-##  Mean   :0.404   Mean   :0.05724   Mean   :0.01684   Mean   :0.138   Mean   :0.2843  
-##  3rd Qu.:1.000   3rd Qu.:0.00000   3rd Qu.:0.00000   3rd Qu.:0.000   3rd Qu.:1.0000  
-##  Max.   :1.000   Max.   :1.00000   Max.   :1.00000   Max.   :1.000   Max.   :1.0000  
-##  NA's   :2       NA's   :2         NA's   :2         NA's   :2                       
-##    income_med      income_high      prosumership   social_benefit      control      
-##  Min.   :0.0000   Min.   :0.0000   Min.   :0.000   Min.   :0.0000   Min.   :0.0000  
-##  1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.0000  
-##  Median :0.0000   Median :0.0000   Median :0.000   Median :0.0000   Median :0.0000  
-##  Mean   :0.3411   Mean   :0.2508   Mean   :0.194   Mean   :0.1137   Mean   :0.1137  
-##  3rd Qu.:1.0000   3rd Qu.:0.5000   3rd Qu.:0.000   3rd Qu.:0.0000   3rd Qu.:0.0000  
-##  Max.   :1.0000   Max.   :1.0000   Max.   :1.000   Max.   :1.0000   Max.   :1.0000  
-##                                                                                     
-##     interact        monitor        Income Range  Income Range (€)
-##  Min.   :0.000   Min.   :0.0000   Min.   :1005   Min.   :1005    
-##  1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:1236   1st Qu.:1236    
-##  Median :0.000   Median :0.0000   Median :1481   Median :1481    
-##  Mean   :0.107   Mean   :0.1338   Mean   :3443   Mean   :3443    
-##  3rd Qu.:0.000   3rd Qu.:0.0000   3rd Qu.:5710   3rd Qu.:5710    
-##  Max.   :1.000   Max.   :1.0000   Max.   :7980   Max.   :7980    
-##                                   NA's   :139    NA's   :139</code></pre>
+<pre><code>##        id        income_range        co_ownership      ownership        index_1         index_2         index_3     
+##  Min.   :  1.0   Length:299         Min.   :0.0000   Min.   :0.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.: 75.5   Class :character   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:4.000   1st Qu.:3.286   1st Qu.:3.000  
+##  Median :150.0   Mode  :character   Median :0.0000   Median :0.000   Median :4.400   Median :3.857   Median :4.000  
+##  Mean   :150.0                      Mean   :0.1104   Mean   :0.194   Mean   :4.281   Mean   :3.752   Mean   :3.503  
+##  3rd Qu.:224.5                      3rd Qu.:0.0000   3rd Qu.:0.000   3rd Qu.:5.000   3rd Qu.:4.286   3rd Qu.:5.000  
+##  Max.   :299.0                      Max.   :1.0000   Max.   :1.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+##                                                                                      NA's   :3       NA's   :5      
+##     index_4         index_5         index_6          gender            age         age_factor           academic    
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :0.0000   Min.   :21.50   Length:299         Min.   :0.000  
+##  1st Qu.:2.000   1st Qu.:3.000   1st Qu.:2.500   1st Qu.:0.0000   1st Qu.:43.00   Class :character   1st Qu.:0.000  
+##  Median :3.000   Median :4.000   Median :3.333   Median :0.0000   Median :53.00   Mode  :character   Median :0.000  
+##  Mean   :3.217   Mean   :3.515   Mean   :3.249   Mean   :0.4983   Mean   :51.63                      Mean   :0.311  
+##  3rd Qu.:5.000   3rd Qu.:5.000   3rd Qu.:4.333   3rd Qu.:1.0000   3rd Qu.:63.00                      3rd Qu.:1.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :1.0000   Max.   :68.00                      Max.   :1.000  
+##  NA's   :23      NA's   :6       NA's   :6                                                                          
+##  income_group        use_finsesco   index_finsesco       p_flat        p_apartment        p_house       home_ownership 
+##  Length:299         Min.   :1.000   Min.   :0.7300   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.000  
+##  Class :character   1st Qu.:1.000   1st Qu.:0.7300   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000  
+##  Mode  :character   Median :1.000   Median :0.7300   Median :0.0000   Median :0.0000   Median :0.0000   Median :0.000  
+##                     Mean   :1.539   Mean   :0.8187   Mean   :0.4448   Mean   :0.2241   Mean   :0.3177   Mean   :0.404  
+##                     3rd Qu.:2.000   3rd Qu.:0.9499   3rd Qu.:1.0000   3rd Qu.:0.0000   3rd Qu.:1.0000   3rd Qu.:1.000  
+##                     Max.   :4.000   Max.   :1.1277   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.000  
+##                     NA's   :82      NA's   :82                                                          NA's   :2      
+##  finsesco_familiar   crowd_yes         crowd_own       income_low       income_med      income_high      prosumership  
+##  Min.   :0.00000   Min.   :0.00000   Min.   :0.000   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.000  
+##  1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000  
+##  Median :0.00000   Median :0.00000   Median :0.000   Median :0.0000   Median :0.0000   Median :0.0000   Median :0.000  
+##  Mean   :0.05724   Mean   :0.01684   Mean   :0.138   Mean   :0.2843   Mean   :0.3411   Mean   :0.2508   Mean   :0.194  
+##  3rd Qu.:0.00000   3rd Qu.:0.00000   3rd Qu.:0.000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:0.5000   3rd Qu.:0.000  
+##  Max.   :1.00000   Max.   :1.00000   Max.   :1.000   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.000  
+##  NA's   :2         NA's   :2         NA's   :2                                                                         
+##  social_benefit      control          interact        monitor        Income Range  Income Range (€)
+##  Min.   :0.0000   Min.   :0.0000   Min.   :0.000   Min.   :0.0000   Min.   :1005   Min.   :1005    
+##  1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.0000   1st Qu.:1236   1st Qu.:1236    
+##  Median :0.0000   Median :0.0000   Median :0.000   Median :0.0000   Median :1481   Median :1481    
+##  Mean   :0.1137   Mean   :0.1137   Mean   :0.107   Mean   :0.1338   Mean   :3443   Mean   :3443    
+##  3rd Qu.:0.0000   3rd Qu.:0.0000   3rd Qu.:0.000   3rd Qu.:0.0000   3rd Qu.:5710   3rd Qu.:5710    
+##  Max.   :1.0000   Max.   :1.0000   Max.   :1.000   Max.   :1.0000   Max.   :7980   Max.   :7980    
+##                                                                     NA's   :139    NA's   :139</code></pre>
 <p><code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> prints one line per variable, showing type and first values; <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> gives numeric summaries or category counts.</p>
 <p>Rows: 2,585
 Columns: 45
@@ -735,23 +731,23 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
 <li>There are multiple inconsistent formats for <code>income</code>.</li>
 </ul>
 <p>Before cleaning, it helps to know what R thinks each type means:</p>
-<div id="yngdlecekl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yngdlecekl table {
+<div id="fmoapwqvgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fmoapwqvgw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yngdlecekl thead, #yngdlecekl tbody, #yngdlecekl tfoot, #yngdlecekl tr, #yngdlecekl td, #yngdlecekl th {
+#fmoapwqvgw thead, #fmoapwqvgw tbody, #fmoapwqvgw tfoot, #fmoapwqvgw tr, #fmoapwqvgw td, #fmoapwqvgw th {
   border-style: none;
 }
 
-#yngdlecekl p {
+#fmoapwqvgw p {
   margin: 0;
   padding: 0;
 }
 
-#yngdlecekl .gt_table {
+#fmoapwqvgw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -777,12 +773,12 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-left-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_caption {
+#fmoapwqvgw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yngdlecekl .gt_title {
+#fmoapwqvgw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -794,7 +790,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-width: 0;
 }
 
-#yngdlecekl .gt_subtitle {
+#fmoapwqvgw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -806,7 +802,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-top-width: 0;
 }
 
-#yngdlecekl .gt_heading {
+#fmoapwqvgw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -818,13 +814,13 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_bottom_border {
+#fmoapwqvgw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_col_headings {
+#fmoapwqvgw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -839,7 +835,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_col_heading {
+#fmoapwqvgw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -859,7 +855,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   overflow-x: hidden;
 }
 
-#yngdlecekl .gt_column_spanner_outer {
+#fmoapwqvgw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -871,15 +867,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 4px;
 }
 
-#yngdlecekl .gt_column_spanner_outer:first-child {
+#fmoapwqvgw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yngdlecekl .gt_column_spanner_outer:last-child {
+#fmoapwqvgw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yngdlecekl .gt_column_spanner {
+#fmoapwqvgw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -891,11 +887,11 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   width: 100%;
 }
 
-#yngdlecekl .gt_spanner_row {
+#fmoapwqvgw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yngdlecekl .gt_group_heading {
+#fmoapwqvgw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -921,7 +917,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   text-align: left;
 }
 
-#yngdlecekl .gt_empty_group_heading {
+#fmoapwqvgw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -936,15 +932,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   vertical-align: middle;
 }
 
-#yngdlecekl .gt_from_md > :first-child {
+#fmoapwqvgw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yngdlecekl .gt_from_md > :last-child {
+#fmoapwqvgw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yngdlecekl .gt_row {
+#fmoapwqvgw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -963,7 +959,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   overflow-x: hidden;
 }
 
-#yngdlecekl .gt_stub {
+#fmoapwqvgw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -976,7 +972,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#yngdlecekl .gt_stub_row_group {
+#fmoapwqvgw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -990,15 +986,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   vertical-align: top;
 }
 
-#yngdlecekl .gt_row_group_first td {
+#fmoapwqvgw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yngdlecekl .gt_row_group_first th {
+#fmoapwqvgw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yngdlecekl .gt_summary_row {
+#fmoapwqvgw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1008,16 +1004,16 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#yngdlecekl .gt_first_summary_row {
+#fmoapwqvgw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_first_summary_row.thick {
+#fmoapwqvgw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yngdlecekl .gt_last_summary_row {
+#fmoapwqvgw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1027,7 +1023,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_grand_summary_row {
+#fmoapwqvgw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1037,7 +1033,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#yngdlecekl .gt_first_grand_summary_row {
+#fmoapwqvgw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1047,7 +1043,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-top-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_last_grand_summary_row_top {
+#fmoapwqvgw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1057,11 +1053,11 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_striped {
+#fmoapwqvgw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yngdlecekl .gt_table_body {
+#fmoapwqvgw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1070,7 +1066,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_footnotes {
+#fmoapwqvgw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1084,7 +1080,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_footnote {
+#fmoapwqvgw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1093,7 +1089,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#yngdlecekl .gt_sourcenotes {
+#fmoapwqvgw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1107,7 +1103,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#yngdlecekl .gt_sourcenote {
+#fmoapwqvgw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1115,72 +1111,72 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#yngdlecekl .gt_left {
+#fmoapwqvgw .gt_left {
   text-align: left;
 }
 
-#yngdlecekl .gt_center {
+#fmoapwqvgw .gt_center {
   text-align: center;
 }
 
-#yngdlecekl .gt_right {
+#fmoapwqvgw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yngdlecekl .gt_font_normal {
+#fmoapwqvgw .gt_font_normal {
   font-weight: normal;
 }
 
-#yngdlecekl .gt_font_bold {
+#fmoapwqvgw .gt_font_bold {
   font-weight: bold;
 }
 
-#yngdlecekl .gt_font_italic {
+#fmoapwqvgw .gt_font_italic {
   font-style: italic;
 }
 
-#yngdlecekl .gt_super {
+#fmoapwqvgw .gt_super {
   font-size: 65%;
 }
 
-#yngdlecekl .gt_footnote_marks {
+#fmoapwqvgw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yngdlecekl .gt_asterisk {
+#fmoapwqvgw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yngdlecekl .gt_indent_1 {
+#fmoapwqvgw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yngdlecekl .gt_indent_2 {
+#fmoapwqvgw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yngdlecekl .gt_indent_3 {
+#fmoapwqvgw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yngdlecekl .gt_indent_4 {
+#fmoapwqvgw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yngdlecekl .gt_indent_5 {
+#fmoapwqvgw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yngdlecekl .katex-display {
+#fmoapwqvgw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yngdlecekl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fmoapwqvgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1259,40 +1255,40 @@ Whenever arithmetic fails, first check the variable’s type.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Rows: 299
 ## Columns: 34
-## $ id                &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, …
-## $ income_range      &lt;fct&gt; Low, Low, High, Medium, Low, High, Low, Low, High, Low, High, Mediu…
-## $ co_ownership      &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0…
-## $ ownership         &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1…
-## $ index_1           &lt;dbl&gt; 4.4, 5.0, 3.4, 5.0, 3.6, 5.0, 5.0, 3.6, 4.2, 3.0, 3.0, 5.0, 5.0, 5.…
-## $ index_2           &lt;dbl&gt; 3.571429, 5.000000, 3.714286, 5.000000, 3.000000, 3.857143, NA, 4.1…
-## $ index_3           &lt;dbl&gt; 4, 5, 2, 5, NA, 3, NA, 3, 5, 1, 1, 5, 4, 4, 3, 2, 5, 5, 3, 5, 3, 3,…
-## $ index_4           &lt;dbl&gt; 3, 5, 3, 5, NA, 1, NA, 4, 4, 1, 1, 5, 5, 5, 4, 4, 5, NA, 2, 5, 4, 2…
-## $ index_5           &lt;dbl&gt; 4, 4, 5, 1, NA, 3, NA, 4, 2, 1, 1, 4, 4, 5, 3, 4, 1, 5, 5, 5, 3, 2,…
-## $ index_6           &lt;dbl&gt; 4.333333, 4.666667, 3.000000, 3.000000, NA, 3.666667, NA, 4.666667,…
-## $ gender            &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0…
-## $ age               &lt;int&gt; 21, 63, 21, 58, 63, 53, 53, 63, 53, 63, 38, 53, 68, 21, 28, 63, 48,…
-## $ age_factor        &lt;chr&gt; "18-25", "61-65", "18-25", "56-60", "61-65", "51-55", "51-55", "61-…
-## $ academic          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0…
-## $ income_group      &lt;chr&gt; "Low", "Low", "High", "Medium", "Low", "High", "Low", "Low", "High"…
-## $ use_finsesco      &lt;dbl&gt; 1, 4, 2, 1, NA, 1, NA, 1, 1, 1, NA, 1, 1, NA, 1, 1, 1, NA, 1, NA, 1…
-## $ index_finsesco    &lt;dbl&gt; 0.7299988, 1.1276756, 0.9498817, 0.7299988, NA, 0.7299988, NA, 0.72…
-## $ p_flat            &lt;dbl&gt; 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0…
-## $ p_apartment       &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0…
-## $ p_house           &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1…
-## $ home_ownership    &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1…
-## $ finsesco_familiar &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
-## $ crowd_yes         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0…
-## $ crowd_own         &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0…
-## $ income_low        &lt;dbl&gt; 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0…
-## $ income_med        &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1…
-## $ income_high       &lt;dbl&gt; 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0…
-## $ prosumership      &lt;dbl&gt; 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1…
-## $ social_benefit    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
-## $ control           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0…
-## $ interact          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0…
-## $ monitor           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1…
-## $ income_range_2    &lt;dbl&gt; 1143.789, 1394.153, 4948.919, NA, 1470.234, 5273.978, 1264.053, 144…
-## $ income_range_3    &lt;dbl&gt; 1143.789, 1394.153, 4948.919, NA, 1470.234, 5273.978, 1264.053, 144…</code></pre>
+## $ id                 [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m2 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m6 [38;5;246m,  [39m7 [38;5;246m,  [39m8 [38;5;246m,  [39m9 [38;5;246m,  [39m10 [38;5;246m,  [39m11 [38;5;246m,  [39m12 [38;5;246m,  [39m13 [38;5;246m,  [39m14 [38;5;246m,  [39m15 [38;5;246m,  [39m16 [38;5;246m,  [39m17 [38;5;246m,  [39m18 [38;5;246m,  [39m19 [38;5;246m,  [39m20 [38;5;246m,  [39m21 [38;5;246m,  [39m22 [38;5;246m,  [39m23 [38;5;246m,  [39m24 [38;5;246m,  [39m25 [38;5;246m,  [39m26 [38;5;246m,  [39m27 [38;5;246m,  [39m…
+## $ income_range       [3m [38;5;246m&lt;fct&gt; [39m [23m Low [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mLow [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mHigh [38;5;246m,  [39mHigh [38;5;246m,  [39mHig…
+## $ co_ownership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ ownership          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ index_1            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m4.2 [38;5;246m,  [39m3.0 [38;5;246m,  [39m3.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.8 [38;5;246m,  [39m4.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m4.8 [38;5;246m,  [39m4.4 [38;5;246m, [39m…
+## $ index_2            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3.571429 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.714286 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.857143 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.142857 [38;5;246m,  [39m4.000000 [38;5;246m,  [39m3.571429 [38;5;246m,  [39m3.000…
+## $ index_3            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m5 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5…
+## $ index_4            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m, [39m…
+## $ index_5            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4…
+## $ index_6            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.333333 [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3.666667 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.333333 [38;5;246m,  [39m2.333333 [38;5;246m,  [39m1.000000 [38;5;246m,  [39m5…
+## $ gender             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ age                [3m [38;5;246m&lt;int&gt; [39m [23m 21 [38;5;246m,  [39m63 [38;5;246m,  [39m21 [38;5;246m,  [39m58 [38;5;246m,  [39m63 [38;5;246m,  [39m53 [38;5;246m,  [39m53 [38;5;246m,  [39m63 [38;5;246m,  [39m53 [38;5;246m,  [39m63 [38;5;246m,  [39m38 [38;5;246m,  [39m53 [38;5;246m,  [39m68 [38;5;246m,  [39m21 [38;5;246m,  [39m28 [38;5;246m,  [39m63 [38;5;246m,  [39m48 [38;5;246m,  [39m68 [38;5;246m,  [39m53 [38;5;246m,  [39m43 [38;5;246m,  [39m63 [38;5;246m,  [39m38 [38;5;246m,  [39m53 [38;5;246m,  [39m68 [38;5;246m,  [39m28 [38;5;246m, [39m…
+## $ age_factor         [3m [38;5;246m&lt;chr&gt; [39m [23m "18-25" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"18-25" [38;5;246m,  [39m"56-60" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"36-40" [38;5;246m,  [39m…
+## $ academic           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ income_group       [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"High…
+## $ use_finsesco       [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m3 [38;5;246m,  [39m…
+## $ index_finsesco     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0.7299988 [38;5;246m,  [39m1.1276756 [38;5;246m,  [39m0.9498817 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m, [39m…
+## $ p_flat             [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ p_apartment        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ p_house            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ home_ownership     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ finsesco_familiar  [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ crowd_yes          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ crowd_own          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ income_low         [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ income_med         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ income_high        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ prosumership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ social_benefit     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ control            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ interact           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ monitor            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ income_range_2     [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323.…
+## $ income_range_3     [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323.…</code></pre>
 <p>If you now see age: int and income_range: fct, the cleaning worked.</p>
 <div class="callout-important">
 <p>🔴 Important {-}</p>
@@ -1314,23 +1310,23 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">income_range</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_index_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">index_1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>The second version mirrors human thought: take data → group → summarise.</p>
-<div id="spglolkwql" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#spglolkwql table {
+<div id="dzppbqkfqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dzppbqkfqq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#spglolkwql thead, #spglolkwql tbody, #spglolkwql tfoot, #spglolkwql tr, #spglolkwql td, #spglolkwql th {
+#dzppbqkfqq thead, #dzppbqkfqq tbody, #dzppbqkfqq tfoot, #dzppbqkfqq tr, #dzppbqkfqq td, #dzppbqkfqq th {
   border-style: none;
 }
 
-#spglolkwql p {
+#dzppbqkfqq p {
   margin: 0;
   padding: 0;
 }
 
-#spglolkwql .gt_table {
+#dzppbqkfqq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1356,12 +1352,12 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-left-color: #D3D3D3;
 }
 
-#spglolkwql .gt_caption {
+#dzppbqkfqq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#spglolkwql .gt_title {
+#dzppbqkfqq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1373,7 +1369,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-width: 0;
 }
 
-#spglolkwql .gt_subtitle {
+#dzppbqkfqq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1385,7 +1381,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-top-width: 0;
 }
 
-#spglolkwql .gt_heading {
+#dzppbqkfqq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1397,13 +1393,13 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#spglolkwql .gt_bottom_border {
+#dzppbqkfqq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#spglolkwql .gt_col_headings {
+#dzppbqkfqq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1418,7 +1414,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#spglolkwql .gt_col_heading {
+#dzppbqkfqq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1438,7 +1434,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   overflow-x: hidden;
 }
 
-#spglolkwql .gt_column_spanner_outer {
+#dzppbqkfqq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1450,15 +1446,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 4px;
 }
 
-#spglolkwql .gt_column_spanner_outer:first-child {
+#dzppbqkfqq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#spglolkwql .gt_column_spanner_outer:last-child {
+#dzppbqkfqq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#spglolkwql .gt_column_spanner {
+#dzppbqkfqq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1470,11 +1466,11 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   width: 100%;
 }
 
-#spglolkwql .gt_spanner_row {
+#dzppbqkfqq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#spglolkwql .gt_group_heading {
+#dzppbqkfqq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1500,7 +1496,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   text-align: left;
 }
 
-#spglolkwql .gt_empty_group_heading {
+#dzppbqkfqq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1515,15 +1511,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   vertical-align: middle;
 }
 
-#spglolkwql .gt_from_md > :first-child {
+#dzppbqkfqq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#spglolkwql .gt_from_md > :last-child {
+#dzppbqkfqq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#spglolkwql .gt_row {
+#dzppbqkfqq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1542,7 +1538,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   overflow-x: hidden;
 }
 
-#spglolkwql .gt_stub {
+#dzppbqkfqq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1555,7 +1551,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#spglolkwql .gt_stub_row_group {
+#dzppbqkfqq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1569,15 +1565,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   vertical-align: top;
 }
 
-#spglolkwql .gt_row_group_first td {
+#dzppbqkfqq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#spglolkwql .gt_row_group_first th {
+#dzppbqkfqq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#spglolkwql .gt_summary_row {
+#dzppbqkfqq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1587,16 +1583,16 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#spglolkwql .gt_first_summary_row {
+#dzppbqkfqq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#spglolkwql .gt_first_summary_row.thick {
+#dzppbqkfqq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#spglolkwql .gt_last_summary_row {
+#dzppbqkfqq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1606,7 +1602,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#spglolkwql .gt_grand_summary_row {
+#dzppbqkfqq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1616,7 +1612,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#spglolkwql .gt_first_grand_summary_row {
+#dzppbqkfqq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1626,7 +1622,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-top-color: #D3D3D3;
 }
 
-#spglolkwql .gt_last_grand_summary_row_top {
+#dzppbqkfqq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1636,11 +1632,11 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#spglolkwql .gt_striped {
+#dzppbqkfqq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#spglolkwql .gt_table_body {
+#dzppbqkfqq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1649,7 +1645,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#spglolkwql .gt_footnotes {
+#dzppbqkfqq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1663,7 +1659,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#spglolkwql .gt_footnote {
+#dzppbqkfqq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1672,7 +1668,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#spglolkwql .gt_sourcenotes {
+#dzppbqkfqq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1686,7 +1682,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#spglolkwql .gt_sourcenote {
+#dzppbqkfqq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1694,72 +1690,72 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#spglolkwql .gt_left {
+#dzppbqkfqq .gt_left {
   text-align: left;
 }
 
-#spglolkwql .gt_center {
+#dzppbqkfqq .gt_center {
   text-align: center;
 }
 
-#spglolkwql .gt_right {
+#dzppbqkfqq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#spglolkwql .gt_font_normal {
+#dzppbqkfqq .gt_font_normal {
   font-weight: normal;
 }
 
-#spglolkwql .gt_font_bold {
+#dzppbqkfqq .gt_font_bold {
   font-weight: bold;
 }
 
-#spglolkwql .gt_font_italic {
+#dzppbqkfqq .gt_font_italic {
   font-style: italic;
 }
 
-#spglolkwql .gt_super {
+#dzppbqkfqq .gt_super {
   font-size: 65%;
 }
 
-#spglolkwql .gt_footnote_marks {
+#dzppbqkfqq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#spglolkwql .gt_asterisk {
+#dzppbqkfqq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#spglolkwql .gt_indent_1 {
+#dzppbqkfqq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#spglolkwql .gt_indent_2 {
+#dzppbqkfqq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#spglolkwql .gt_indent_3 {
+#dzppbqkfqq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#spglolkwql .gt_indent_4 {
+#dzppbqkfqq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#spglolkwql .gt_indent_5 {
+#dzppbqkfqq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#spglolkwql .katex-display {
+#dzppbqkfqq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#spglolkwql div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dzppbqkfqq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1920,6 +1916,10 @@ When you decide that “under €1,500” means “Low-Income” you’re interp
 </li>
 <li>Upload via <strong>Assignments</strong> page on Moodle.</li>
 </ul>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
   <div class="chapter-nav">

@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Session 3 - Telling Energy Stories with ggplot2 | Energy-Transitions — Class 3</title>
+<meta name="author" content="Renan Magalhães">
+<meta name="description" content="In applied energy research, figures are more than pictures — they are arguments. A good plot answers a narrow question (“What is the distribution of heating behaviour by gender?”), communicates...">
+<meta name="generator" content="bookdown 0.45 with bs4_book()">
+<meta property="og:title" content="Session 3 - Telling Energy Stories with ggplot2 | Energy-Transitions — Class 3">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In applied energy research, figures are more than pictures — they are arguments. A good plot answers a narrow question (“What is the distribution of heating behaviour by gender?”), communicates...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Session 3 - Telling Energy Stories with ggplot2 | Energy-Transitions — Class 3">
+<meta name="twitter:description" content="In applied energy research, figures are more than pictures — they are arguments. A good plot answers a narrow question (“What is the distribution of heating behaviour by gender?”), communicates...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Custom header additions --><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+      #corner-logo {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        z-index: 1030; /* above navbar */
+      }
+      #corner-logo img {
+        height: 36px;
+        opacity: 0.95;
+      }
+      #corner-logo img:hover {
+        opacity: 1;
+      }
+      @media (max-width: 991px){
+        #corner-logo { top: 8px; right: 8px; }
+        #corner-logo img { height: 28px; }
+      }
+    </style>
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var div = document.createElement("div");
+        div.id = "corner-logo";
+        div.innerHTML = '<img src="assets/logo1.png" alt="Logo">';
+        document.body.appendChild(div);
+      });
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Energy-Transitions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="syllabus.html">Syllabus</a></li>
+<li><a class="" href="session-1.html">Session 1</a></li>
+<li><a class="" href="session-2.html">Session 2</a></li>
+<li><a class="active" href="session-3---telling-energy-stories-with-ggplot2.html">Session 3 - Telling Energy Stories with ggplot2</a></li>
+<li><a class="" href="session-4.html">Session 4</a></li>
+<li><a class="" href="session-5.html">Session 5</a></li>
+<li><a class="" href="assignments-uploads.html">Assignments &amp; Uploads</a></li>
+<li><a class="" href="datasets.html">Datasets</a></li>
+<li><a class="" href="about-publishing.html">About &amp; Publishing</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/USER/REPO">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="session-3---telling-energy-stories-with-ggplot2" class="section level1 unnumbered">
+<h1>Session 3 - Telling Energy Stories with ggplot2<a class="anchor" aria-label="anchor" href="#session-3---telling-energy-stories-with-ggplot2"><i class="fas fa-link"></i></a>
+</h1>
+<p>In applied energy research, figures are more than pictures — they are <em>arguments</em>. A good plot answers a narrow question (“What is the distribution of heating behaviour by gender?”), communicates uncertainty, and open space to the the next questions. In this chapter you will learn how to turn the FinSESCo survey into clear, reproducible visual stories using <strong>ggplot2</strong>. We will stay in the <strong>descriptive</strong> territory: counts, proportions, distributions, and grouped comparisons. In <strong>Session 4</strong> we will add statistical inference to our toolbox.</p>
+<p>VIDEO 1</p>
+<div id="why-visualize-first" class="section level2 unnumbered">
+<h2>1. Why visualize first?<a class="anchor" aria-label="anchor" href="#why-visualize-first"><i class="fas fa-link"></i></a>
+</h2>
+<p>Energy data is most of the time messy, multi-dimensional, and context-dependent. Before modeling, you should <em>see</em> the data:</p>
+<ul>
+<li>
+<strong>Scale &amp; composition.</strong> Who is in the sample? Are women and low-income prosumers sufficiently represented?<br>
+</li>
+<li>
+<strong>Distributions.</strong> Are behaviour indices skewed?<br>
+</li>
+<li>
+<strong>Comparisons.</strong> Do self-consumers differ from sellers? Is heating behaviour distributed differently than electricity behaviour?<br>
+</li>
+<li>
+<strong>Design decisions.</strong> Will your audience be an energy-policy reader (needs proportions and clear labels) or a methods audience (cares about distribution shape)?</li>
+</ul>
+<p>While creating our figures, we will follow this roadmap: <strong>formulate a question → choose a geometry → map aesthetics → check assumptions → interpret → export</strong>.</p>
+</div>
+<div id="setup-packages-data-and-a-consistent-theme" class="section level2 unnumbered">
+<h2>2. Setup: packages, data, and a consistent theme<a class="anchor" aria-label="anchor" href="#setup-packages-data-and-a-consistent-theme"><i class="fas fa-link"></i></a>
+</h2>
+<p>We will use mostly <code>ggplot2</code>, a package inside the <code>tidyverse</code>. We’ll use also <code>scales</code> to adjust the formatting.</p>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>   <span class="co"># ggplot2, dplyr, tidyr, readr, stringr, forcats</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span>      <span class="co"># labels: percent_format(), comma_format(), etc.</span></span>
+<span></span>
+<span><span class="co"># Load your dataset (adjust path as in Sessions 1–2)</span></span>
+<span><span class="co"># finsesco &lt;- readr::read_csv(here::here("data", "finsesco_clean.csv"))</span></span>
+<span><span class="co"># or an .rds if you saved it: finsesco &lt;- readr::read_rds("data/finsesco_clean.rds")</span></span></code></pre></div>
+<p>In <code>ggplot2</code> we can adjust the aesthetics of a graph. Some of these aesthetics are store as themes. For this class, we will use a light and accessible default for all plots.</p>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#theme_set(theme_minimal(base_size = 12))</span></span>
+<span><span class="co">#update_geom_defaults("bar", list(linewidth = 0.3))</span></span>
+<span><span class="co">#update_geom_defaults("point", list(alpha = 0.8))</span></span></code></pre></div>
+<p>We keep a single visual language across the chapter so figures feel related and are easier to compare. This is a good practice in research reports.</p>
+</div>
+<div id="the-grammar-of-graphics" class="section level2 unnumbered">
+<h2>3. The Grammar of Graphics<a class="anchor" aria-label="anchor" href="#the-grammar-of-graphics"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before we start coding, it’s important to understand what makes <code>ggplot2</code> so powerful and why it has become the standard for data visualization in R. The idea behind <strong>“The Grammar of Graphics”</strong> is that <strong>every plot is built from the same basic components</strong> — data, mappings, and layers. Instead of thinking about “types of plots” (bar chart, boxplot, histogram), we describe <strong>what we want to show</strong> and let R assemble the figure step by step.</p>
+<p>In short, ggplot2 turns the process of creating graphics into a <strong>language</strong> — a consistent way of describing data visualizations.<br>
+Once you understand the grammar, you can combine elements freely and build any kind of plot you need for your research.</p>
+<div id="the-three-essential-building-blocks" class="section level3" number="0.1.1">
+<h3>
+<span class="header-section-number">0.1.1</span> 3.1 The three essential building blocks<a class="anchor" aria-label="anchor" href="#the-three-essential-building-blocks"><i class="fas fa-link"></i></a>
+</h3>
+<p>Every ggplot begins with <strong>three key ingredients</strong>:</p>
+<div id="flecbtjeio" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#flecbtjeio table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#flecbtjeio thead, #flecbtjeio tbody, #flecbtjeio tfoot, #flecbtjeio tr, #flecbtjeio td, #flecbtjeio th {
+  border-style: none;
+}
+
+#flecbtjeio p {
+  margin: 0;
+  padding: 0;
+}
+
+#flecbtjeio .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#flecbtjeio .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#flecbtjeio .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#flecbtjeio .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#flecbtjeio .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#flecbtjeio .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#flecbtjeio .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#flecbtjeio .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#flecbtjeio .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#flecbtjeio .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#flecbtjeio .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#flecbtjeio .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#flecbtjeio .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#flecbtjeio .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#flecbtjeio .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flecbtjeio .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#flecbtjeio .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#flecbtjeio .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#flecbtjeio .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flecbtjeio .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#flecbtjeio .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flecbtjeio .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#flecbtjeio .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flecbtjeio .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#flecbtjeio .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flecbtjeio .gt_left {
+  text-align: left;
+}
+
+#flecbtjeio .gt_center {
+  text-align: center;
+}
+
+#flecbtjeio .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#flecbtjeio .gt_font_normal {
+  font-weight: normal;
+}
+
+#flecbtjeio .gt_font_bold {
+  font-weight: bold;
+}
+
+#flecbtjeio .gt_font_italic {
+  font-style: italic;
+}
+
+#flecbtjeio .gt_super {
+  font-size: 65%;
+}
+
+#flecbtjeio .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#flecbtjeio .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#flecbtjeio .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#flecbtjeio .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#flecbtjeio .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#flecbtjeio .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#flecbtjeio .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#flecbtjeio .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#flecbtjeio div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<div class="inline-table"><table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading">
+<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style><span class="gt_from_md"><strong>The Three Key Ingredients of Every ggplot</strong></span></td>
+    </tr>
+<tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Component">Component</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="What-it-does">What it does</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Example-in-FinSESCo-context">Example in FinSESCo context</th>
+    </tr>
+</thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="Component" class="gt_row gt_left" style="font-weight: bold;">Data</td>
+<td headers="What it does" class="gt_row gt_left">The dataset you’re visualizing.</td>
+<td headers="Example in FinSESCo context" class="gt_row gt_left">`finsesco` – our survey of energy efficiency and prosumer behaviour.</td>
+</tr>
+<tr>
+<td headers="Component" class="gt_row gt_left" style="font-weight: bold;">Aesthetics (aes)</td>
+<td headers="What it does" class="gt_row gt_left">How variables map to visual properties such as position, color, or size.</td>
+<td headers="Example in FinSESCo context" class="gt_row gt_left">`aes(x = income_range, y = behaviour_elec_scaled)`</td>
+</tr>
+<tr>
+<td headers="Component" class="gt_row gt_left" style="font-weight: bold;">Geometry (geom)</td>
+<td headers="What it does" class="gt_row gt_left">The visual representation — points, bars, lines, boxplots, etc.</td>
+<td headers="Example in FinSESCo context" class="gt_row gt_left">`geom_boxplot()`, `geom_col()`, `geom_line`</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>For example, to compare <strong>willingness to invest in energy efficiency</strong> across <strong>income groups</strong>, you could write:</p>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">clean</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">index_1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-94-1.png" width="672"></div>
+<ul>
+<li>
+<strong>Take the data</strong> from <code>finsesco</code>.<br>
+</li>
+<li>
+<strong>Map</strong> the <code>income_range</code> variable to the x-axis <em>(categories: “Low”, “Medium”, “High”)</em>.<br>
+</li>
+<li>
+<strong>Map</strong> <code>index_1</code> to the y-axis <em>(a numeric index measuring willingness to invest in energy efficiency)</em>.<br>
+</li>
+<li>
+<strong>Represent</strong> that relationship as <strong>boxplots</strong>, one for each income group.</li>
+</ul>
+<p>The output is simple but already meaningful: each box summarizes the <strong>median and spread of investment willingness</strong> by income.</p>
+</div>
+<div id="adding-more-layers-step-by-step" class="section level3 unnumbered">
+<h3>3.3 Adding More Layers (Step by Step)<a class="anchor" aria-label="anchor" href="#adding-more-layers-step-by-step"><i class="fas fa-link"></i></a>
+</h3>
+<p>One of the powers of <strong>ggplot2</strong> is that you can build plots gradually by adding <strong>layers</strong> with the <code>+</code> operator. Each layer adds new information or improves readability, very much like constructing a sentence piece by piece.</p>
+<p>Let’s now create a different kind of plot: a <strong>bar chart</strong> showing the <strong>average willingness to invest in energy efficiency (<code>index_1</code>)</strong> across <strong>income groups (<code>income_range</code>)</strong>.</p>
+<p><strong>Step 1 — Compute the summary table</strong></p>
+<p>Because bar charts work best with pre-computed values, we’ll first calculate the mean willingness to adapt behaviour for heating usage for each income group.</p>
+<p><strong>Step 1 — Compute the summary table</strong></p>
+<p>Bar charts with <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code> expect a pre-computed y-value.<br>
+Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each income group.</p>
+<p><strong>Step 2 — Compute the summary table</strong></p>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">avg_heat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">mean_heat</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#2C7BB6"</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>title <span class="op">=</span> <span class="st">"Average Heating Behaviour by Income Group"</span>,</span>
+<span>subtitle <span class="op">=</span> <span class="st">"FinSESCo survey; bars show group means"</span>,</span>
+<span>x <span class="op">=</span> <span class="st">"Income Group"</span>,</span>
+<span>y <span class="op">=</span> <span class="st">"Mean Heating Behaviour (0–100)"</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-96-1.png" width="672"></div>
+<p><strong>Step 3 — Add color, labels, and a cleaner layout</strong></p>
+<p>Let’s improve readability by coloring bars by category, adding value labels, and simplifying the legend.</p>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">avg_heat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">mean_heat</span>, fill <span class="op">=</span> <span class="va">income_range</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">mean_heat</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>title <span class="op">=</span> <span class="st">"Heating Behaviour by Income Group"</span>,</span>
+<span>subtitle <span class="op">=</span> <span class="st">"Each bar shows the mean of behaviour_heat_scaled within the income category"</span>,</span>
+<span>x <span class="op">=</span> <span class="st">"Income Group"</span>,</span>
+<span>y <span class="op">=</span> <span class="st">"Average Heating Behaviour (0–100)"</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"OrRd"</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
+<span>legend.position <span class="op">=</span> <span class="st">"none"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-97-1.png" width="672"></div>
+<div id="lisbljlytp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lisbljlytp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lisbljlytp thead, #lisbljlytp tbody, #lisbljlytp tfoot, #lisbljlytp tr, #lisbljlytp td, #lisbljlytp th {
+  border-style: none;
+}
+
+#lisbljlytp p {
+  margin: 0;
+  padding: 0;
+}
+
+#lisbljlytp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lisbljlytp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lisbljlytp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lisbljlytp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lisbljlytp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lisbljlytp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lisbljlytp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lisbljlytp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lisbljlytp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lisbljlytp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lisbljlytp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lisbljlytp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lisbljlytp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lisbljlytp .gt_row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lisbljlytp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lisbljlytp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lisbljlytp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lisbljlytp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lisbljlytp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lisbljlytp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lisbljlytp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lisbljlytp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lisbljlytp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lisbljlytp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lisbljlytp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lisbljlytp .gt_left {
+  text-align: left;
+}
+
+#lisbljlytp .gt_center {
+  text-align: center;
+}
+
+#lisbljlytp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lisbljlytp .gt_font_normal {
+  font-weight: normal;
+}
+
+#lisbljlytp .gt_font_bold {
+  font-weight: bold;
+}
+
+#lisbljlytp .gt_font_italic {
+  font-style: italic;
+}
+
+#lisbljlytp .gt_super {
+  font-size: 65%;
+}
+
+#lisbljlytp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lisbljlytp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lisbljlytp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lisbljlytp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lisbljlytp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lisbljlytp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lisbljlytp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lisbljlytp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lisbljlytp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<div class="inline-table"><table class="gt_table" style="table-layout:fixed;width:0px;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width:200px;">
+<col style="width:180px;">
+<col style="width:500px;">
+</colgroup>
+<thead>
+<tr class="gt_heading">
+<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style><span class="gt_from_md"><strong>Step 4 — Understanding What Each Layer Does</strong></span></td>
+    </tr>
+<tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Layer">Layer</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Function">Function</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Explanation">Explanation</th>
+    </tr>
+</thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="Layer" class="gt_row gt_left" style="font-weight: bold;">ggplot(avg_heat, aes(...))</td>
+<td headers="Function" class="gt_row gt_left">Base canvas</td>
+<td headers="Explanation" class="gt_row gt_left">Defines the data and visual mappings (x = income_range, y = mean_heat).</td>
+</tr>
+<tr>
+<td headers="Layer" class="gt_row gt_left" style="font-weight: bold;">geom_col()</td>
+<td headers="Function" class="gt_row gt_left">Geometry</td>
+<td headers="Explanation" class="gt_row gt_left">Draws bars using the pre-computed y-values.</td>
+</tr>
+<tr>
+<td headers="Layer" class="gt_row gt_left" style="font-weight: bold;">fill = income_range</td>
+<td headers="Function" class="gt_row gt_left">Aesthetic mapping</td>
+<td headers="Explanation" class="gt_row gt_left">Colors each bar by income category for clarity.</td>
+</tr>
+<tr>
+<td headers="Layer" class="gt_row gt_left" style="font-weight: bold;">geom_text()</td>
+<td headers="Function" class="gt_row gt_left">Annotation</td>
+<td headers="Explanation" class="gt_row gt_left">Prints the numeric mean above each bar.</td>
+</tr>
+<tr>
+<td headers="Layer" class="gt_row gt_left" style="font-weight: bold;">labs()</td>
+<td headers="Function" class="gt_row gt_left">Labels</td>
+<td headers="Explanation" class="gt_row gt_left">Adds title, subtitle, and axis names.</td>
+</tr>
+<tr>
+<td headers="Layer" class="gt_row gt_left" style="font-weight: bold;">theme_minimal()</td>
+<td headers="Function" class="gt_row gt_left">Theme</td>
+<td headers="Explanation" class="gt_row gt_left">Clean layout suitable for reports and slides.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>We can clearly see how <strong>average heating behaviour</strong> varies across income levels.
+As the High income bar stands taller, it suggests that richer households report more energy-conscious heating behaviour on average.
+<strong>But remember:</strong> these are descriptive patterns — they show associations, not causal effects. Specially in the case for our figure, as the differences between the groups are not so pronounced. In Session 4, we’ll learn to add inference to assess whether these differences are statistically meaningful.</p>
+</div>
+<div id="why-this-matters-for-energy-research" class="section level3 unnumbered">
+<h3>3.4 Why This Matters for Energy Research<a class="anchor" aria-label="anchor" href="#why-this-matters-for-energy-research"><i class="fas fa-link"></i></a>
+</h3>
+<p>Energy research blends <strong>behavioural</strong>, <strong>socioeconomic</strong>, and <strong>technological</strong> dimensions.<br>
+Visualization plays a key role in connecting these elements and translating data into insight.<br>
+It helps you to:</p>
+<ul>
+<li>
+<strong>Detect patterns and inequalities</strong> — for example, do lower-income households show systematically lower heating-efficiency behaviours?<br>
+</li>
+<li>
+<strong>Communicate evidence clearly</strong> to policymakers, stakeholders, and the public.<br>
+</li>
+<li>
+<strong>Explore data before modeling</strong>, spotting anomalies, trends, and subgroup differences.<br>
+</li>
+<li>
+<strong>Build intuition</strong> about distributions and relationships before running regressions or formal tests.</li>
+</ul>
+<p>Every plot connects back to real-world questions in the FinSESCo dataset:</p>
+<ul>
+<li>Who behaves more efficiently?<br>
+</li>
+<li>Who invests in renewables or efficiency?<br>
+</li>
+<li>How do gender, income, and ownership relate to engagement?</li>
+</ul>
+<p>Mastering the <strong>grammar of graphics</strong> gives you a consistent visual language to answer these questions — turning raw data into meaningful stories about the energy transition.</p>
+</div>
+</div>
+<div id="counts-and-shares-who-is-in-our-sample" class="section level2 unnumbered">
+<h2>4. Counts and Shares: Who Is in Our Sample?<a class="anchor" aria-label="anchor" href="#counts-and-shares-who-is-in-our-sample"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before analyzing behaviour or attitudes, we first need to understand <strong>who</strong> is in our dataset.<br>
+If some groups are much larger than others, raw counts can be misleading.<br>
+Proportions (shares) correct for this and allow fair comparisons between groups of different sizes.</p>
+<p>This section uses the FinSESCo dataset (<code>f</code>) to explore sample composition through <strong>counts</strong> and <strong>shares</strong>, using <code>ggplot2</code>.</p>
+<hr>
+<div id="counts-by-gender-absolute" class="section level3 unnumbered">
+<h3>4.1 Counts by Gender (Absolute)<a class="anchor" aria-label="anchor" href="#counts-by-gender-absolute"><i class="fas fa-link"></i></a>
+</h3>
+<p>We start simple: count how many male and female respondents are in the sample.</p>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span><span class="va">gender</span>,</span>
+<span>                                `0` <span class="op">=</span> <span class="st">"Male"</span>,</span>
+<span>                                `1` <span class="op">=</span> <span class="st">"Female"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#0072B2"</span>, alpha <span class="op">=</span> <span class="fl">0.8</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span></span>
+<span>  <span class="co"># Add count labels</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span></span>
+<span>    stat <span class="op">=</span> <span class="st">"count"</span>,</span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">..count..</span><span class="op">)</span>,</span>
+<span>    vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.4</span>,</span>
+<span>    size <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>    fontface <span class="op">=</span> <span class="st">"bold"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Sample Composition by Gender"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Start with counts to see how many observations you actually have"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Gender"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count of Respondents"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">data_complete</span><span class="op">$</span><span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1.1</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure">
+<img src="Energy-Transitions_files/figure-html/unnamed-chunk-100-1.png" width="672">
+### 4.2 Shares by Gender (Relative) {-}</div>
+<p>Next, we visualize the <strong>proportion</strong> of respondents by gender.<br>
+This is more useful when comparing subgroups of different sizes, because proportions correct for imbalances in sample counts.</p>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Recode gender and compute proportions</span></span>
+<span><span class="va">gender_share</span> <span class="op">&lt;-</span> <span class="va">data_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span><span class="va">gender</span>,</span>
+<span>                                `0` <span class="op">=</span> <span class="st">"Male"</span>,</span>
+<span>                                `1` <span class="op">=</span> <span class="st">"Female"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>share <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Plot</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gender_share</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="va">share</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="co"># Add percentage labels</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">share</span>, accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>            position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_stack.html">position_stack</a></span><span class="op">(</span>vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>            color <span class="op">=</span> <span class="st">"white"</span>, size <span class="op">=</span> <span class="fl">5</span>, fontface <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="co"># Manual colors: Male = blue, Female = red</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>,    <span class="co"># blue</span></span>
+<span>                               <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>  <span class="co"># red</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Gender Share in the Sample"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Then you get the proportions"</span>,</span>
+<span>    x <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Share of Respondents"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    axis.text.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    axis.ticks.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    legend.position <span class="op">=</span> <span class="st">"top"</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-101-1.png" width="672"></div>
+</div>
+<div id="gender-composition-within-prosumer-types" class="section level3 unnumbered">
+<h3>4.3 Gender Composition Within Prosumer Types<a class="anchor" aria-label="anchor" href="#gender-composition-within-prosumer-types"><i class="fas fa-link"></i></a>
+</h3>
+<p>Counts and overall shares are a good starting point, but in energy research we often care about how <strong>demographic composition differs across subgroups</strong>. One example, would be across <strong>prosumer types</strong>. For example?<br>
+&gt; Within each prosumer type, what share of respondents are male and female?</p>
+<p>To answer this, we compute gender shares <em>inside</em> each <code>prosumer_type</code> and visualize them with a grouped bar chart.</p>
+<p>Before comparing behaviours across ownership groups, we need to understand <em>who</em> is in each group.<br>
+Using the variables <code>ownership</code> and <code>co_ownership</code>, we create an <code>ownership_type</code> category:</p>
+<ul>
+<li>
+<strong>Non-owner</strong> → ownership = 0 AND co_ownership = 0<br>
+</li>
+<li>
+<strong>Sole-owner</strong> → ownership = 1 AND co_ownership = 0<br>
+</li>
+<li>
+<strong>Co-owner</strong> → co_ownership = 1 (ownership is also 1 in this case)</li>
+</ul>
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data_extended</span> <span class="op">&lt;-</span> <span class="va">data_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span><span class="va">gender</span>,</span>
+<span>                           `0` <span class="op">=</span> <span class="st">"Male"</span>,</span>
+<span>                           `1` <span class="op">=</span> <span class="st">"Female"</span><span class="op">)</span>,</span>
+<span>    </span>
+<span>    ownership_type <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>      <span class="va">ownership</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">co_ownership</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="st">"Non-owner"</span>,</span>
+<span>      <span class="va">ownership</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">co_ownership</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">~</span> <span class="st">"Sole-owner"</span>,</span>
+<span>      <span class="va">co_ownership</span> <span class="op">==</span> <span class="fl">1</span> <span class="op">~</span> <span class="st">"Co-owner"</span>,</span>
+<span>      <span class="cn">TRUE</span> <span class="op">~</span> <span class="cn">NA_character_</span></span>
+<span>    <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Non-owner"</span>, <span class="st">"Sole-owner"</span>, <span class="st">"Co-owner"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Compute gender composition by ownership type</span></span>
+<span><span class="va">comp_owner</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">ownership_type</span>, <span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>share <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Plot</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">comp_owner</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">share</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="co"># Add percentage labels</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">share</span>, accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>,</span>
+<span>    vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.3</span>,</span>
+<span>    size <span class="op">=</span> <span class="fl">4</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
+<span>    expand <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expansion.html">expansion</a></span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="co"># Consistent colour scheme: Male = blue, Female = red</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span></span>
+<span>    values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>,</span>
+<span>               <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Gender Composition Across Ownership Types"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Shares of male and female respondents within non-owners, sole-owners, and co-owners"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Ownership Type"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Share of Respondents"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-103-1.png" width="672"></div>
+<p>The FinSESCo survey made a deliberate effort to <strong>increase the share of women</strong>, especially <strong>female prosumers</strong>.<br>
+This targeted sampling worked well among:</p>
+<ul>
+<li>
+<strong>Non-owners</strong>, and<br>
+</li>
+<li>
+<strong>Sole-owners</strong>,</li>
+</ul>
+<p>where gender proportions are relatively balanced or closer to parity.</p>
+<p>However, the data reveal that despite targeted outreach, <strong>co-ownership remains more male-dominated</strong>.<br>
+This is a common pattern in renewable-energy prosumership research: men tend to be overrepresented among those who adopt or co-invest in technical energy systems such as PV installations.</p>
+<p>Understanding this imbalance helps frame the analysis:</p>
+<ul>
+<li>If co-owners behave differently (e.g., higher heating-efficiency scores),<br>
+you should first ask:<br><strong>Is this because they are co-owners, or because the group is more male?</strong>
+</li>
+</ul>
+<p>This is exactly why descriptive visualization is essential before any formal modelling:<br>
+it shows <em>who is in each group</em> and prevents misleading interpretations later.</p>
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_complete</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">behaviour_elec_scaled</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">30</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Distribution of electricity behaviour (0–100)"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Check for skew, clumps (heaping), or impossible values"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Behaviour index (electricity)"</span>, y <span class="op">=</span> <span class="st">"Frequency"</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-104-1.png" width="672"></div>
+</div>
+</div>
+<div id="group-summaries-with-error-bars-descriptive-variability" class="section level2 unnumbered">
+<h2>6. Group Summaries with Error Bars (Descriptive Variability)<a class="anchor" aria-label="anchor" href="#group-summaries-with-error-bars-descriptive-variability"><i class="fas fa-link"></i></a>
+</h2>
+<p>So far, we have mainly compared <strong>distributions</strong> (histograms, boxplots).<br>
+Sometimes, we want a more compact summary: <strong>“What is the average behaviour in each group?”</strong></p>
+<p>A common way to show this is:</p>
+<ul>
+<li>a <strong>bar (or point)</strong> for the <strong>group mean</strong>, and<br>
+</li>
+<li>an <strong>error bar</strong> for the <strong>variability around the mean</strong>.</li>
+</ul>
+<p>In Session 3, we treat error bars as <strong>purely descriptive</strong>, using something simple such as:</p>
+<ul>
+<li>mean ± 1 standard error (SE)</li>
+</ul>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mean_se</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span></span>
+<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>    mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
+<span>    se   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">sum_e</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span></span>
+<span>      <span class="va">gender</span>,</span>
+<span>      `0` <span class="op">=</span> <span class="st">"Male"</span>,</span>
+<span>      `1` <span class="op">=</span> <span class="st">"Female"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ownership_type</span>, <span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/mean_se.html">mean_se</a></span><span class="op">(</span><span class="va">behaviour_elec_scaled</span><span class="op">)</span>,</span>
+<span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">sum_e</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">mean</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbar</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">mean</span> <span class="op">-</span> <span class="va">se</span>, ymax <span class="op">=</span> <span class="va">mean</span> <span class="op">+</span> <span class="va">se</span><span class="op">)</span>,</span>
+<span>    width <span class="op">=</span> <span class="fl">0.2</span>,</span>
+<span>    position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>, <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Electricity Behaviour: Descriptive Group Means (±1 SE)"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Use for visual summaries only; formal inference comes next session"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Ownership Type"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Mean Behaviour (0–100)"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure">
+<img src="Energy-Transitions_files/figure-html/unnamed-chunk-105-1.png" width="672">
+This could help us answer questions like:</div>
+<ul>
+<li>Do prosumers <strong>on average</strong> show higher electricity behaviour than non-owners?<br>
+</li>
+<li>Are gender gaps large or small <strong>relative to within-group variation</strong>?</li>
+</ul>
+<p><strong>Reading error bars carefully</strong></p>
+<ul>
+<li>Overlapping SE bars do <strong>not automatically</strong> mean “no difference”.<br>
+</li>
+<li>They simply show that there is <strong>sampling variability</strong> around each mean.<br>
+</li>
+<li>In Session 4, we will learn how to test differences <strong>formally</strong>.</li>
+</ul>
+<p>For now, the message is:<br>
+&gt; Error bars give a quick sense of how stable or noisy the group averages are.</p>
+<hr>
+</div>
+<div id="proportions-binary-outcomes-policy-cares-about" class="section level2 unnumbered">
+<h2>7. Proportions: Binary Outcomes Policy Cares About<a class="anchor" aria-label="anchor" href="#proportions-binary-outcomes-policy-cares-about"><i class="fas fa-link"></i></a>
+</h2>
+<p>Many policy questions are <strong>yes/no</strong>:</p>
+<ul>
+<li>“What share of households have <strong>high willingness</strong> to invest in heating?”<br>
+</li>
+<li>“What share of respondents report <strong>very efficient</strong> behaviour?”</li>
+</ul>
+<p>To answer such questions, we often:</p>
+<ol style="list-style-type: decimal">
+<li>Define a <strong>threshold</strong> on a scale (e.g., “high” = score ≥ 7 on a 0–10 scale).<br>
+</li>
+<li>Create a <strong>binary variable</strong> (1 = high, 0 = not high).<br>
+</li>
+<li>Compute the <strong>proportion</strong> of 1s by group (e.g., by gender or prosumer type).<br>
+</li>
+<li>Plot these proportions with bars and percentage labels.</li>
+</ol>
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://forcats.tidyverse.org/">forcats</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">bin</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span></span>
+<span>      <span class="va">gender</span>,</span>
+<span>      `0` <span class="op">=</span> <span class="st">"Male"</span>,</span>
+<span>      `1` <span class="op">=</span> <span class="st">"Female"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    <span class="co"># IMPORTANT: if your variable has another name, replace index_1 below</span></span>
+<span>    high_inv_index1 <span class="op">=</span> <span class="va">inv_ee_heat_scaled_2</span> <span class="op">&gt;=</span> <span class="fl">70</span>   <span class="co"># threshold can be adjusted</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">high_inv_index1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p_grp</span> <span class="op">&lt;-</span> <span class="va">bin</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">gender</span>, <span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">high_inv_index1</span><span class="op">)</span>,</span>
+<span>    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">p</span>, accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">p_grp</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">p</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">label</span><span class="op">)</span>,</span>
+<span>    position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>,</span>
+<span>    vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.4</span>,</span>
+<span>    size <span class="op">=</span> <span class="fl">3.5</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>, <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Share with High Willingness to Invest in Energy Efficiency (&gt; 70 in a scale of 100)"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Proportions are directly interpretable for policy audiences"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Ownership Type"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Proportion of High-Investment Respondents"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-106-1.png" width="672"></div>
+<p>This yields statements that policymakers understand easily, such as:</p>
+<blockquote>
+<p>“Among co-owners, 42% report high willingness to invest in heating, compared to 25% among non-owners.”</p>
+</blockquote>
+<p>🧪 <strong>Sensitivity check</strong></p>
+<p>Thresholds are partly <strong>researcher choices</strong>.<br>
+If you change the cutoff (e.g., 6 vs. 7 vs. 8) and the conclusions change dramatically, you should:</p>
+<ul>
+<li>mention this in your interpretation, and<br>
+</li>
+<li>be transparent about the robustness of your results.</li>
+</ul>
+<hr>
+</div>
+<div id="facets-many-comparisons-one-visual-grammar" class="section level2 unnumbered">
+<h2>8. Facets: Many Comparisons, One Visual Grammar<a class="anchor" aria-label="anchor" href="#facets-many-comparisons-one-visual-grammar"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sometimes we need to compare <strong>the same relationship</strong> across many subgroups.<br>
+For example:</p>
+<ul>
+<li>Heating behaviour by <strong>income</strong>, separately for each <strong>prosumer type</strong>.<br>
+</li>
+<li>Electricity behaviour by <strong>gender</strong>, separately for each <strong>income group</strong>.</li>
+</ul>
+<p><strong>Facets</strong> allow you to:</p>
+<ul>
+<li>keep the same axes and plot type,<br>
+</li>
+<li>but give each subgroup its <strong>own panel</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_extended</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">behaviour_heat_scaled</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>outlier.alpha <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">ownership_type</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Heating Behaviour by Income and Ownership Type"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Facets preserve structure; rotate labels when categories are long"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Income Range"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Behaviour (0–100)"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">30</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-107-1.png" width="672"></div>
+<p>This helps the reader compare <strong>structures</strong>, not just numbers.<br>
+You can visually scan across panels and ask:</p>
+<ul>
+<li>Does the income gradient look similar for non-owners and self-consumers?<br>
+</li>
+<li>Does a gap between prosumers and non-prosumers appear in all income groups or only in high income?</li>
+</ul>
+<p>Facets are a powerful way to show <strong>heterogeneity</strong> without overcrowding a single plot.</p>
+<hr>
+</div>
+<div id="stacked-vs.-dodged-vs.-100-bars-which-composition-view" class="section level2 unnumbered">
+<h2>9. Stacked vs. Dodged vs. 100% Bars: Which Composition View?<a class="anchor" aria-label="anchor" href="#stacked-vs.-dodged-vs.-100-bars-which-composition-view"><i class="fas fa-link"></i></a>
+</h2>
+<p>The same underlying data (e.g., <strong>counts of men and women in each prosumer type</strong>) can be shown in three main ways.</p>
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">base_tab</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span></span>
+<span>      <span class="va">gender</span>,</span>
+<span>      `0` <span class="op">=</span> <span class="st">"Male"</span>,</span>
+<span>      `1` <span class="op">=</span> <span class="st">"Female"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">ownership_type</span>, <span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>p <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Each emphasizes a different message:</p>
+<div id="stacked-counts" class="section level3" number="0.1.2">
+<h3>
+<span class="header-section-number">0.1.2</span> 9.1 Stacked Counts<a class="anchor" aria-label="anchor" href="#stacked-counts"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">base_tab</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>, <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Stacked Counts by Ownership Type and Gender"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Ownership Type"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count of Respondents"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-109-1.png" width="672"></div>
+<p>Stacked bars on the same x-axis (e.g., prosumer types) show:</p>
+<ul>
+<li>total <strong>group size</strong> (bar height), and<br>
+</li>
+<li>internal <strong>composition</strong> (segments by gender).</li>
+</ul>
+<p>Use when:</p>
+<ul>
+<li>you care about both <strong>how many</strong> and <strong>who</strong> is in each group.</li>
+</ul>
+</div>
+<div id="dodged-side-by-side-counts" class="section level3" number="0.1.3">
+<h3>
+<span class="header-section-number">0.1.3</span> 9.2 Dodged (Side-by-Side) Counts<a class="anchor" aria-label="anchor" href="#dodged-side-by-side-counts"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">base_tab</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>, <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Dodged Counts by Ownership Type and Gender"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Ownership Type"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count of Respondents"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-110-1.png" width="672"></div>
+<p>Bars for each group (e.g., gender) are placed <strong>side by side</strong> for each category:</p>
+<ul>
+<li>emphasizes <strong>comparisons of magnitude</strong> across groups,<br>
+</li>
+<li>e.g., “Are there more female self-consumers than male self-consumers?”</li>
+</ul>
+<p>Use when:</p>
+<ul>
+<li>you want to clearly compare the <strong>levels</strong> of two groups across categories.</li>
+</ul>
+</div>
+<div id="standardized-bars" class="section level3" number="0.1.4">
+<h3>
+<span class="header-section-number">0.1.4</span> 9.3 100% (Standardized) Bars<a class="anchor" aria-label="anchor" href="#standardized-bars"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">base_tab</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">p</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>, <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"100% Bars: Gender Composition Within Ownership Types"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Ownership Type"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Share of Respondents"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-111-1.png" width="672"></div>
+<p>Each bar has the same height (100%) and only the <strong>share</strong> (percentage) inside changes:</p>
+<ul>
+<li>removes differences in total sample size,<br>
+</li>
+<li>focuses solely on <strong>composition</strong> (e.g., gender mix within each prosumer type).</li>
+</ul>
+<p>Use when:</p>
+<ul>
+<li>you want to highlight <strong>relative composition</strong>, independent of group size.</li>
+</ul>
+<p><strong>Rule of thumb</strong></p>
+<ul>
+<li>Use <strong>stacked counts</strong> to emphasize total capacity or size.<br>
+</li>
+<li>Use <strong>dodged bars</strong> to compare group magnitudes directly.<br>
+</li>
+<li>Use <strong>100% bars</strong> to highlight composition (shares) independent of size.</li>
+</ul>
+<hr>
+</div>
+</div>
+<div id="ordering-categories-for-meaning" class="section level2 unnumbered">
+<h2>10. Ordering Categories for Meaning<a class="anchor" aria-label="anchor" href="#ordering-categories-for-meaning"><i class="fas fa-link"></i></a>
+</h2>
+<p>By default, R often orders categories <strong>alphabetically</strong>, which can obscure interesting patterns.<br>
+In energy research, a more meaningful order often exists, for example:</p>
+<ul>
+<li>income: Low → Medium → High<br>
+</li>
+<li>prosumer types ordered by <strong>mean behaviour</strong> or <strong>investment willingness</strong>
+</li>
+</ul>
+<p>Reordering factors helps the plot align with the <strong>story</strong>:</p>
+<ul>
+<li>If you order prosumer types from lowest to highest mean electricity behaviour,<br>
+the left-to-right progression matches the idea of an <strong>increasing gradient</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#1. Compute order as a simple character vector</span></span>
+<span><span class="va">ord</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    m <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">behaviour_elec_scaled</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">m</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>                   <span class="co"># from lower to higher mean behaviour</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="op">)</span>                   <span class="co"># ensure it's a plain character vector</span></span>
+<span></span>
+<span><span class="co"># 2. Relevel ownership_type using that order</span></span>
+<span><span class="va">data_extended_ord</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    ownership_type <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span>, <span class="va">ord</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 3. Plot</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_extended_ord</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#0072B2"</span>, alpha <span class="op">=</span> <span class="fl">0.8</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Ownership Types Ordered by Mean Electricity Behaviour"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Ordering supports the narrative (from lower to higher mean behaviour)"</span>,</span>
+<span>    x <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count of Respondents"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">30</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-112-1.png" width="672"></div>
+<p>Design heuristic:</p>
+<blockquote>
+<p>Whenever your plot invites a left-to-right reading (“least” to “most”, “low” to “high”),<br>
+consider reordering categories according to a <strong>substantive statistic</strong> (e.g., mean behaviour).</p>
+</blockquote>
+<hr>
+</div>
+<div id="quick-plot-decision-guide" class="section level2 unnumbered">
+<h2>11. Quick Plot Decision Guide<a class="anchor" aria-label="anchor" href="#quick-plot-decision-guide"><i class="fas fa-link"></i></a>
+</h2>
+<p>To wrap up Session 3, here is a compact guide:</p>
+<ul>
+<li>
+<strong>One numeric variable</strong> → histogram or density (distribution shape).<br>
+</li>
+<li>
+<strong>Numeric vs. category</strong> → boxplot, or mean + error bars (group comparison).<br>
+</li>
+<li>
+<strong>Counts across categories</strong> → bar chart (stacked or dodged).<br>
+</li>
+<li>
+<strong>Shares / composition</strong> → 100% bar chart.<br>
+</li>
+<li>
+<strong>Many subgroups</strong> → facets.<br>
+</li>
+<li>
+<strong>Order matters</strong> → reorder factors to support your narrative.</li>
+</ul>
+<p>In Session 4, we take the next step:<br>
+moving from <strong>descriptive visuals</strong> to <strong>statistical inference</strong>, where we ask whether the patterns we see are <strong>likely to reflect real differences</strong> or just sampling noise.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="session-2.html">Session 2</a></div>
+<div class="next"><a href="session-4.html">Session 4</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#session-3---telling-energy-stories-with-ggplot2">Session 3 - Telling Energy Stories with ggplot2</a></li>
+<li><a class="nav-link" href="#why-visualize-first">1. Why visualize first?</a></li>
+<li><a class="nav-link" href="#setup-packages-data-and-a-consistent-theme">2. Setup: packages, data, and a consistent theme</a></li>
+<li>
+<a class="nav-link" href="#the-grammar-of-graphics">3. The Grammar of Graphics</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-three-essential-building-blocks"><span class="header-section-number">0.1.1</span> 3.1 The three essential building blocks</a></li>
+<li><a class="nav-link" href="#adding-more-layers-step-by-step">3.3 Adding More Layers (Step by Step)</a></li>
+<li><a class="nav-link" href="#why-this-matters-for-energy-research">3.4 Why This Matters for Energy Research</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#counts-and-shares-who-is-in-our-sample">4. Counts and Shares: Who Is in Our Sample?</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#counts-by-gender-absolute">4.1 Counts by Gender (Absolute)</a></li>
+<li><a class="nav-link" href="#gender-composition-within-prosumer-types">4.3 Gender Composition Within Prosumer Types</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#group-summaries-with-error-bars-descriptive-variability">6. Group Summaries with Error Bars (Descriptive Variability)</a></li>
+<li><a class="nav-link" href="#proportions-binary-outcomes-policy-cares-about">7. Proportions: Binary Outcomes Policy Cares About</a></li>
+<li><a class="nav-link" href="#facets-many-comparisons-one-visual-grammar">8. Facets: Many Comparisons, One Visual Grammar</a></li>
+<li>
+<a class="nav-link" href="#stacked-vs.-dodged-vs.-100-bars-which-composition-view">9. Stacked vs. Dodged vs. 100% Bars: Which Composition View?</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#stacked-counts"><span class="header-section-number">0.1.2</span> 9.1 Stacked Counts</a></li>
+<li><a class="nav-link" href="#dodged-side-by-side-counts"><span class="header-section-number">0.1.3</span> 9.2 Dodged (Side-by-Side) Counts</a></li>
+<li><a class="nav-link" href="#standardized-bars"><span class="header-section-number">0.1.4</span> 9.3 100% (Standardized) Bars</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#ordering-categories-for-meaning">10. Ordering Categories for Meaning</a></li>
+<li><a class="nav-link" href="#quick-plot-decision-guide">11. Quick Plot Decision Guide</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/USER/REPO/blob/main/04-class-03.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USER/REPO/edit/main/04-class-03.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Energy-Transitions</strong>" was written by Renan Magalhães. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

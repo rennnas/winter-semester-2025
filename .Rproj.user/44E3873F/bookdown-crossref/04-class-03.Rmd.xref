@@ -1,3 +1,14 @@
 h1:session-3 Session 3
-h2:visualization-with-ggplot2 Visualization with ggplot2
+h2:why-visualize-first 1. Why visualize first?
+h2:setup-packages-data-and-a-consistent-theme 2. Setup: packages, data, and a consistent theme
+h2:the-grammar-of-graphics 3. The Grammar of Graphics
+h3:the-three-essential-building-blocks 3.1 The three essential building blocks
+h3:adding-more-layers-step-by-step 3.2 Adding More Layers (Step by Step)
+h1:recode-gender-and-compute-proportions Recode gender and compute proportions
+h1:plot Plot
+h1:compute-gender-composition-by-ownership-type Compute gender composition by ownership type
+h1:plot-1 Plot
+h1:relevel-ownership_type-using-that-order 2. Relevel ownership_type using that order
+h1:plot-2 3. Plot
+h2:quick-plot-decision-guide 10. Quick Plot Decision Guide
 
