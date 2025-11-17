@@ -1,14 +1,14 @@
 h1:session-4 Session 4
-h1:basic-statistics-for-energy-research Basic Statistics for Energy Research
-h1:why-basic-statistics-matter 1. Why Basic Statistics Matter
-h1:central-tendency 2. Central Tendency
-h1:measures-of-spread 3. Measures of Spread
-h1:distributions 4. Distributions
-h1:grouped-descriptive-statistics 5. Grouped Descriptive Statistics
-h1:cross-tabulations 6. Cross-tabulations
-h1:correlation 7. Correlation
-h1:comparing-two-groups-t-test 8. Comparing Two Groups: t-test
-h1:comparing-more-than-two-groups-anova 9. Comparing More Than Two Groups: ANOVA
-h1:visualising-group-differences 10. Visualising Group Differences
-h1:interpretation-checklist 11. Interpretation Checklist
+h2:why-basic-statistics-matter 1. Why Basic Statistics Matter
+h2:central-tendency 2. Central Tendency
+h2:measures-of-spread 3. Measures of Spread
+h2:distributions 4. Distributions
+h2:grouped-descriptive-statistics 5. Grouped Descriptive Statistics
+h2:cross-tabulations 6. Cross-tabulations
+h2:correlation 7. Correlation
+h2:comparing-two-groups-t-test 8. Comparing Two Groups: t-test
+h2:comparing-more-than-two-groups-anova 9. Comparing More Than Two Groups: ANOVA
+h2:visualising-group-differences 10. Visualising Group Differences
+h2:interpretation-checklist 11. Interpretation Checklist
+h2:exercise Exercise
 

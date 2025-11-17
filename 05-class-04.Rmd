@@ -1,7 +1,5 @@
 # Session 4 {-}
 
-# Basic Statistics for Energy Research {-}
-
 Up to now, you learned how to explore a dataset, inspect variables, filter, select, and visualise data. In this session, we move into basic statistics, which form the backbone of any data-driven research in the energy transition.
 
 Basic statistics help you answer questions such as:
@@ -21,9 +19,7 @@ library(DescTools)
 ```
 
 
----
-
-# 1. Why Basic Statistics Matter {-}
+## 1. Why Basic Statistics Matter {-}
 
 Before you build any model — regression, ANCOVA, or machine learning — you must understand your data as it is. If you skip this step, it becomes very easy to misinterpret results or to overlook basic data quality problems.
 
@@ -40,9 +36,8 @@ Basic statistics help you:
 
 In short: descriptive statistics are not a “preliminary step” you rush through. They are part of the analysis and help you build a credible story from the data.
 
----
 
-# 2. Central Tendency {-}
+## 2. Central Tendency {-}
 
 Central tendency measures describe where the “middle” of the data lies. Each measure emphasises a different aspect of that middle.
 
@@ -64,9 +59,8 @@ Mode(data_extended$behaviour_elec, na.rm = TRUE)
 
 In the FinSESCo dataset, you will often see that the mean and median differ. When the mean is considerably higher than the median, it suggests a right-skewed distribution with a minority of very high values.
 
----
 
-# 3. Measures of Spread {-}
+## 3. Measures of Spread {-}
 
 Central tendency tells you about the centre of the distribution, but not how spread out the data are around that centre. Two groups can have the same mean but very different patterns in terms of dispersion.
 
@@ -92,9 +86,7 @@ Key measures of spread include:
 
 For energy behaviour variables, spread is important because it reveals whether behaviour is relatively homogeneous across households or whether there is a lot of heterogeneity that later models will need to explain.
 
----
-
-# 4. Distributions {-}
+## 4. Distributions {-}
 
 A distribution describes how often each possible value of a variable occurs. Looking at distributions is crucial for understanding the shape and structure of your data.
 
@@ -136,9 +128,8 @@ Typical patterns in this context:
 
 Understanding the distribution helps you decide whether certain transformations or robust methods might be needed later and whether particular values should be examined more closely.
 
----
 
-# 5. Grouped Descriptive Statistics {-}
+## 5. Grouped Descriptive Statistics {-}
 
 Group summaries allow you to compare basic statistics across categories such as ownership type, gender, income group, or region.
 
@@ -167,9 +158,8 @@ By computing grouped means, standard deviations, and counts, you can:
 
 In practice, you might find that certain prosumer categories show both higher mean engagement and lower variability, indicating a more consistently engaged group.
 
----
 
-# 6. Cross-tabulations {-}
+## 6. Cross-tabulations {-}
 
 Cross-tabulations (or contingency tables) are used for summarising the relationship between two categorical variables.
 
@@ -193,9 +183,8 @@ A cross-tabulation table shows counts, and proportions can be added to make comp
 
 This is important because later differences in behaviour between groups might partly reflect differences in composition. If one prosumer group is heavily male and another heavily female, gender could be a confounding factor in behavioural comparisons.
 
----
 
-# 7. Correlation {-}
+## 7. Correlation {-}
 
 Correlation measures how strongly two numeric variables move together in a linear fashion.
 
@@ -228,9 +217,8 @@ data_extended %>%
 
 However, it is important to remember: **correlation does not imply causation**. A strong correlation can be driven by an underlying third variable (e.g., income, age, or dwelling type). Correlation is a starting point to formulate hypotheses, not the final proof of a causal effect.
 
----
 
-# 8. Comparing Two Groups: t-test {-}
+## 8. Comparing Two Groups: t-test {-}
 
 The t-test is used when you want to compare the means of **two** groups on a numeric variable. It answers the question:
 
@@ -262,9 +250,8 @@ If the p-value is below a chosen threshold (commonly 0.05) and the confidence in
 
 You should not use a t-test when you have more than two groups, when the outcome is categorical, or when samples are extremely small and unbalanced. In those cases, other methods (e.g. ANOVA or chi-square tests) are more appropriate.
 
----
 
-# 9. Comparing More Than Two Groups: ANOVA {-}
+## 9. Comparing More Than Two Groups: ANOVA {-}
 
 When you want to compare the means of **three or more** groups on a numeric outcome, the standard approach is **ANOVA** (Analysis of Variance).
 
@@ -295,9 +282,8 @@ TukeyHSD(anova_model)
 
 You use ANOVA rather than a series of t-tests because running many t-tests inflates the probability of false positives. ANOVA provides a single, coherent test for the overall group effect.
 
----
 
-# 10. Visualising Group Differences {-}
+## 10. Visualising Group Differences {-}
 
 Numerical outputs are important, but visualisations often make group differences easier to grasp and communicate.
 
@@ -333,9 +319,8 @@ Such plots help you answer visually:
 
 In an energy-behaviour context, you might show mean electricity behaviour by ownership group with error bars. Even without looking at the detailed ANOVA output, the plot will give a quick sense of whether policies or interventions might need to target specific groups.
 
----
 
-# 11. Interpretation Checklist {-}
+## 11. Interpretation Checklist {-}
 
 Whenever you interpret statistical results (t-test, ANOVA, or correlations), it helps to follow a simple checklist:
 
@@ -355,3 +340,9 @@ Whenever you interpret statistical results (t-test, ANOVA, or correlations), it 
    Do the findings fit with theory, previous research, and plausible behavioural mechanisms?
 
 This checklist keeps you from over-interpreting single numbers and helps keep your analysis grounded in context.
+
+
+## Exercise {-}
+
+- **Exercise 04**: **[Download PDF](exercises/ex04/ex04.Rmd)**  
+- Upload via **Assignments** page on Moodle.

@@ -76,18 +76,6 @@
 <li><a class="active" href="session-2.html">Session 2</a></li>
 <li><a class="" href="session-3.html">Session 3</a></li>
 <li><a class="" href="session-4.html">Session 4</a></li>
-<li><a class="" href="basic-statistics-for-energy-research.html">Basic Statistics for Energy Research</a></li>
-<li><a class="" href="why-basic-statistics-matter.html">1. Why Basic Statistics Matter</a></li>
-<li><a class="" href="central-tendency.html">2. Central Tendency</a></li>
-<li><a class="" href="measures-of-spread.html">3. Measures of Spread</a></li>
-<li><a class="" href="distributions.html">4. Distributions</a></li>
-<li><a class="" href="grouped-descriptive-statistics.html">5. Grouped Descriptive Statistics</a></li>
-<li><a class="" href="cross-tabulations.html">6. Cross-tabulations</a></li>
-<li><a class="" href="correlation.html">7. Correlation</a></li>
-<li><a class="" href="comparing-two-groups-t-test.html">8. Comparing Two Groups: t-test</a></li>
-<li><a class="" href="comparing-more-than-two-groups-anova.html">9. Comparing More Than Two Groups: ANOVA</a></li>
-<li><a class="" href="visualising-group-differences.html">10. Visualising Group Differences</a></li>
-<li><a class="" href="interpretation-checklist.html">11. Interpretation Checklist</a></li>
 <li><a class="" href="session-5.html">Session 5</a></li>
 <li><a class="" href="assignments-uploads.html">Assignments &amp; Uploads</a></li>
 <li><a class="" href="datasets.html">Datasets</a></li>
@@ -119,23 +107,23 @@ If you skip the cleaning stage, every later step—summary statistics, regressio
 <p>Once data satisfy these rules, they can easily be filtered, summarized, plotted, and joined.
 Most R packages (especially those in the tidyverse) assume data are tidy.
 The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
-<div id="qbfhewwnox" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qbfhewwnox table {
+<div id="sxwcuzikpa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sxwcuzikpa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qbfhewwnox thead, #qbfhewwnox tbody, #qbfhewwnox tfoot, #qbfhewwnox tr, #qbfhewwnox td, #qbfhewwnox th {
+#sxwcuzikpa thead, #sxwcuzikpa tbody, #sxwcuzikpa tfoot, #sxwcuzikpa tr, #sxwcuzikpa td, #sxwcuzikpa th {
   border-style: none;
 }
 
-#qbfhewwnox p {
+#sxwcuzikpa p {
   margin: 0;
   padding: 0;
 }
 
-#qbfhewwnox .gt_table {
+#sxwcuzikpa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -161,12 +149,12 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-left-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_caption {
+#sxwcuzikpa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qbfhewwnox .gt_title {
+#sxwcuzikpa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -178,7 +166,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-width: 0;
 }
 
-#qbfhewwnox .gt_subtitle {
+#sxwcuzikpa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -190,7 +178,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-top-width: 0;
 }
 
-#qbfhewwnox .gt_heading {
+#sxwcuzikpa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -202,13 +190,13 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_bottom_border {
+#sxwcuzikpa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_col_headings {
+#sxwcuzikpa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -223,7 +211,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_col_heading {
+#sxwcuzikpa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -243,7 +231,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   overflow-x: hidden;
 }
 
-#qbfhewwnox .gt_column_spanner_outer {
+#sxwcuzikpa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -255,15 +243,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 4px;
 }
 
-#qbfhewwnox .gt_column_spanner_outer:first-child {
+#sxwcuzikpa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qbfhewwnox .gt_column_spanner_outer:last-child {
+#sxwcuzikpa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qbfhewwnox .gt_column_spanner {
+#sxwcuzikpa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -275,11 +263,11 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   width: 100%;
 }
 
-#qbfhewwnox .gt_spanner_row {
+#sxwcuzikpa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qbfhewwnox .gt_group_heading {
+#sxwcuzikpa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -305,7 +293,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   text-align: left;
 }
 
-#qbfhewwnox .gt_empty_group_heading {
+#sxwcuzikpa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -320,15 +308,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   vertical-align: middle;
 }
 
-#qbfhewwnox .gt_from_md > :first-child {
+#sxwcuzikpa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qbfhewwnox .gt_from_md > :last-child {
+#sxwcuzikpa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qbfhewwnox .gt_row {
+#sxwcuzikpa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -347,7 +335,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   overflow-x: hidden;
 }
 
-#qbfhewwnox .gt_stub {
+#sxwcuzikpa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -360,7 +348,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#qbfhewwnox .gt_stub_row_group {
+#sxwcuzikpa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -374,15 +362,15 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   vertical-align: top;
 }
 
-#qbfhewwnox .gt_row_group_first td {
+#sxwcuzikpa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qbfhewwnox .gt_row_group_first th {
+#sxwcuzikpa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qbfhewwnox .gt_summary_row {
+#sxwcuzikpa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -392,16 +380,16 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#qbfhewwnox .gt_first_summary_row {
+#sxwcuzikpa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_first_summary_row.thick {
+#sxwcuzikpa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qbfhewwnox .gt_last_summary_row {
+#sxwcuzikpa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -411,7 +399,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_grand_summary_row {
+#sxwcuzikpa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -421,7 +409,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#qbfhewwnox .gt_first_grand_summary_row {
+#sxwcuzikpa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -431,7 +419,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-top-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_last_grand_summary_row_top {
+#sxwcuzikpa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -441,11 +429,11 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_striped {
+#sxwcuzikpa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qbfhewwnox .gt_table_body {
+#sxwcuzikpa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -454,7 +442,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-bottom-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_footnotes {
+#sxwcuzikpa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -468,7 +456,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_footnote {
+#sxwcuzikpa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -477,7 +465,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#qbfhewwnox .gt_sourcenotes {
+#sxwcuzikpa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -491,7 +479,7 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   border-right-color: #D3D3D3;
 }
 
-#qbfhewwnox .gt_sourcenote {
+#sxwcuzikpa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -499,72 +487,72 @@ The cleaning workflow we’ll follow mirrors the professional pipeline:</p>
   padding-right: 5px;
 }
 
-#qbfhewwnox .gt_left {
+#sxwcuzikpa .gt_left {
   text-align: left;
 }
 
-#qbfhewwnox .gt_center {
+#sxwcuzikpa .gt_center {
   text-align: center;
 }
 
-#qbfhewwnox .gt_right {
+#sxwcuzikpa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qbfhewwnox .gt_font_normal {
+#sxwcuzikpa .gt_font_normal {
   font-weight: normal;
 }
 
-#qbfhewwnox .gt_font_bold {
+#sxwcuzikpa .gt_font_bold {
   font-weight: bold;
 }
 
-#qbfhewwnox .gt_font_italic {
+#sxwcuzikpa .gt_font_italic {
   font-style: italic;
 }
 
-#qbfhewwnox .gt_super {
+#sxwcuzikpa .gt_super {
   font-size: 65%;
 }
 
-#qbfhewwnox .gt_footnote_marks {
+#sxwcuzikpa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qbfhewwnox .gt_asterisk {
+#sxwcuzikpa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qbfhewwnox .gt_indent_1 {
+#sxwcuzikpa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qbfhewwnox .gt_indent_2 {
+#sxwcuzikpa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qbfhewwnox .gt_indent_3 {
+#sxwcuzikpa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qbfhewwnox .gt_indent_4 {
+#sxwcuzikpa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qbfhewwnox .gt_indent_5 {
+#sxwcuzikpa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qbfhewwnox .katex-display {
+#sxwcuzikpa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qbfhewwnox div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sxwcuzikpa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -641,40 +629,40 @@ This time we’ll pay close attention to its structure, not yet to its content.<
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Rows: 299
 ## Columns: 34
-## $ id                  [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m2 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m6 [38;5;246m,  [39m7 [38;5;246m,  [39m8 [38;5;246m,  [39m9 [38;5;246m,  [39m10 [38;5;246m,  [39m11 [38;5;246m,  [39m12 [38;5;246m,  [39m13 [38;5;246m,  [39m14 [38;5;246m,  [39m15 [38;5;246m,  [39m16 [38;5;246m,  [39m17 [38;5;246m,  [39m18 [38;5;246m,  [39m19 [38;5;246m,  [39m20 [38;5;246m,  [39m21 [38;5;246m,  [39m22 [38;5;246m,  [39m23 [38;5;246m,  [39m24 [38;5;246m,  [39m25 [38;5;246m,  [39m26 [38;5;246m,  [39m27 [38;5;246m, [39m…
-## $ income_range        [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Hig…
-## $ co_ownership        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ ownership           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ index_1             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m4.2 [38;5;246m,  [39m3.0 [38;5;246m,  [39m3.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.8 [38;5;246m,  [39m4.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m4.8 [38;5;246m,  [39m4.4…
-## $ index_2             [3m [38;5;246m&lt;dbl&gt; [39m [23m 3.571429 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.714286 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.857143 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.142857 [38;5;246m,  [39m4.000000 [38;5;246m,  [39m3.571429 [38;5;246m,  [39m3.00…
-## $ index_3             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m5 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m…
-## $ index_4             [3m [38;5;246m&lt;dbl&gt; [39m [23m 3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3…
-## $ index_5             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m…
-## $ index_6             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.333333 [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3.666667 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.333333 [38;5;246m,  [39m2.333333 [38;5;246m,  [39m1.000000 [38;5;246m,  [39m…
-## $ gender              [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ age                 [3m [38;5;246m&lt;dbl&gt; [39m [23m 21.5 [38;5;246m,  [39m63.0 [38;5;246m,  [39m21.5 [38;5;246m,  [39m58.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m38.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m68.0 [38;5;246m,  [39m21.5 [38;5;246m,  [39m28.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m48…
-## $ age_factor          [3m [38;5;246m&lt;chr&gt; [39m [23m "18-25" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"18-25" [38;5;246m,  [39m"56-60" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"36-40" [38;5;246m, [39m…
-## $ academic            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ income_group        [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Hig…
-## $ use_finsesco        [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m3 [38;5;246m, [39m…
-## $ index_finsesco      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0.7299988 [38;5;246m,  [39m1.1276756 [38;5;246m,  [39m0.9498817 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m…
-## $ p_flat              [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ p_apartment         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ p_house             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ home_ownership      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ finsesco_familiar   [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ crowd_yes           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ crowd_own           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ income_low          [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ income_med          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ income_high         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ prosumership        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ social_benefit      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m, [39m…
-## $ control             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ interact            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ monitor             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m, [39m…
-## $ `Income Range`      [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323…
-## $ `Income Range (€)`  [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323…</code></pre>
+## $ id                  [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m2 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m6 [38;5;246m,  [39m7 [38;5;246m,  [39m8 [38;5;246m,  [39m9 [38;5;246m,  [39m10 [38;5;246m,  [39m11 [38;5;246m,  [39m12 [38;5;246m,  [39m13 [38;5;246m,  [39m14 [38;5;246m,  [39m15 [38;5;246m,  [39m16 [38;5;246m,  [39m17 [38;5;246m,  [39m18 [38;5;246m,  [39m19 [38;5;246m,  [39m20 [38;5;246m,  [39m21 [38;5;246m,  [39m22 [38;5;246m,  [39m23 [38;5;246m,  [39m24 [38;5;246m,  [39m25 [38;5;246m,  [39m26 [38;5;246m,  [39m2…
+## $ income_range        [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"H…
+## $ co_ownership        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ ownership           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ index_1             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m4.2 [38;5;246m,  [39m3.0 [38;5;246m,  [39m3.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.8 [38;5;246m,  [39m4.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m4.8 [38;5;246m,  [39m4…
+## $ index_2             [3m [38;5;246m&lt;dbl&gt; [39m [23m 3.571429 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.714286 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.857143 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.142857 [38;5;246m,  [39m4.000000 [38;5;246m,  [39m3.571429 [38;5;246m,  [39m3.…
+## $ index_3             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m5 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5…
+## $ index_4             [3m [38;5;246m&lt;dbl&gt; [39m [23m 3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m, [39m…
+## $ index_5             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m5…
+## $ index_6             [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.333333 [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3.666667 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.333333 [38;5;246m,  [39m2.333333 [38;5;246m,  [39m1.000000…
+## $ gender              [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ age                 [3m [38;5;246m&lt;dbl&gt; [39m [23m 21.5 [38;5;246m,  [39m63.0 [38;5;246m,  [39m21.5 [38;5;246m,  [39m58.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m38.0 [38;5;246m,  [39m53.0 [38;5;246m,  [39m68.0 [38;5;246m,  [39m21.5 [38;5;246m,  [39m28.0 [38;5;246m,  [39m63.0 [38;5;246m,  [39m…
+## $ age_factor          [3m [38;5;246m&lt;chr&gt; [39m [23m "18-25" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"18-25" [38;5;246m,  [39m"56-60" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"36-40…
+## $ academic            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ income_group        [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"H…
+## $ use_finsesco        [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ index_finsesco      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0.7299988 [38;5;246m,  [39m1.1276756 [38;5;246m,  [39m0.9498817 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m…
+## $ p_flat              [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ p_apartment         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ p_house             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ home_ownership      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ finsesco_familiar   [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ crowd_yes           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ crowd_own           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ income_low          [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
+## $ income_med          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ income_high         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ prosumership        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ social_benefit      [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ control             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ interact            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ monitor             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
+## $ `Income Range`      [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m53…
+## $ `Income Range (€)`  [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m53…</code></pre>
 <div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##        id        income_range        co_ownership      ownership        index_1         index_2         index_3     
@@ -731,23 +719,23 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
 <li>There are multiple inconsistent formats for <code>income</code>.</li>
 </ul>
 <p>Before cleaning, it helps to know what R thinks each type means:</p>
-<div id="fmoapwqvgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fmoapwqvgw table {
+<div id="nynsptxpyi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nynsptxpyi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fmoapwqvgw thead, #fmoapwqvgw tbody, #fmoapwqvgw tfoot, #fmoapwqvgw tr, #fmoapwqvgw td, #fmoapwqvgw th {
+#nynsptxpyi thead, #nynsptxpyi tbody, #nynsptxpyi tfoot, #nynsptxpyi tr, #nynsptxpyi td, #nynsptxpyi th {
   border-style: none;
 }
 
-#fmoapwqvgw p {
+#nynsptxpyi p {
   margin: 0;
   padding: 0;
 }
 
-#fmoapwqvgw .gt_table {
+#nynsptxpyi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -773,12 +761,12 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-left-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_caption {
+#nynsptxpyi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fmoapwqvgw .gt_title {
+#nynsptxpyi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -790,7 +778,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-width: 0;
 }
 
-#fmoapwqvgw .gt_subtitle {
+#nynsptxpyi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -802,7 +790,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-top-width: 0;
 }
 
-#fmoapwqvgw .gt_heading {
+#nynsptxpyi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -814,13 +802,13 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_bottom_border {
+#nynsptxpyi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_col_headings {
+#nynsptxpyi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -835,7 +823,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_col_heading {
+#nynsptxpyi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -855,7 +843,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   overflow-x: hidden;
 }
 
-#fmoapwqvgw .gt_column_spanner_outer {
+#nynsptxpyi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -867,15 +855,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 4px;
 }
 
-#fmoapwqvgw .gt_column_spanner_outer:first-child {
+#nynsptxpyi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fmoapwqvgw .gt_column_spanner_outer:last-child {
+#nynsptxpyi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fmoapwqvgw .gt_column_spanner {
+#nynsptxpyi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -887,11 +875,11 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   width: 100%;
 }
 
-#fmoapwqvgw .gt_spanner_row {
+#nynsptxpyi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fmoapwqvgw .gt_group_heading {
+#nynsptxpyi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -917,7 +905,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   text-align: left;
 }
 
-#fmoapwqvgw .gt_empty_group_heading {
+#nynsptxpyi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -932,15 +920,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   vertical-align: middle;
 }
 
-#fmoapwqvgw .gt_from_md > :first-child {
+#nynsptxpyi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fmoapwqvgw .gt_from_md > :last-child {
+#nynsptxpyi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fmoapwqvgw .gt_row {
+#nynsptxpyi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -959,7 +947,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   overflow-x: hidden;
 }
 
-#fmoapwqvgw .gt_stub {
+#nynsptxpyi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -972,7 +960,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#fmoapwqvgw .gt_stub_row_group {
+#nynsptxpyi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -986,15 +974,15 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   vertical-align: top;
 }
 
-#fmoapwqvgw .gt_row_group_first td {
+#nynsptxpyi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fmoapwqvgw .gt_row_group_first th {
+#nynsptxpyi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fmoapwqvgw .gt_summary_row {
+#nynsptxpyi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1004,16 +992,16 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#fmoapwqvgw .gt_first_summary_row {
+#nynsptxpyi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_first_summary_row.thick {
+#nynsptxpyi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fmoapwqvgw .gt_last_summary_row {
+#nynsptxpyi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1023,7 +1011,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_grand_summary_row {
+#nynsptxpyi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1033,7 +1021,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#fmoapwqvgw .gt_first_grand_summary_row {
+#nynsptxpyi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1043,7 +1031,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-top-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_last_grand_summary_row_top {
+#nynsptxpyi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1053,11 +1041,11 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_striped {
+#nynsptxpyi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fmoapwqvgw .gt_table_body {
+#nynsptxpyi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1066,7 +1054,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-bottom-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_footnotes {
+#nynsptxpyi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1080,7 +1068,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_footnote {
+#nynsptxpyi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1089,7 +1077,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#fmoapwqvgw .gt_sourcenotes {
+#nynsptxpyi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1103,7 +1091,7 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   border-right-color: #D3D3D3;
 }
 
-#fmoapwqvgw .gt_sourcenote {
+#nynsptxpyi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1111,72 +1099,72 @@ $ Gender <chr> “Female”, “Male”, …</chr></chr></chr></p>
   padding-right: 5px;
 }
 
-#fmoapwqvgw .gt_left {
+#nynsptxpyi .gt_left {
   text-align: left;
 }
 
-#fmoapwqvgw .gt_center {
+#nynsptxpyi .gt_center {
   text-align: center;
 }
 
-#fmoapwqvgw .gt_right {
+#nynsptxpyi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fmoapwqvgw .gt_font_normal {
+#nynsptxpyi .gt_font_normal {
   font-weight: normal;
 }
 
-#fmoapwqvgw .gt_font_bold {
+#nynsptxpyi .gt_font_bold {
   font-weight: bold;
 }
 
-#fmoapwqvgw .gt_font_italic {
+#nynsptxpyi .gt_font_italic {
   font-style: italic;
 }
 
-#fmoapwqvgw .gt_super {
+#nynsptxpyi .gt_super {
   font-size: 65%;
 }
 
-#fmoapwqvgw .gt_footnote_marks {
+#nynsptxpyi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fmoapwqvgw .gt_asterisk {
+#nynsptxpyi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fmoapwqvgw .gt_indent_1 {
+#nynsptxpyi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fmoapwqvgw .gt_indent_2 {
+#nynsptxpyi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fmoapwqvgw .gt_indent_3 {
+#nynsptxpyi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fmoapwqvgw .gt_indent_4 {
+#nynsptxpyi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fmoapwqvgw .gt_indent_5 {
+#nynsptxpyi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fmoapwqvgw .katex-display {
+#nynsptxpyi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fmoapwqvgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nynsptxpyi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1255,40 +1243,40 @@ Whenever arithmetic fails, first check the variable’s type.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">finsesco</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Rows: 299
 ## Columns: 34
-## $ id                 [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m2 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m6 [38;5;246m,  [39m7 [38;5;246m,  [39m8 [38;5;246m,  [39m9 [38;5;246m,  [39m10 [38;5;246m,  [39m11 [38;5;246m,  [39m12 [38;5;246m,  [39m13 [38;5;246m,  [39m14 [38;5;246m,  [39m15 [38;5;246m,  [39m16 [38;5;246m,  [39m17 [38;5;246m,  [39m18 [38;5;246m,  [39m19 [38;5;246m,  [39m20 [38;5;246m,  [39m21 [38;5;246m,  [39m22 [38;5;246m,  [39m23 [38;5;246m,  [39m24 [38;5;246m,  [39m25 [38;5;246m,  [39m26 [38;5;246m,  [39m27 [38;5;246m,  [39m…
-## $ income_range       [3m [38;5;246m&lt;fct&gt; [39m [23m Low [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mLow [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mHigh [38;5;246m,  [39mHigh [38;5;246m,  [39mHig…
-## $ co_ownership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ ownership          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ index_1            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m4.2 [38;5;246m,  [39m3.0 [38;5;246m,  [39m3.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.8 [38;5;246m,  [39m4.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m4.8 [38;5;246m,  [39m4.4 [38;5;246m, [39m…
-## $ index_2            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3.571429 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.714286 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.857143 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.142857 [38;5;246m,  [39m4.000000 [38;5;246m,  [39m3.571429 [38;5;246m,  [39m3.000…
-## $ index_3            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m5 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5…
-## $ index_4            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m, [39m…
-## $ index_5            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4…
-## $ index_6            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.333333 [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3.666667 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.333333 [38;5;246m,  [39m2.333333 [38;5;246m,  [39m1.000000 [38;5;246m,  [39m5…
-## $ gender             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ age                [3m [38;5;246m&lt;int&gt; [39m [23m 21 [38;5;246m,  [39m63 [38;5;246m,  [39m21 [38;5;246m,  [39m58 [38;5;246m,  [39m63 [38;5;246m,  [39m53 [38;5;246m,  [39m53 [38;5;246m,  [39m63 [38;5;246m,  [39m53 [38;5;246m,  [39m63 [38;5;246m,  [39m38 [38;5;246m,  [39m53 [38;5;246m,  [39m68 [38;5;246m,  [39m21 [38;5;246m,  [39m28 [38;5;246m,  [39m63 [38;5;246m,  [39m48 [38;5;246m,  [39m68 [38;5;246m,  [39m53 [38;5;246m,  [39m43 [38;5;246m,  [39m63 [38;5;246m,  [39m38 [38;5;246m,  [39m53 [38;5;246m,  [39m68 [38;5;246m,  [39m28 [38;5;246m, [39m…
-## $ age_factor         [3m [38;5;246m&lt;chr&gt; [39m [23m "18-25" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"18-25" [38;5;246m,  [39m"56-60" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"36-40" [38;5;246m,  [39m…
-## $ academic           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ income_group       [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"High…
-## $ use_finsesco       [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m3 [38;5;246m,  [39m…
-## $ index_finsesco     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0.7299988 [38;5;246m,  [39m1.1276756 [38;5;246m,  [39m0.9498817 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m, [39m…
-## $ p_flat             [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ p_apartment        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ p_house            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ home_ownership     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ finsesco_familiar  [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ crowd_yes          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ crowd_own          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ income_low         [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ income_med         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ income_high        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ prosumership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ social_benefit     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m…
-## $ control            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ interact           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ monitor            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m…
-## $ income_range_2     [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323.…
-## $ income_range_3     [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m5323.…</code></pre>
+## $ id                 [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m2 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m6 [38;5;246m,  [39m7 [38;5;246m,  [39m8 [38;5;246m,  [39m9 [38;5;246m,  [39m10 [38;5;246m,  [39m11 [38;5;246m,  [39m12 [38;5;246m,  [39m13 [38;5;246m,  [39m14 [38;5;246m,  [39m15 [38;5;246m,  [39m16 [38;5;246m,  [39m17 [38;5;246m,  [39m18 [38;5;246m,  [39m19 [38;5;246m,  [39m20 [38;5;246m,  [39m21 [38;5;246m,  [39m22 [38;5;246m,  [39m23 [38;5;246m,  [39m24 [38;5;246m,  [39m25 [38;5;246m,  [39m26 [38;5;246m,  [39m27…
+## $ income_range       [3m [38;5;246m&lt;fct&gt; [39m [23m Low [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mLow [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mLow [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mHigh [38;5;246m,  [39mMedium [38;5;246m,  [39mHigh [38;5;246m,  [39mHigh [38;5;246m,  [39mH…
+## $ co_ownership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ ownership          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ index_1            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.4 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.6 [38;5;246m,  [39m4.2 [38;5;246m,  [39m3.0 [38;5;246m,  [39m3.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m3.8 [38;5;246m,  [39m4.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m5.0 [38;5;246m,  [39m4.8 [38;5;246m,  [39m4.…
+## $ index_2            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3.571429 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.714286 [38;5;246m,  [39m5.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.857143 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.142857 [38;5;246m,  [39m4.000000 [38;5;246m,  [39m3.571429 [38;5;246m,  [39m3.0…
+## $ index_3            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m5 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m, [39m…
+## $ index_4            [3m [38;5;246m&lt;dbl&gt; [39m [23m 3 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m…
+## $ index_5            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m4 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m2 [38;5;246m,  [39m5 [38;5;246m,  [39m3 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m,  [39m4 [38;5;246m,  [39m3 [38;5;246m,  [39m5 [38;5;246m, [39m…
+## $ index_6            [3m [38;5;246m&lt;dbl&gt; [39m [23m 4.333333 [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m3.000000 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m3.666667 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m4.666667 [38;5;246m,  [39m3.333333 [38;5;246m,  [39m2.333333 [38;5;246m,  [39m1.000000 [38;5;246m, [39m…
+## $ gender             [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ age                [3m [38;5;246m&lt;int&gt; [39m [23m 21 [38;5;246m,  [39m63 [38;5;246m,  [39m21 [38;5;246m,  [39m58 [38;5;246m,  [39m63 [38;5;246m,  [39m53 [38;5;246m,  [39m53 [38;5;246m,  [39m63 [38;5;246m,  [39m53 [38;5;246m,  [39m63 [38;5;246m,  [39m38 [38;5;246m,  [39m53 [38;5;246m,  [39m68 [38;5;246m,  [39m21 [38;5;246m,  [39m28 [38;5;246m,  [39m63 [38;5;246m,  [39m48 [38;5;246m,  [39m68 [38;5;246m,  [39m53 [38;5;246m,  [39m43 [38;5;246m,  [39m63 [38;5;246m,  [39m38 [38;5;246m,  [39m53 [38;5;246m,  [39m68 [38;5;246m,  [39m2…
+## $ age_factor         [3m [38;5;246m&lt;chr&gt; [39m [23m "18-25" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"18-25" [38;5;246m,  [39m"56-60" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"51-55" [38;5;246m,  [39m"61-65" [38;5;246m,  [39m"36-40"…
+## $ academic           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ income_group       [3m [38;5;246m&lt;chr&gt; [39m [23m "Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Low" [38;5;246m,  [39m"High" [38;5;246m,  [39m"Medium" [38;5;246m,  [39m"Hi…
+## $ use_finsesco       [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m4 [38;5;246m,  [39m2 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m4 [38;5;246m,  [39m1 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m3…
+## $ index_finsesco     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0.7299988 [38;5;246m,  [39m1.1276756 [38;5;246m,  [39m0.9498817 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m0.7299988 [38;5;246m,  [39m [31mN [39m…
+## $ p_flat             [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ p_apartment        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0…
+## $ p_house            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ home_ownership     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ finsesco_familiar  [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ crowd_yes          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ crowd_own          [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ income_low         [3m [38;5;246m&lt;dbl&gt; [39m [23m 1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0…
+## $ income_med         [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ income_high        [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ prosumership       [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ social_benefit     [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0…
+## $ control            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ interact           [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ monitor            [3m [38;5;246m&lt;dbl&gt; [39m [23m 0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m1 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m0 [38;5;246m,  [39m1…
+## $ income_range_2     [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m532…
+## $ income_range_3     [3m [38;5;246m&lt;dbl&gt; [39m [23m 1143.789 [38;5;246m,  [39m1394.153 [38;5;246m,  [39m4948.919 [38;5;246m,  [39m [31mNA [39m [38;5;246m,  [39m1470.234 [38;5;246m,  [39m5273.978 [38;5;246m,  [39m1264.053 [38;5;246m,  [39m1446.210 [38;5;246m,  [39m4585.128 [38;5;246m,  [39m1228.307 [38;5;246m,  [39m532…</code></pre>
 <p>If you now see age: int and income_range: fct, the cleaning worked.</p>
 <div class="callout-important">
 <p>🔴 Important {-}</p>
@@ -1310,23 +1298,23 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">income_range</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_index_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">index_1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>The second version mirrors human thought: take data → group → summarise.</p>
-<div id="dzppbqkfqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dzppbqkfqq table {
+<div id="bdcozpoirt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bdcozpoirt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dzppbqkfqq thead, #dzppbqkfqq tbody, #dzppbqkfqq tfoot, #dzppbqkfqq tr, #dzppbqkfqq td, #dzppbqkfqq th {
+#bdcozpoirt thead, #bdcozpoirt tbody, #bdcozpoirt tfoot, #bdcozpoirt tr, #bdcozpoirt td, #bdcozpoirt th {
   border-style: none;
 }
 
-#dzppbqkfqq p {
+#bdcozpoirt p {
   margin: 0;
   padding: 0;
 }
 
-#dzppbqkfqq .gt_table {
+#bdcozpoirt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1352,12 +1340,12 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-left-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_caption {
+#bdcozpoirt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dzppbqkfqq .gt_title {
+#bdcozpoirt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1369,7 +1357,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-width: 0;
 }
 
-#dzppbqkfqq .gt_subtitle {
+#bdcozpoirt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1381,7 +1369,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-top-width: 0;
 }
 
-#dzppbqkfqq .gt_heading {
+#bdcozpoirt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1393,13 +1381,13 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_bottom_border {
+#bdcozpoirt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_col_headings {
+#bdcozpoirt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1414,7 +1402,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_col_heading {
+#bdcozpoirt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1434,7 +1422,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   overflow-x: hidden;
 }
 
-#dzppbqkfqq .gt_column_spanner_outer {
+#bdcozpoirt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1446,15 +1434,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 4px;
 }
 
-#dzppbqkfqq .gt_column_spanner_outer:first-child {
+#bdcozpoirt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dzppbqkfqq .gt_column_spanner_outer:last-child {
+#bdcozpoirt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dzppbqkfqq .gt_column_spanner {
+#bdcozpoirt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1466,11 +1454,11 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   width: 100%;
 }
 
-#dzppbqkfqq .gt_spanner_row {
+#bdcozpoirt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dzppbqkfqq .gt_group_heading {
+#bdcozpoirt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1496,7 +1484,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   text-align: left;
 }
 
-#dzppbqkfqq .gt_empty_group_heading {
+#bdcozpoirt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1511,15 +1499,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   vertical-align: middle;
 }
 
-#dzppbqkfqq .gt_from_md > :first-child {
+#bdcozpoirt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dzppbqkfqq .gt_from_md > :last-child {
+#bdcozpoirt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dzppbqkfqq .gt_row {
+#bdcozpoirt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1538,7 +1526,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   overflow-x: hidden;
 }
 
-#dzppbqkfqq .gt_stub {
+#bdcozpoirt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1551,7 +1539,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#dzppbqkfqq .gt_stub_row_group {
+#bdcozpoirt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1565,15 +1553,15 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   vertical-align: top;
 }
 
-#dzppbqkfqq .gt_row_group_first td {
+#bdcozpoirt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dzppbqkfqq .gt_row_group_first th {
+#bdcozpoirt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dzppbqkfqq .gt_summary_row {
+#bdcozpoirt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1583,16 +1571,16 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#dzppbqkfqq .gt_first_summary_row {
+#bdcozpoirt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_first_summary_row.thick {
+#bdcozpoirt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dzppbqkfqq .gt_last_summary_row {
+#bdcozpoirt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1602,7 +1590,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_grand_summary_row {
+#bdcozpoirt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1612,7 +1600,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#dzppbqkfqq .gt_first_grand_summary_row {
+#bdcozpoirt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1622,7 +1610,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-top-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_last_grand_summary_row_top {
+#bdcozpoirt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1632,11 +1620,11 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_striped {
+#bdcozpoirt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dzppbqkfqq .gt_table_body {
+#bdcozpoirt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1645,7 +1633,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-bottom-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_footnotes {
+#bdcozpoirt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1659,7 +1647,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_footnote {
+#bdcozpoirt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1668,7 +1656,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#dzppbqkfqq .gt_sourcenotes {
+#bdcozpoirt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1682,7 +1670,7 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   border-right-color: #D3D3D3;
 }
 
-#dzppbqkfqq .gt_sourcenote {
+#bdcozpoirt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1690,72 +1678,72 @@ Always check how many missing values you introduced: <code>sum(is.na(finsesco$ag
   padding-right: 5px;
 }
 
-#dzppbqkfqq .gt_left {
+#bdcozpoirt .gt_left {
   text-align: left;
 }
 
-#dzppbqkfqq .gt_center {
+#bdcozpoirt .gt_center {
   text-align: center;
 }
 
-#dzppbqkfqq .gt_right {
+#bdcozpoirt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dzppbqkfqq .gt_font_normal {
+#bdcozpoirt .gt_font_normal {
   font-weight: normal;
 }
 
-#dzppbqkfqq .gt_font_bold {
+#bdcozpoirt .gt_font_bold {
   font-weight: bold;
 }
 
-#dzppbqkfqq .gt_font_italic {
+#bdcozpoirt .gt_font_italic {
   font-style: italic;
 }
 
-#dzppbqkfqq .gt_super {
+#bdcozpoirt .gt_super {
   font-size: 65%;
 }
 
-#dzppbqkfqq .gt_footnote_marks {
+#bdcozpoirt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dzppbqkfqq .gt_asterisk {
+#bdcozpoirt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dzppbqkfqq .gt_indent_1 {
+#bdcozpoirt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dzppbqkfqq .gt_indent_2 {
+#bdcozpoirt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dzppbqkfqq .gt_indent_3 {
+#bdcozpoirt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dzppbqkfqq .gt_indent_4 {
+#bdcozpoirt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dzppbqkfqq .gt_indent_5 {
+#bdcozpoirt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dzppbqkfqq .katex-display {
+#bdcozpoirt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dzppbqkfqq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bdcozpoirt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

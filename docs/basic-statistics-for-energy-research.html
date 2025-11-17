@@ -77,17 +77,6 @@
 <li><a class="" href="session-3.html">Session 3</a></li>
 <li><a class="" href="session-4.html">Session 4</a></li>
 <li><a class="active" href="basic-statistics-for-energy-research.html">Basic Statistics for Energy Research</a></li>
-<li><a class="" href="why-basic-statistics-matter.html">1. Why Basic Statistics Matter</a></li>
-<li><a class="" href="central-tendency.html">2. Central Tendency</a></li>
-<li><a class="" href="measures-of-spread.html">3. Measures of Spread</a></li>
-<li><a class="" href="distributions.html">4. Distributions</a></li>
-<li><a class="" href="grouped-descriptive-statistics.html">5. Grouped Descriptive Statistics</a></li>
-<li><a class="" href="cross-tabulations.html">6. Cross-tabulations</a></li>
-<li><a class="" href="correlation.html">7. Correlation</a></li>
-<li><a class="" href="comparing-two-groups-t-test.html">8. Comparing Two Groups: t-test</a></li>
-<li><a class="" href="comparing-more-than-two-groups-anova.html">9. Comparing More Than Two Groups: ANOVA</a></li>
-<li><a class="" href="visualising-group-differences.html">10. Visualising Group Differences</a></li>
-<li><a class="" href="interpretation-checklist.html">11. Interpretation Checklist</a></li>
 <li><a class="" href="session-5.html">Session 5</a></li>
 <li><a class="" href="assignments-uploads.html">Assignments &amp; Uploads</a></li>
 <li><a class="" href="datasets.html">Datasets</a></li>
@@ -116,14 +105,366 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://andrisignorell.github.io/DescTools/">DescTools</a></span><span class="op">)</span></span></code></pre></div>
-<hr>
+<div id="why-basic-statistics-matter" class="section level2 unnumbered">
+<h2>1. Why Basic Statistics Matter<a class="anchor" aria-label="anchor" href="#why-basic-statistics-matter"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before you build any model — regression, ANCOVA, or machine learning — you must understand your data as it is. If you skip this step, it becomes very easy to misinterpret results or to overlook basic data quality problems.</p>
+<p>Basic statistics help you:</p>
+<ul>
+<li><p><strong>Detect errors early</strong><br>
+Strange means, impossible minimum or maximum values, or odd spikes in the distribution can indicate coding errors, wrong units, or inconsistent data entry.</p></li>
+<li><p><strong>Understand the shape of behaviour</strong><br>
+Energy behaviour, consumption, and investment willingness rarely follow a perfect bell-shaped (normal) distribution. They often show skewness, heavy tails, or clusters for specific subgroups (e.g., high-income prosumers).</p></li>
+<li><p><strong>Ask more precise questions</strong><br>
+Instead of asking only “Do prosumers behave differently?”, you can refine the question to “Which types of prosumers differ, and by how much, in which behaviours?”</p></li>
+</ul>
+<p>In short: descriptive statistics are not a “preliminary step” you rush through. They are part of the analysis and help you build a credible story from the data.</p>
+</div>
+<div id="central-tendency" class="section level2 unnumbered">
+<h2>2. Central Tendency<a class="anchor" aria-label="anchor" href="#central-tendency"><i class="fas fa-link"></i></a>
+</h2>
+<p>Central tendency measures describe where the “middle” of the data lies. Each measure emphasises a different aspect of that middle.</p>
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data_extended</span><span class="op">$</span><span class="va">behaviour_elec</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1.277922</code></pre>
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">data_extended</span><span class="op">$</span><span class="va">behaviour_elec</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1.297061</code></pre>
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://andrisignorell.github.io/DescTools/reference/Mode.html">Mode</a></span><span class="op">(</span><span class="va">data_extended</span><span class="op">$</span><span class="va">behaviour_elec</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1.338566
+## attr(,"freq")
+## [1] 629</code></pre>
+<ul>
+<li><p><strong>Mean (average)</strong><br>
+Add up all values and divide by the number of observations. It is intuitive and widely used, but very sensitive to extreme values (outliers).</p></li>
+<li><p><strong>Median</strong><br>
+The value that sits exactly in the middle when you sort the data from smallest to largest. The median is robust to outliers and thus often more informative for skewed variables such as income, energy bills, or certain behavioural indices.</p></li>
+<li><p><strong>Mode</strong><br>
+The most frequent value. This measure is useful for categorical variables (e.g. most common ownership type) and for variables where a particular score is especially common.</p></li>
+</ul>
+<p>In the FinSESCo dataset, you will often see that the mean and median differ. When the mean is considerably higher than the median, it suggests a right-skewed distribution with a minority of very high values.</p>
+</div>
+<div id="measures-of-spread" class="section level2 unnumbered">
+<h2>3. Measures of Spread<a class="anchor" aria-label="anchor" href="#measures-of-spread"><i class="fas fa-link"></i></a>
+</h2>
+<p>Central tendency tells you about the centre of the distribution, but not how spread out the data are around that centre. Two groups can have the same mean but very different patterns in terms of dispersion.</p>
+<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">data_extended</span><span class="op">$</span><span class="va">behaviour_heat</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.08744716</code></pre>
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/IQR.html">IQR</a></span><span class="op">(</span><span class="va">data_extended</span><span class="op">$</span><span class="va">behaviour_heat</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.09512417</code></pre>
+<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">data_extended</span><span class="op">$</span><span class="va">behaviour_heat</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.8325546 1.3385662</code></pre>
+<p>Key measures of spread include:</p>
+<ul>
+<li><p><strong>Standard Deviation (SD)</strong><br>
+Indicates how far, on average, observations lie from the mean. A small SD means values are tightly clustered; a large SD means values are more spread out.</p></li>
+<li><p><strong>Interquartile Range (IQR)</strong><br>
+The difference between the 75th and 25th percentile. It focuses on the “middle 50%” of the data and is robust to extreme outliers, making it particularly useful for skewed or noisy variables.</p></li>
+<li><p><strong>Range (minimum and maximum)</strong><br>
+The simplest measure: the smallest and largest values in the dataset. Helpful to quickly spot obvious errors (e.g., negative household size, or impossible index values).</p></li>
+</ul>
+<p>For energy behaviour variables, spread is important because it reveals whether behaviour is relatively homogeneous across households or whether there is a lot of heterogeneity that later models will need to explain.</p>
+</div>
+<div id="distributions" class="section level2 unnumbered">
+<h2>4. Distributions<a class="anchor" aria-label="anchor" href="#distributions"><i class="fas fa-link"></i></a>
+</h2>
+<p>A distribution describes how often each possible value of a variable occurs. Looking at distributions is crucial for understanding the shape and structure of your data.</p>
+<p>Two simple and powerful visual tools are:</p>
+<ul>
+<li>
+<strong>Histograms</strong><br>
+They show how many observations fall into each “bin” of values. From a histogram, you can see whether a variable is symmetric, skewed, unimodal, or multimodal.</li>
+</ul>
+<div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">behaviour_elec</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">30</span>, fill <span class="op">=</span> <span class="st">"#0072B2"</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Distribution of Electricity Behaviour Index"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Electricity Behaviour Index"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count of Households"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-66-1.png" width="672"></div>
+<ul>
+<li>
+<strong>Boxplots</strong><br>
+They summarise the distribution using median, quartiles, and potential outliers. Boxplots are compact, making them useful for comparing several groups side by side.</li>
+</ul>
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_extended</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">behaviour_elec</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#0072B2"</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Boxplot of Electricity Behaviour Index"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Electricity Behaviour Index"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-67-1.png" width="672"></div>
+<p>Typical patterns in this context:</p>
+<ul>
+<li>Behaviour and consumption variables are often <strong>right-skewed</strong> (many households with moderate values, fewer with very high values), in this case see the contrary!</li>
+<li>Index variables based on survey responses can be <strong>clumped</strong> around specific values (e.g., many people agreeing or strongly agreeing).</li>
+</ul>
+<p>Understanding the distribution helps you decide whether certain transformations or robust methods might be needed later and whether particular values should be examined more closely.</p>
+</div>
+<div id="grouped-descriptive-statistics" class="section level2 unnumbered">
+<h2>5. Grouped Descriptive Statistics<a class="anchor" aria-label="anchor" href="#grouped-descriptive-statistics"><i class="fas fa-link"></i></a>
+</h2>
+<p>Group summaries allow you to compare basic statistics across categories such as ownership type, gender, income group, or region.</p>
+<p>Typical questions:</p>
+<ul>
+<li>How does the mean electricity behaviour differ across ownership types?</li>
+<li>Is the standard deviation higher for non-owners than for prosumers?</li>
+<li>Are sample sizes balanced, or is one group much smaller?</li>
+</ul>
+<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    mean_elec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">behaviour_elec</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    sd_elec   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">behaviour_elec</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    n         <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">behaviour_elec</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<p>By computing grouped means, standard deviations, and counts, you can:</p>
+<ul>
+<li>Identify which groups behave similarly or differently.</li>
+<li>Check whether some categories are under-represented.</li>
+<li>Build intuition for later hypothesis tests (t-tests, ANOVA, ANCOVA).</li>
+</ul>
+<p>In practice, you might find that certain prosumer categories show both higher mean engagement and lower variability, indicating a more consistently engaged group.</p>
+</div>
+<div id="cross-tabulations" class="section level2 unnumbered">
+<h2>6. Cross-tabulations<a class="anchor" aria-label="anchor" href="#cross-tabulations"><i class="fas fa-link"></i></a>
+</h2>
+<p>Cross-tabulations (or contingency tables) are used for summarising the relationship between two categorical variables.</p>
+<p>Examples from FinSESCo:</p>
+<ul>
+<li>Gender by ownership type<br>
+</li>
+<li>Income group by prosumer status<br>
+</li>
+<li>Region by type of heating system</li>
+</ul>
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tab_gender_own</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">data_extended</span><span class="op">$</span><span class="va">gender</span>, <span class="va">data_extended</span><span class="op">$</span><span class="va">ownership_type</span><span class="op">)</span></span>
+<span><span class="va">tab_gender_own</span></span></code></pre></div>
+<pre><code>##         
+##          Non-owner Sole-owner Co-owner
+##   Male         721        197      267
+##   Female       939        276      185</code></pre>
+<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="va">tab_gender_own</span>, margin <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##         
+##          Non-owner Sole-owner  Co-owner
+##   Male   0.4343373  0.4164905 0.5907080
+##   Female 0.5656627  0.5835095 0.4092920</code></pre>
+<p>A cross-tabulation table shows counts, and proportions can be added to make comparisons easier. For example, proportions by column help you answer questions such as:</p>
+<ul>
+<li>Within each ownership type, what share of respondents are women?</li>
+<li>Within each prosumer category, what proportion belongs to a specific income bracket?</li>
+</ul>
+<p>This is important because later differences in behaviour between groups might partly reflect differences in composition. If one prosumer group is heavily male and another heavily female, gender could be a confounding factor in behavioural comparisons.</p>
+</div>
+<div id="correlation" class="section level2 unnumbered">
+<h2>7. Correlation<a class="anchor" aria-label="anchor" href="#correlation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Correlation measures how strongly two numeric variables move together in a linear fashion.</p>
+<ul>
+<li>A <strong>positive correlation</strong> means higher values of one variable tend to be associated with higher values of the other.</li>
+<li>A <strong>negative correlation</strong> means higher values of one variable tend to be associated with lower values of the other.</li>
+<li>A value near <strong>zero</strong> suggests little or no linear relationship.</li>
+</ul>
+<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span></span>
+<span>  <span class="va">data_extended</span><span class="op">$</span><span class="va">behaviour_elec</span>,</span>
+<span>  <span class="va">data_extended</span><span class="op">$</span><span class="va">inv_ee_elec_scaled_2</span>,</span>
+<span>  use <span class="op">=</span> <span class="st">"complete.obs"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.2319637</code></pre>
+<p>Correlation is very useful as a first diagnostic tool to see which variables appear related. In the context of energy research, you might explore correlations between:</p>
+<ul>
+<li>Behavioural indices for electricity vs heating,</li>
+<li>Behavioural indices and income or education,</li>
+<li>Investment willingness and past energy-related actions.</li>
+</ul>
+<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">behaviour_elec</span>, <span class="va">behaviour_heat</span>, <span class="va">inv_ee_elec_scaled_2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span>use <span class="op">=</span> <span class="st">"pairwise.complete.obs"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##                      behaviour_elec behaviour_heat inv_ee_elec_scaled_2
+## behaviour_elec            1.0000000      0.5658498            0.2319637
+## behaviour_heat            0.5658498      1.0000000            0.2827447
+## inv_ee_elec_scaled_2      0.2319637      0.2827447            1.0000000</code></pre>
+<p>However, it is important to remember: <strong>correlation does not imply causation</strong>. A strong correlation can be driven by an underlying third variable (e.g., income, age, or dwelling type). Correlation is a starting point to formulate hypotheses, not the final proof of a causal effect.</p>
+</div>
+<div id="comparing-two-groups-t-test" class="section level2 unnumbered">
+<h2>8. Comparing Two Groups: t-test<a class="anchor" aria-label="anchor" href="#comparing-two-groups-t-test"><i class="fas fa-link"></i></a>
+</h2>
+<p>The t-test is used when you want to compare the means of <strong>two</strong> groups on a numeric variable. It answers the question:</p>
+<blockquote>
+<p>Are the average values in Group A and Group B genuinely different, or could the difference be explained by random variation?</p>
+</blockquote>
+<p>You typically use an independent-samples t-test when:</p>
+<ul>
+<li>The independent variable has exactly two categories (e.g. men vs women, owners vs non-owners).</li>
+<li>The dependent variable is numeric (e.g. an index of energy behaviour or willingness to invest).</li>
+</ul>
+<p>In energy research, typical examples include:</p>
+<ul>
+<li>Comparing average electricity behaviour between men and women.</li>
+<li>Comparing average heating behaviour between owners and tenants.</li>
+<li>Comparing investment willingness between prosumers and non-prosumers.</li>
+</ul>
+<p>The t-test output provides:</p>
+<ul>
+<li>The estimated difference between group means.</li>
+<li>A p-value indicating whether this difference is statistically significant.</li>
+<li>A confidence interval showing the range of plausible values for the difference.</li>
+</ul>
+<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">behaviour_elec</span> <span class="op">~</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">data_extended</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  behaviour_elec by gender
+## t = 5.7401, df = 2554.2, p-value = 1.058e-08
+## alternative hypothesis: true difference in means between group Male and group Female is not equal to 0
+## 95 percent confidence interval:
+##  0.01059520 0.02159012
+## sample estimates:
+##   mean in group Male mean in group Female 
+##             1.286652             1.270559</code></pre>
+<p>If the p-value is below a chosen threshold (commonly 0.05) and the confidence interval does not include zero, you conclude that the two groups differ in their average behaviour.</p>
+<p>You should not use a t-test when you have more than two groups, when the outcome is categorical, or when samples are extremely small and unbalanced. In those cases, other methods (e.g. ANOVA or chi-square tests) are more appropriate.</p>
+</div>
+<div id="comparing-more-than-two-groups-anova" class="section level2 unnumbered">
+<h2>9. Comparing More Than Two Groups: ANOVA<a class="anchor" aria-label="anchor" href="#comparing-more-than-two-groups-anova"><i class="fas fa-link"></i></a>
+</h2>
+<p>When you want to compare the means of <strong>three or more</strong> groups on a numeric outcome, the standard approach is <strong>ANOVA</strong> (Analysis of Variance).</p>
+<p>Typical use cases in this seminar include questions such as:</p>
+<ul>
+<li>Do different ownership categories (e.g. non-owners, sellers, self-consumers, consumer-sellers) exhibit different levels of electricity behaviour?</li>
+<li>Does investment willingness differ across several income groups?</li>
+<li>Are heating behaviour scores different across education categories?</li>
+</ul>
+<p>Conceptually, ANOVA tests whether the variability <strong>between</strong> group means is large relative to the variability <strong>within</strong> groups. If the between-group variation is much larger, it suggests that group membership is associated with meaningful differences in the outcome.</p>
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">anova_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">behaviour_elec</span> <span class="op">~</span> <span class="va">ownership_type</span>, data <span class="op">=</span> <span class="va">data_extended</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova_model</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##                  Df Sum Sq  Mean Sq F value Pr(&gt;F)  
+## ownership_type    2  0.037 0.018379   3.569 0.0283 *
+## Residuals      2565 13.207 0.005149                 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 17 observations deleted due to missingness</code></pre>
+<p>The key result in ANOVA is an F-test with a corresponding p-value:</p>
+<ul>
+<li>If the p-value is below your threshold (e.g. 0.05), you conclude that at least one group mean differs from the others.</li>
+<li>If the p-value is above the threshold, you conclude that any observed differences between group means are compatible with random variation.</li>
+</ul>
+<p>ANOVA itself tells you that “somewhere” among the groups there is a difference, but not exactly <strong>which</strong> pairs of groups differ. For that, you use post-hoc tests such as Tukey’s HSD, which compare group means pairwise while controlling for multiple comparisons.</p>
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">anova_model</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = behaviour_elec ~ ownership_type, data = data_extended)
+## 
+## $ownership_type
+##                             diff           lwr        upr     p adj
+## Sole-owner-Non-owner 0.006816653 -0.0019767348 0.01561004 0.1638919
+## Co-owner-Non-owner   0.008803242 -0.0001404581 0.01774694 0.0548369
+## Co-owner-Sole-owner  0.001986588 -0.0090997447 0.01307292 0.9072697</code></pre>
+<p>You use ANOVA rather than a series of t-tests because running many t-tests inflates the probability of false positives. ANOVA provides a single, coherent test for the overall group effect.</p>
+</div>
+<div id="visualising-group-differences" class="section level2 unnumbered">
+<h2>10. Visualising Group Differences<a class="anchor" aria-label="anchor" href="#visualising-group-differences"><i class="fas fa-link"></i></a>
+</h2>
+<p>Numerical outputs are important, but visualisations often make group differences easier to grasp and communicate.</p>
+<p>A common approach is to plot:</p>
+<ul>
+<li>The <strong>mean</strong> of the outcome for each group as a bar or point.</li>
+<li>
+<strong>Error bars</strong> representing uncertainty around the mean, often using standard errors or confidence intervals.</li>
+</ul>
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    m  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">inv_ee_elec_scaled</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    se <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">inv_ee_elec_scaled</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">inv_ee_elec_scaled</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">m</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#0072B2"</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">m</span> <span class="op">-</span> <span class="va">se</span>, ymax <span class="op">=</span> <span class="va">m</span> <span class="op">+</span> <span class="va">se</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="st">"Willingness to invest in electricity efficiency measures by Ownership Type"</span>,</span>
+<span>      x <span class="op">=</span> <span class="st">"Ownership Type"</span>,</span>
+<span>      y <span class="op">=</span> <span class="st">"Mean Investment Behaviour (± SE)"</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-75-1.png" width="672"></div>
+<p>Such plots help you answer visually:</p>
+<ul>
+<li>Which groups appear higher or lower on the outcome?</li>
+<li>Do uncertainty intervals overlap strongly, suggesting small or uncertain differences?</li>
+<li>Are some groups based on very small sample sizes (indicated by wide bars or very few points)?</li>
+</ul>
+<p>In an energy-behaviour context, you might show mean electricity behaviour by ownership group with error bars. Even without looking at the detailed ANOVA output, the plot will give a quick sense of whether policies or interventions might need to target specific groups.</p>
+</div>
+<div id="interpretation-checklist" class="section level2 unnumbered">
+<h2>11. Interpretation Checklist<a class="anchor" aria-label="anchor" href="#interpretation-checklist"><i class="fas fa-link"></i></a>
+</h2>
+<p>Whenever you interpret statistical results (t-test, ANOVA, or correlations), it helps to follow a simple checklist:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Is the result statistically significant?</strong><br>
+Look at the p-value, but also understand that significance depends on sample size.</p></li>
+<li><p><strong>Is the effect size meaningful?</strong><br>
+A tiny difference can be statistically significant in very large samples but might not be relevant in practice.</p></li>
+<li><p><strong>Are group sizes balanced?</strong><br>
+Unequal group sizes can make some tests more sensitive or more fragile, especially if one group is very small.</p></li>
+<li><p><strong>Are there obvious confounding factors?</strong><br>
+Differences between groups might be partly driven by other variables (e.g. age, income, dwelling type). These will be handled more explicitly by ANCOVA and regression later on.</p></li>
+<li><p><strong>Does the result make substantive sense?</strong><br>
+Do the findings fit with theory, previous research, and plausible behavioural mechanisms?</p></li>
+</ol>
+<p>This checklist keeps you from over-interpreting single numbers and helps keep your analysis grounded in context.</p>
+</div>
+<div id="exercise-3" class="section level2 unnumbered">
+<h2>Exercise<a class="anchor" aria-label="anchor" href="#exercise-3"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>Exercise 04</strong>: <strong><a href="exercises/ex04/ex04.Rmd">Download PDF</a></strong><br>
+</li>
+<li>Upload via <strong>Assignments</strong> page on Moodle.</li>
+</ul>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="session-4.html">Session 4</a></div>
-<div class="next"><a href="why-basic-statistics-matter.html">1. Why Basic Statistics Matter</a></div>
+<div class="next"><a href="session-5.html">Session 5</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#basic-statistics-for-energy-research">Basic Statistics for Energy Research</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#basic-statistics-for-energy-research">Basic Statistics for Energy Research</a></li>
+<li><a class="nav-link" href="#why-basic-statistics-matter">1. Why Basic Statistics Matter</a></li>
+<li><a class="nav-link" href="#central-tendency">2. Central Tendency</a></li>
+<li><a class="nav-link" href="#measures-of-spread">3. Measures of Spread</a></li>
+<li><a class="nav-link" href="#distributions">4. Distributions</a></li>
+<li><a class="nav-link" href="#grouped-descriptive-statistics">5. Grouped Descriptive Statistics</a></li>
+<li><a class="nav-link" href="#cross-tabulations">6. Cross-tabulations</a></li>
+<li><a class="nav-link" href="#correlation">7. Correlation</a></li>
+<li><a class="nav-link" href="#comparing-two-groups-t-test">8. Comparing Two Groups: t-test</a></li>
+<li><a class="nav-link" href="#comparing-more-than-two-groups-anova">9. Comparing More Than Two Groups: ANOVA</a></li>
+<li><a class="nav-link" href="#visualising-group-differences">10. Visualising Group Differences</a></li>
+<li><a class="nav-link" href="#interpretation-checklist">11. Interpretation Checklist</a></li>
+<li><a class="nav-link" href="#exercise-3">Exercise</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

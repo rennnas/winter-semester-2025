@@ -1,2 +1,11 @@
-
+h1:compute-the-mean-and-median-of-a-heating-behaviour-index-e.g.-behaviour_heat. 1. Compute the mean and median of a heating behaviour index (e.g., behaviour_heat).
+h1:calculate-the-standard-deviation-interquartile-range-iqr-and-minimummaximum-values-for-the-same-heating-behaviour-index. 2. Calculate the standard deviation, interquartile range (IQR), and minimum/maximum values for the same heating behaviour index.
+h1:plot-a-histogram-of-an-electricity-behaviour-index-behaviour_elec. 3. Plot a histogram of an electricity behaviour index (behaviour_elec).
+h1:create-a-boxplot-of-the-same-electricity-behaviour-index. 4. Create a boxplot of the same electricity behaviour index.
+h1:produce-grouped-descriptive-statistics-mean-sd-n-for-electricity-behaviour-across-ownership-types. 5. Produce grouped descriptive statistics (mean, SD, n) for electricity behaviour across ownership types.
+h1:compute-a-cross-tabulation-of-gender-by-ownership-type-and-convert-it-into-column-proportions. 6. Compute a cross-tabulation of gender by ownership type and convert it into column proportions.
+h1:calculate-a-correlation-between-behaviour_elec-and-income-or-income_range. 7. Calculate a correlation between behaviour_elec and income (or income_range).
+h1:run-a-t-test-comparing-electricity-behaviour-between-two-groups-of-your-choice-e.g.-men-vs-women-owners-vs-tenants. 8. Run a t-test comparing electricity behaviour between two groups of your choice (e.g., men vs women, owners vs tenants).
+h1:run-an-anova-comparing-electricity-behaviour-across-three-or-more-ownership-categories. 9. Run an ANOVA comparing electricity behaviour across three or more ownership categories.
+h1:run-a-tukey-post-hoc-test-after-the-anova. 10. Run a Tukey post-hoc test after the ANOVA.
 

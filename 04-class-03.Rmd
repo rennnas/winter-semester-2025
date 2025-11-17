@@ -850,7 +850,10 @@ moving from **descriptive visuals** to **statistical inference**, where we ask w
 
 
 
+## Exercise {-}
 
+- **Exercise 03**: **[Download PDF](exercises/ex03/ex03.Rmd)**  
+- Upload via **Assignments** page on Moodle.
 
 
 

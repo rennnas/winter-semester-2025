@@ -1,2 +1,10 @@
-
+h1:load-packages-and-data 1.Load packages and data
+h1:counts-by-gender 2.Counts by gender
+h1:shares-by-gender 3.Shares by gender
+h1:gender-composition-within-ownership-types 4.Gender composition within ownership types
+h1:histogram-of-electricity-behaviour 5. Histogram of electricity behaviour
+h1:boxplots-of-electricity-behaviour-by-gender 6. Boxplots of electricity behaviour by gender
+h1:compare-electricity-vs.-heating-behaviour-facets 7. Compare electricity vs. heating behaviour (facets)
+h1:mean-behaviour-with-error-bars-by-ownership-type-and-gender 8. Mean behaviour with error bars (by ownership type and gender)
+h1:binary-indicator-for-high-investment-willingness-heating 9. Binary indicator for high investment willingness (heating)
 
