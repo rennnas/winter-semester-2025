@@ -1,14 +1,6 @@
 
 # Datasets {-}
 
-Place your data files in the `data/` folder. Use links below so students can download:
-
 - **finSESCo_sample.csv** – [Download](data/finSESCo_sample.csv)  
 - **energy_usage_demo.csv** – [Download](data/energy_usage_demo.csv)
 - **CODEBOOK** – [Download](data/codebook.xlsx)
-
-```{r}
-# Small preview example
-data <- read.csv("data/energy_usage_demo.csv")
-head(data)
-```

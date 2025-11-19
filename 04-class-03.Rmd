@@ -51,6 +51,9 @@ VIDEO 1
 
 ## 1. Why visualize first? {-}
 
+<iframe src="https://drive.google.com/file/d/1A0vraXapL-YH1uKSuyUxCHrF54LiVVX8/preview"
+        width="640" height="360" allow="autoplay"></iframe>
+
 Energy data is most of the time messy, multi-dimensional, and context-dependent. Before modeling, you should *see* the data:
 
 - **Scale & composition.** Who is in the sample? Are women and low-income prosumers sufficiently represented?  
@@ -83,6 +86,7 @@ In `ggplot2` we can adjust the aesthetics of a graph. Some of these aesthetics a
 ```
 
 We keep a single visual language across the chapter so figures feel related and are easier to compare. This is a good practice in research reports.
+
 
 ## 3. The Grammar of Graphics {-}
 
@@ -487,7 +491,8 @@ ggplot(data_complete, aes(x = behaviour_elec_scaled)) +
     x = "Behaviour index (electricity)", y = "Frequency"
   )
 ```
-
+<iframe src="https://drive.google.com/file/d/1RQ1MWvilTYvr5hxKIOfSN5Mv5e9eij6P/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 ## 5. Group Summaries with Error Bars (Descriptive Variability) {-}
 

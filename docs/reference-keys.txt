@@ -1,5 +1,3 @@
-tab:unnamed-chunk-9
+tab:unnamed-chunk-40
 watch-electricity-system-an-overview
 interpretation-mindset
-contact
-credits

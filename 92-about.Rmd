@@ -1,11 +1,11 @@
 
 # About & Publishing {-}
 
-## Contact
+## Contact {-}
 
 - **Instructor:** Renan Magalhães  
 - **Email:** <magalhaes@kelso-institute-europe.de>
 
-## Credits
+## Credits {-}
 
 Built with **bookdown::bs4_book**.
