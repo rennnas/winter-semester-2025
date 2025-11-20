@@ -4,3 +4,4 @@
 - **finSESCo_sample.csv** – [Download](data/finSESCo_sample.csv)  
 - **energy_usage_demo.csv** – [Download](data/energy_usage_demo.csv)
 - **CODEBOOK** – [Download](data/codebook.xlsx)
+- **Extended Dataset** – [Download](data/data_extended.csv)

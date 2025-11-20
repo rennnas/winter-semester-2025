@@ -46,8 +46,6 @@ glimpse(data_complete)
 
 In applied energy research, figures are more than pictures — they are *arguments*. A good plot answers a narrow question (“What is the distribution of heating behaviour by gender?”), communicates uncertainty, and open space to the the next questions. In this chapter you will learn how to turn the FinSESCo survey into clear, reproducible visual stories using **ggplot2**. We will stay in the **descriptive** territory: counts, proportions, distributions, and grouped comparisons. In **Session 4** we will add statistical inference to our toolbox.
 
-VIDEO 1
-
 
 ## 1. Why visualize first? {-}
 

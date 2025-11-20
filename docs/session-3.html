@@ -91,7 +91,6 @@
 <h1>Session 3<a class="anchor" aria-label="anchor" href="#session-3"><i class="fas fa-link"></i></a>
 </h1>
 <p>In applied energy research, figures are more than pictures — they are <em>arguments</em>. A good plot answers a narrow question (“What is the distribution of heating behaviour by gender?”), communicates uncertainty, and open space to the the next questions. In this chapter you will learn how to turn the FinSESCo survey into clear, reproducible visual stories using <strong>ggplot2</strong>. We will stay in the <strong>descriptive</strong> territory: counts, proportions, distributions, and grouped comparisons. In <strong>Session 4</strong> we will add statistical inference to our toolbox.</p>
-<p>VIDEO 1</p>
 <div id="why-visualize-first" class="section level2 unnumbered">
 <h2>1. Why visualize first?<a class="anchor" aria-label="anchor" href="#why-visualize-first"><i class="fas fa-link"></i></a>
 </h2>
@@ -141,23 +140,23 @@ Once you understand the grammar, you can combine elements freely and build any k
 <h3>3.1 The three essential building blocks<a class="anchor" aria-label="anchor" href="#the-three-essential-building-blocks"><i class="fas fa-link"></i></a>
 </h3>
 <p>Every ggplot begins with <strong>three key ingredients</strong>:</p>
-<div id="nbxttdowre" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nbxttdowre table {
+<div id="nvnwiowfti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nvnwiowfti table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nbxttdowre thead, #nbxttdowre tbody, #nbxttdowre tfoot, #nbxttdowre tr, #nbxttdowre td, #nbxttdowre th {
+#nvnwiowfti thead, #nvnwiowfti tbody, #nvnwiowfti tfoot, #nvnwiowfti tr, #nvnwiowfti td, #nvnwiowfti th {
   border-style: none;
 }
 
-#nbxttdowre p {
+#nvnwiowfti p {
   margin: 0;
   padding: 0;
 }
 
-#nbxttdowre .gt_table {
+#nvnwiowfti .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -183,12 +182,12 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-left-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_caption {
+#nvnwiowfti .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nbxttdowre .gt_title {
+#nvnwiowfti .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -200,7 +199,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-width: 0;
 }
 
-#nbxttdowre .gt_subtitle {
+#nvnwiowfti .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -212,7 +211,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-top-width: 0;
 }
 
-#nbxttdowre .gt_heading {
+#nvnwiowfti .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -224,13 +223,13 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_bottom_border {
+#nvnwiowfti .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_col_headings {
+#nvnwiowfti .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -245,7 +244,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_col_heading {
+#nvnwiowfti .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -265,7 +264,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   overflow-x: hidden;
 }
 
-#nbxttdowre .gt_column_spanner_outer {
+#nvnwiowfti .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -277,15 +276,15 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 4px;
 }
 
-#nbxttdowre .gt_column_spanner_outer:first-child {
+#nvnwiowfti .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nbxttdowre .gt_column_spanner_outer:last-child {
+#nvnwiowfti .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nbxttdowre .gt_column_spanner {
+#nvnwiowfti .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -297,11 +296,11 @@ Once you understand the grammar, you can combine elements freely and build any k
   width: 100%;
 }
 
-#nbxttdowre .gt_spanner_row {
+#nvnwiowfti .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nbxttdowre .gt_group_heading {
+#nvnwiowfti .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -327,7 +326,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   text-align: left;
 }
 
-#nbxttdowre .gt_empty_group_heading {
+#nvnwiowfti .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -342,15 +341,15 @@ Once you understand the grammar, you can combine elements freely and build any k
   vertical-align: middle;
 }
 
-#nbxttdowre .gt_from_md > :first-child {
+#nvnwiowfti .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nbxttdowre .gt_from_md > :last-child {
+#nvnwiowfti .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nbxttdowre .gt_row {
+#nvnwiowfti .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -369,7 +368,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   overflow-x: hidden;
 }
 
-#nbxttdowre .gt_stub {
+#nvnwiowfti .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -382,7 +381,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nbxttdowre .gt_stub_row_group {
+#nvnwiowfti .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -396,15 +395,15 @@ Once you understand the grammar, you can combine elements freely and build any k
   vertical-align: top;
 }
 
-#nbxttdowre .gt_row_group_first td {
+#nvnwiowfti .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nbxttdowre .gt_row_group_first th {
+#nvnwiowfti .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nbxttdowre .gt_summary_row {
+#nvnwiowfti .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -414,16 +413,16 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nbxttdowre .gt_first_summary_row {
+#nvnwiowfti .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_first_summary_row.thick {
+#nvnwiowfti .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nbxttdowre .gt_last_summary_row {
+#nvnwiowfti .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -433,7 +432,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_grand_summary_row {
+#nvnwiowfti .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -443,7 +442,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nbxttdowre .gt_first_grand_summary_row {
+#nvnwiowfti .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -453,7 +452,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-top-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_last_grand_summary_row_top {
+#nvnwiowfti .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -463,11 +462,11 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_striped {
+#nvnwiowfti .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nbxttdowre .gt_table_body {
+#nvnwiowfti .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -476,7 +475,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_footnotes {
+#nvnwiowfti .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -490,7 +489,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_footnote {
+#nvnwiowfti .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -499,7 +498,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nbxttdowre .gt_sourcenotes {
+#nvnwiowfti .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -513,7 +512,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nbxttdowre .gt_sourcenote {
+#nvnwiowfti .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -521,72 +520,72 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nbxttdowre .gt_left {
+#nvnwiowfti .gt_left {
   text-align: left;
 }
 
-#nbxttdowre .gt_center {
+#nvnwiowfti .gt_center {
   text-align: center;
 }
 
-#nbxttdowre .gt_right {
+#nvnwiowfti .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nbxttdowre .gt_font_normal {
+#nvnwiowfti .gt_font_normal {
   font-weight: normal;
 }
 
-#nbxttdowre .gt_font_bold {
+#nvnwiowfti .gt_font_bold {
   font-weight: bold;
 }
 
-#nbxttdowre .gt_font_italic {
+#nvnwiowfti .gt_font_italic {
   font-style: italic;
 }
 
-#nbxttdowre .gt_super {
+#nvnwiowfti .gt_super {
   font-size: 65%;
 }
 
-#nbxttdowre .gt_footnote_marks {
+#nvnwiowfti .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nbxttdowre .gt_asterisk {
+#nvnwiowfti .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nbxttdowre .gt_indent_1 {
+#nvnwiowfti .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nbxttdowre .gt_indent_2 {
+#nvnwiowfti .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nbxttdowre .gt_indent_3 {
+#nvnwiowfti .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nbxttdowre .gt_indent_4 {
+#nvnwiowfti .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nbxttdowre .gt_indent_5 {
+#nvnwiowfti .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nbxttdowre .katex-display {
+#nvnwiowfti .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nbxttdowre div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nvnwiowfti div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -624,7 +623,7 @@ Once you understand the grammar, you can combine elements freely and build any k
 <div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">clean</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">index_1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-75-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-44-1.png" width="672"></div>
 <ul>
 <li>
 <strong>Take the data</strong> from <code>finsesco</code>.<br>
@@ -661,7 +660,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
 <span>y <span class="op">=</span> <span class="st">"Mean Heating Behaviour (0–100)"</span></span>
 <span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-77-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-46-1.png" width="672"></div>
 <p><strong>Step 3 — Add color, labels, and a cleaner layout</strong></p>
 <p>Let’s improve readability by coloring bars by category, adding value labels, and simplifying the legend.</p>
 <div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
@@ -680,24 +679,24 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
 <span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
 <span>legend.position <span class="op">=</span> <span class="st">"none"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-78-1.png" width="672"></div>
-<div id="wgizmyjlyf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wgizmyjlyf table {
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-47-1.png" width="672"></div>
+<div id="mkamzglyqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mkamzglyqq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wgizmyjlyf thead, #wgizmyjlyf tbody, #wgizmyjlyf tfoot, #wgizmyjlyf tr, #wgizmyjlyf td, #wgizmyjlyf th {
+#mkamzglyqq thead, #mkamzglyqq tbody, #mkamzglyqq tfoot, #mkamzglyqq tr, #mkamzglyqq td, #mkamzglyqq th {
   border-style: none;
 }
 
-#wgizmyjlyf p {
+#mkamzglyqq p {
   margin: 0;
   padding: 0;
 }
 
-#wgizmyjlyf .gt_table {
+#mkamzglyqq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -723,12 +722,12 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-left-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_caption {
+#mkamzglyqq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wgizmyjlyf .gt_title {
+#mkamzglyqq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -740,7 +739,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-width: 0;
 }
 
-#wgizmyjlyf .gt_subtitle {
+#mkamzglyqq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -752,7 +751,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-top-width: 0;
 }
 
-#wgizmyjlyf .gt_heading {
+#mkamzglyqq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -764,13 +763,13 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_bottom_border {
+#mkamzglyqq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_col_headings {
+#mkamzglyqq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -785,7 +784,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_col_heading {
+#mkamzglyqq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -805,7 +804,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   overflow-x: hidden;
 }
 
-#wgizmyjlyf .gt_column_spanner_outer {
+#mkamzglyqq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -817,15 +816,15 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 4px;
 }
 
-#wgizmyjlyf .gt_column_spanner_outer:first-child {
+#mkamzglyqq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wgizmyjlyf .gt_column_spanner_outer:last-child {
+#mkamzglyqq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wgizmyjlyf .gt_column_spanner {
+#mkamzglyqq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -837,11 +836,11 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   width: 100%;
 }
 
-#wgizmyjlyf .gt_spanner_row {
+#mkamzglyqq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wgizmyjlyf .gt_group_heading {
+#mkamzglyqq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -867,7 +866,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   text-align: left;
 }
 
-#wgizmyjlyf .gt_empty_group_heading {
+#mkamzglyqq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -882,15 +881,15 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   vertical-align: middle;
 }
 
-#wgizmyjlyf .gt_from_md > :first-child {
+#mkamzglyqq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wgizmyjlyf .gt_from_md > :last-child {
+#mkamzglyqq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wgizmyjlyf .gt_row {
+#mkamzglyqq .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -909,7 +908,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   overflow-x: hidden;
 }
 
-#wgizmyjlyf .gt_stub {
+#mkamzglyqq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -922,7 +921,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#wgizmyjlyf .gt_stub_row_group {
+#mkamzglyqq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -936,15 +935,15 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   vertical-align: top;
 }
 
-#wgizmyjlyf .gt_row_group_first td {
+#mkamzglyqq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wgizmyjlyf .gt_row_group_first th {
+#mkamzglyqq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wgizmyjlyf .gt_summary_row {
+#mkamzglyqq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -954,16 +953,16 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#wgizmyjlyf .gt_first_summary_row {
+#mkamzglyqq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_first_summary_row.thick {
+#mkamzglyqq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wgizmyjlyf .gt_last_summary_row {
+#mkamzglyqq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -973,7 +972,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_grand_summary_row {
+#mkamzglyqq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -983,7 +982,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#wgizmyjlyf .gt_first_grand_summary_row {
+#mkamzglyqq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -993,7 +992,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-top-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_last_grand_summary_row_top {
+#mkamzglyqq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1003,11 +1002,11 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_striped {
+#mkamzglyqq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wgizmyjlyf .gt_table_body {
+#mkamzglyqq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1016,7 +1015,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_footnotes {
+#mkamzglyqq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1030,7 +1029,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_footnote {
+#mkamzglyqq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1039,7 +1038,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#wgizmyjlyf .gt_sourcenotes {
+#mkamzglyqq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1053,7 +1052,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#wgizmyjlyf .gt_sourcenote {
+#mkamzglyqq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1061,72 +1060,72 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#wgizmyjlyf .gt_left {
+#mkamzglyqq .gt_left {
   text-align: left;
 }
 
-#wgizmyjlyf .gt_center {
+#mkamzglyqq .gt_center {
   text-align: center;
 }
 
-#wgizmyjlyf .gt_right {
+#mkamzglyqq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wgizmyjlyf .gt_font_normal {
+#mkamzglyqq .gt_font_normal {
   font-weight: normal;
 }
 
-#wgizmyjlyf .gt_font_bold {
+#mkamzglyqq .gt_font_bold {
   font-weight: bold;
 }
 
-#wgizmyjlyf .gt_font_italic {
+#mkamzglyqq .gt_font_italic {
   font-style: italic;
 }
 
-#wgizmyjlyf .gt_super {
+#mkamzglyqq .gt_super {
   font-size: 65%;
 }
 
-#wgizmyjlyf .gt_footnote_marks {
+#mkamzglyqq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wgizmyjlyf .gt_asterisk {
+#mkamzglyqq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wgizmyjlyf .gt_indent_1 {
+#mkamzglyqq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wgizmyjlyf .gt_indent_2 {
+#mkamzglyqq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wgizmyjlyf .gt_indent_3 {
+#mkamzglyqq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wgizmyjlyf .gt_indent_4 {
+#mkamzglyqq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wgizmyjlyf .gt_indent_5 {
+#mkamzglyqq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wgizmyjlyf .katex-display {
+#mkamzglyqq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wgizmyjlyf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mkamzglyqq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1252,7 +1251,7 @@ Proportions (shares) correct for this and allow fair comparisons between groups 
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">data_complete</span><span class="op">$</span><span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1.1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure">
-<img src="Energy-Transitions_files/figure-html/unnamed-chunk-81-1.png" width="672">
+<img src="Energy-Transitions_files/figure-html/unnamed-chunk-50-1.png" width="672">
 ### 4.2 Shares by Gender (Relative) {-}</div>
 <p>Next, we visualize the <strong>proportion</strong> of respondents by gender.<br>
 This is more useful when comparing subgroups of different sizes, because proportions correct for imbalances in sample counts.</p>
@@ -1294,7 +1293,7 @@ This is more useful when comparing subgroups of different sizes, because proport
 <span>    axis.ticks.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>    legend.position <span class="op">=</span> <span class="st">"top"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-82-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-51-1.png" width="672"></div>
 </div>
 <div id="gender-composition-within-prosumer-types" class="section level3 unnumbered">
 <h3>4.2 Gender Composition Within Prosumer Types<a class="anchor" aria-label="anchor" href="#gender-composition-within-prosumer-types"><i class="fas fa-link"></i></a>
@@ -1369,7 +1368,7 @@ Using the variables <code>ownership</code> and <code>co_ownership</code>, we cre
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-84-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-53-1.png" width="672"></div>
 <p>The FinSESCo survey made a deliberate effort to <strong>increase the share of women</strong>, especially <strong>female prosumers</strong>.<br>
 This targeted sampling worked well among:</p>
 <ul>
@@ -1398,7 +1397,7 @@ it shows <em>who is in each group</em> and prevents misleading interpretations l
 <span>    subtitle <span class="op">=</span> <span class="st">"Check for skew, clumps (heaping), or impossible values"</span>,</span>
 <span>    x <span class="op">=</span> <span class="st">"Behaviour index (electricity)"</span>, y <span class="op">=</span> <span class="st">"Frequency"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="Energy-Transitions_files/figure-html/unnamed-chunk-85-1.png" width="672"><iframe src="https://drive.google.com/file/d/1RQ1MWvilTYvr5hxKIOfSN5Mv5e9eij6P/preview" width="640" height="360" allow="autoplay"></iframe></p>
+<p><img src="Energy-Transitions_files/figure-html/unnamed-chunk-54-1.png" width="672"><iframe src="https://drive.google.com/file/d/1RQ1MWvilTYvr5hxKIOfSN5Mv5e9eij6P/preview" width="640" height="360" allow="autoplay"></iframe></p>
 </div>
 </div>
 <div id="group-summaries-with-error-bars-descriptive-variability" class="section level2 unnumbered">
@@ -1456,7 +1455,7 @@ Sometimes, we want a more compact summary: <strong>“What is the average behavi
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure">
-<img src="Energy-Transitions_files/figure-html/unnamed-chunk-86-1.png" width="672">
+<img src="Energy-Transitions_files/figure-html/unnamed-chunk-55-1.png" width="672">
 This could help us answer questions like:</div>
 <ul>
 <li>Do prosumers <strong>on average</strong> show higher electricity behaviour than non-owners?<br>
@@ -1543,7 +1542,7 @@ This could help us answer questions like:</div>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-87-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-56-1.png" width="672"></div>
 <p>This yields statements that policymakers understand easily, such as:</p>
 <blockquote>
 <p>“Among co-owners, 42% report high willingness to invest in heating, compared to 25% among non-owners.”</p>
@@ -1586,7 +1585,7 @@ For example:</p>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">30</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-88-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-57-1.png" width="672"></div>
 <p>This helps the reader compare <strong>structures</strong>, not just numbers.<br>
 You can visually scan across panels and ask:</p>
 <ul>
@@ -1629,7 +1628,7 @@ You can visually scan across panels and ask:</p>
 <span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-90-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-59-1.png" width="672"></div>
 <p>Stacked bars on the same x-axis (e.g., prosumer types) show:</p>
 <ul>
 <li>total <strong>group size</strong> (bar height), and<br>
@@ -1655,7 +1654,7 @@ You can visually scan across panels and ask:</p>
 <span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-91-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-60-1.png" width="672"></div>
 <p>Bars for each group (e.g., gender) are placed <strong>side by side</strong> for each category:</p>
 <ul>
 <li>emphasizes <strong>comparisons of magnitude</strong> across groups,<br>
@@ -1682,7 +1681,7 @@ You can visually scan across panels and ask:</p>
 <span>    fill <span class="op">=</span> <span class="st">"Gender"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-92-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-61-1.png" width="672"></div>
 <p>Each bar has the same height (100%) and only the <strong>share</strong> (percentage) inside changes:</p>
 <ul>
 <li>removes differences in total sample size,<br>
@@ -1749,7 +1748,7 @@ the left-to-right progression matches the idea of an <strong>increasing gradient
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">30</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-93-1.png" width="672"></div>
+<div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-62-1.png" width="672"></div>
 <p>Design heuristic:</p>
 <blockquote>
 <p>Whenever your plot invites a left-to-right reading (“least” to “most”, “low” to “high”),<br>
