@@ -21,6 +21,9 @@ library(DescTools)
 
 ## 1. Why Basic Statistics Matter {-}
 
+<iframe src="https://drive.google.com/file/d/1_J62uo-zKykKxFPGYBzl_FqrIKmg2vni/preview"
+        width="640" height="360" allow="autoplay"></iframe>
+
 Before you build any model — regression, ANCOVA, or machine learning — you must understand your data as it is. If you skip this step, it becomes very easy to misinterpret results or to overlook basic data quality problems.
 
 Basic statistics help you:
@@ -183,6 +186,9 @@ A cross-tabulation table shows counts, and proportions can be added to make comp
 
 This is important because later differences in behaviour between groups might partly reflect differences in composition. If one prosumer group is heavily male and another heavily female, gender could be a confounding factor in behavioural comparisons.
 
+
+<iframe src="https://drive.google.com/file/d/1b5sQukwjYlLzUn7KYVyKrRiUxzPmnif_/preview"
+        width="640" height="360" allow="autoplay"></iframe>
 
 ## 7. Correlation {-}
 

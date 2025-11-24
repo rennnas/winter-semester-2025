@@ -116,7 +116,7 @@
 <h2>2. Setup: packages, data, and a consistent theme<a class="anchor" aria-label="anchor" href="#setup-packages-data-and-a-consistent-theme"><i class="fas fa-link"></i></a>
 </h2>
 <p>We will use mostly <code>ggplot2</code>, a package inside the <code>tidyverse</code>. We’ll use also <code>scales</code> to adjust the formatting.</p>
-<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>   <span class="co"># ggplot2, dplyr, tidyr, readr, stringr, forcats</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span>      <span class="co"># labels: percent_format(), comma_format(), etc.</span></span>
 <span></span>
@@ -124,7 +124,7 @@
 <span><span class="co"># finsesco &lt;- readr::read_csv(here::here("data", "finsesco_clean.csv"))</span></span>
 <span><span class="co"># or an .rds if you saved it: finsesco &lt;- readr::read_rds("data/finsesco_clean.rds")</span></span></code></pre></div>
 <p>In <code>ggplot2</code> we can adjust the aesthetics of a graph. Some of these aesthetics are store as themes. For this class, we will use a light and accessible default for all plots.</p>
-<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#theme_set(theme_minimal(base_size = 12))</span></span>
 <span><span class="co">#update_geom_defaults("bar", list(linewidth = 0.3))</span></span>
 <span><span class="co">#update_geom_defaults("point", list(alpha = 0.8))</span></span></code></pre></div>
@@ -140,23 +140,23 @@ Once you understand the grammar, you can combine elements freely and build any k
 <h3>3.1 The three essential building blocks<a class="anchor" aria-label="anchor" href="#the-three-essential-building-blocks"><i class="fas fa-link"></i></a>
 </h3>
 <p>Every ggplot begins with <strong>three key ingredients</strong>:</p>
-<div id="nvnwiowfti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nvnwiowfti table {
+<div id="kyuadkiszv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kyuadkiszv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nvnwiowfti thead, #nvnwiowfti tbody, #nvnwiowfti tfoot, #nvnwiowfti tr, #nvnwiowfti td, #nvnwiowfti th {
+#kyuadkiszv thead, #kyuadkiszv tbody, #kyuadkiszv tfoot, #kyuadkiszv tr, #kyuadkiszv td, #kyuadkiszv th {
   border-style: none;
 }
 
-#nvnwiowfti p {
+#kyuadkiszv p {
   margin: 0;
   padding: 0;
 }
 
-#nvnwiowfti .gt_table {
+#kyuadkiszv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -182,12 +182,12 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-left-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_caption {
+#kyuadkiszv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nvnwiowfti .gt_title {
+#kyuadkiszv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -199,7 +199,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-width: 0;
 }
 
-#nvnwiowfti .gt_subtitle {
+#kyuadkiszv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -211,7 +211,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-top-width: 0;
 }
 
-#nvnwiowfti .gt_heading {
+#kyuadkiszv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -223,13 +223,13 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_bottom_border {
+#kyuadkiszv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_col_headings {
+#kyuadkiszv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -244,7 +244,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_col_heading {
+#kyuadkiszv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -264,7 +264,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   overflow-x: hidden;
 }
 
-#nvnwiowfti .gt_column_spanner_outer {
+#kyuadkiszv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -276,15 +276,15 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 4px;
 }
 
-#nvnwiowfti .gt_column_spanner_outer:first-child {
+#kyuadkiszv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nvnwiowfti .gt_column_spanner_outer:last-child {
+#kyuadkiszv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nvnwiowfti .gt_column_spanner {
+#kyuadkiszv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -296,11 +296,11 @@ Once you understand the grammar, you can combine elements freely and build any k
   width: 100%;
 }
 
-#nvnwiowfti .gt_spanner_row {
+#kyuadkiszv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nvnwiowfti .gt_group_heading {
+#kyuadkiszv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -326,7 +326,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   text-align: left;
 }
 
-#nvnwiowfti .gt_empty_group_heading {
+#kyuadkiszv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -341,15 +341,15 @@ Once you understand the grammar, you can combine elements freely and build any k
   vertical-align: middle;
 }
 
-#nvnwiowfti .gt_from_md > :first-child {
+#kyuadkiszv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nvnwiowfti .gt_from_md > :last-child {
+#kyuadkiszv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nvnwiowfti .gt_row {
+#kyuadkiszv .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -368,7 +368,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   overflow-x: hidden;
 }
 
-#nvnwiowfti .gt_stub {
+#kyuadkiszv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -381,7 +381,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nvnwiowfti .gt_stub_row_group {
+#kyuadkiszv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -395,15 +395,15 @@ Once you understand the grammar, you can combine elements freely and build any k
   vertical-align: top;
 }
 
-#nvnwiowfti .gt_row_group_first td {
+#kyuadkiszv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nvnwiowfti .gt_row_group_first th {
+#kyuadkiszv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nvnwiowfti .gt_summary_row {
+#kyuadkiszv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -413,16 +413,16 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nvnwiowfti .gt_first_summary_row {
+#kyuadkiszv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_first_summary_row.thick {
+#kyuadkiszv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nvnwiowfti .gt_last_summary_row {
+#kyuadkiszv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -432,7 +432,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_grand_summary_row {
+#kyuadkiszv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -442,7 +442,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nvnwiowfti .gt_first_grand_summary_row {
+#kyuadkiszv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -452,7 +452,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-top-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_last_grand_summary_row_top {
+#kyuadkiszv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -462,11 +462,11 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_striped {
+#kyuadkiszv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nvnwiowfti .gt_table_body {
+#kyuadkiszv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -475,7 +475,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-bottom-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_footnotes {
+#kyuadkiszv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -489,7 +489,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_footnote {
+#kyuadkiszv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -498,7 +498,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nvnwiowfti .gt_sourcenotes {
+#kyuadkiszv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -512,7 +512,7 @@ Once you understand the grammar, you can combine elements freely and build any k
   border-right-color: #D3D3D3;
 }
 
-#nvnwiowfti .gt_sourcenote {
+#kyuadkiszv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -520,72 +520,72 @@ Once you understand the grammar, you can combine elements freely and build any k
   padding-right: 5px;
 }
 
-#nvnwiowfti .gt_left {
+#kyuadkiszv .gt_left {
   text-align: left;
 }
 
-#nvnwiowfti .gt_center {
+#kyuadkiszv .gt_center {
   text-align: center;
 }
 
-#nvnwiowfti .gt_right {
+#kyuadkiszv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nvnwiowfti .gt_font_normal {
+#kyuadkiszv .gt_font_normal {
   font-weight: normal;
 }
 
-#nvnwiowfti .gt_font_bold {
+#kyuadkiszv .gt_font_bold {
   font-weight: bold;
 }
 
-#nvnwiowfti .gt_font_italic {
+#kyuadkiszv .gt_font_italic {
   font-style: italic;
 }
 
-#nvnwiowfti .gt_super {
+#kyuadkiszv .gt_super {
   font-size: 65%;
 }
 
-#nvnwiowfti .gt_footnote_marks {
+#kyuadkiszv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nvnwiowfti .gt_asterisk {
+#kyuadkiszv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nvnwiowfti .gt_indent_1 {
+#kyuadkiszv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nvnwiowfti .gt_indent_2 {
+#kyuadkiszv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nvnwiowfti .gt_indent_3 {
+#kyuadkiszv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nvnwiowfti .gt_indent_4 {
+#kyuadkiszv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nvnwiowfti .gt_indent_5 {
+#kyuadkiszv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nvnwiowfti .katex-display {
+#kyuadkiszv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nvnwiowfti div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kyuadkiszv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -620,7 +620,7 @@ Once you understand the grammar, you can combine elements freely and build any k
 </table></div>
 </div>
 <p>For example, to compare <strong>willingness to invest in energy efficiency</strong> across <strong>income groups</strong>, you could write:</p>
-<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">clean</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">index_1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-44-1.png" width="672"></div>
@@ -650,7 +650,7 @@ Once you understand the grammar, you can combine elements freely and build any k
 <p>Bar charts with <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code> expect a pre-computed y-value.<br>
 Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each income group.</p>
 <p><strong>Step 2 — Compute the summary table</strong></p>
-<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">avg_heat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">mean_heat</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#2C7BB6"</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
@@ -663,7 +663,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
 <div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-46-1.png" width="672"></div>
 <p><strong>Step 3 — Add color, labels, and a cleaner layout</strong></p>
 <p>Let’s improve readability by coloring bars by category, adding value labels, and simplifying the legend.</p>
-<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">avg_heat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">mean_heat</span>, fill <span class="op">=</span> <span class="va">income_range</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"black"</span>, alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">mean_heat</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
@@ -680,23 +680,23 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
 <span>legend.position <span class="op">=</span> <span class="st">"none"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Energy-Transitions_files/figure-html/unnamed-chunk-47-1.png" width="672"></div>
-<div id="mkamzglyqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mkamzglyqq table {
+<div id="rfkezuffpy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rfkezuffpy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mkamzglyqq thead, #mkamzglyqq tbody, #mkamzglyqq tfoot, #mkamzglyqq tr, #mkamzglyqq td, #mkamzglyqq th {
+#rfkezuffpy thead, #rfkezuffpy tbody, #rfkezuffpy tfoot, #rfkezuffpy tr, #rfkezuffpy td, #rfkezuffpy th {
   border-style: none;
 }
 
-#mkamzglyqq p {
+#rfkezuffpy p {
   margin: 0;
   padding: 0;
 }
 
-#mkamzglyqq .gt_table {
+#rfkezuffpy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -722,12 +722,12 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-left-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_caption {
+#rfkezuffpy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mkamzglyqq .gt_title {
+#rfkezuffpy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -739,7 +739,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-width: 0;
 }
 
-#mkamzglyqq .gt_subtitle {
+#rfkezuffpy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -751,7 +751,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-top-width: 0;
 }
 
-#mkamzglyqq .gt_heading {
+#rfkezuffpy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -763,13 +763,13 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_bottom_border {
+#rfkezuffpy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_col_headings {
+#rfkezuffpy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -784,7 +784,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_col_heading {
+#rfkezuffpy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -804,7 +804,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   overflow-x: hidden;
 }
 
-#mkamzglyqq .gt_column_spanner_outer {
+#rfkezuffpy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -816,15 +816,15 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 4px;
 }
 
-#mkamzglyqq .gt_column_spanner_outer:first-child {
+#rfkezuffpy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mkamzglyqq .gt_column_spanner_outer:last-child {
+#rfkezuffpy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mkamzglyqq .gt_column_spanner {
+#rfkezuffpy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -836,11 +836,11 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   width: 100%;
 }
 
-#mkamzglyqq .gt_spanner_row {
+#rfkezuffpy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mkamzglyqq .gt_group_heading {
+#rfkezuffpy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -866,7 +866,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   text-align: left;
 }
 
-#mkamzglyqq .gt_empty_group_heading {
+#rfkezuffpy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -881,15 +881,15 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   vertical-align: middle;
 }
 
-#mkamzglyqq .gt_from_md > :first-child {
+#rfkezuffpy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mkamzglyqq .gt_from_md > :last-child {
+#rfkezuffpy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mkamzglyqq .gt_row {
+#rfkezuffpy .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -908,7 +908,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   overflow-x: hidden;
 }
 
-#mkamzglyqq .gt_stub {
+#rfkezuffpy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -921,7 +921,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#mkamzglyqq .gt_stub_row_group {
+#rfkezuffpy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -935,15 +935,15 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   vertical-align: top;
 }
 
-#mkamzglyqq .gt_row_group_first td {
+#rfkezuffpy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mkamzglyqq .gt_row_group_first th {
+#rfkezuffpy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mkamzglyqq .gt_summary_row {
+#rfkezuffpy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -953,16 +953,16 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#mkamzglyqq .gt_first_summary_row {
+#rfkezuffpy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_first_summary_row.thick {
+#rfkezuffpy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mkamzglyqq .gt_last_summary_row {
+#rfkezuffpy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -972,7 +972,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_grand_summary_row {
+#rfkezuffpy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -982,7 +982,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#mkamzglyqq .gt_first_grand_summary_row {
+#rfkezuffpy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -992,7 +992,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-top-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_last_grand_summary_row_top {
+#rfkezuffpy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1002,11 +1002,11 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_striped {
+#rfkezuffpy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mkamzglyqq .gt_table_body {
+#rfkezuffpy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1015,7 +1015,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-bottom-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_footnotes {
+#rfkezuffpy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1029,7 +1029,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_footnote {
+#rfkezuffpy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1038,7 +1038,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#mkamzglyqq .gt_sourcenotes {
+#rfkezuffpy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1052,7 +1052,7 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   border-right-color: #D3D3D3;
 }
 
-#mkamzglyqq .gt_sourcenote {
+#rfkezuffpy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1060,72 +1060,72 @@ Let’s calculate the <strong>mean heating behaviour (0–100)</strong> for each
   padding-right: 5px;
 }
 
-#mkamzglyqq .gt_left {
+#rfkezuffpy .gt_left {
   text-align: left;
 }
 
-#mkamzglyqq .gt_center {
+#rfkezuffpy .gt_center {
   text-align: center;
 }
 
-#mkamzglyqq .gt_right {
+#rfkezuffpy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mkamzglyqq .gt_font_normal {
+#rfkezuffpy .gt_font_normal {
   font-weight: normal;
 }
 
-#mkamzglyqq .gt_font_bold {
+#rfkezuffpy .gt_font_bold {
   font-weight: bold;
 }
 
-#mkamzglyqq .gt_font_italic {
+#rfkezuffpy .gt_font_italic {
   font-style: italic;
 }
 
-#mkamzglyqq .gt_super {
+#rfkezuffpy .gt_super {
   font-size: 65%;
 }
 
-#mkamzglyqq .gt_footnote_marks {
+#rfkezuffpy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mkamzglyqq .gt_asterisk {
+#rfkezuffpy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mkamzglyqq .gt_indent_1 {
+#rfkezuffpy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mkamzglyqq .gt_indent_2 {
+#rfkezuffpy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mkamzglyqq .gt_indent_3 {
+#rfkezuffpy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mkamzglyqq .gt_indent_4 {
+#rfkezuffpy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mkamzglyqq .gt_indent_5 {
+#rfkezuffpy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mkamzglyqq .katex-display {
+#rfkezuffpy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mkamzglyqq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rfkezuffpy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1225,7 +1225,7 @@ Proportions (shares) correct for this and allow fair comparisons between groups 
 <h3>4.1 Counts by Gender (Absolute)<a class="anchor" aria-label="anchor" href="#counts-by-gender-absolute"><i class="fas fa-link"></i></a>
 </h3>
 <p>We start simple: count how many male and female respondents are in the sample.</p>
-<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span><span class="va">gender</span>,</span>
 <span>                                `0` <span class="op">=</span> <span class="st">"Male"</span>,</span>
@@ -1250,12 +1250,16 @@ Proportions (shares) correct for this and allow fair comparisons between groups 
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">data_complete</span><span class="op">$</span><span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1.1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: The dot-dot notation (`..count..`) was deprecated in ggplot2 3.4.0.
+## ℹ Please use `after_stat(count)` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
 <div class="inline-figure">
 <img src="Energy-Transitions_files/figure-html/unnamed-chunk-50-1.png" width="672">
 ### 4.2 Shares by Gender (Relative) {-}</div>
 <p>Next, we visualize the <strong>proportion</strong> of respondents by gender.<br>
 This is more useful when comparing subgroups of different sizes, because proportions correct for imbalances in sample counts.</p>
-<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Recode gender and compute proportions</span></span>
 <span><span class="va">gender_share</span> <span class="op">&lt;-</span> <span class="va">data_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span><span class="va">gender</span>,</span>
@@ -1313,7 +1317,7 @@ Using the variables <code>ownership</code> and <code>co_ownership</code>, we cre
 <li>
 <strong>Co-owner</strong> → co_ownership = 1 (ownership is also 1 in this case)</li>
 </ul>
-<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data_extended</span> <span class="op">&lt;-</span> <span class="va">data_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span><span class="va">gender</span>,</span>
@@ -1328,7 +1332,7 @@ Using the variables <code>ownership</code> and <code>co_ownership</code>, we cre
 <span>    <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>      <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Non-owner"</span>, <span class="st">"Sole-owner"</span>, <span class="st">"Co-owner"</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Compute gender composition by ownership type</span></span>
 <span><span class="va">comp_owner</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">ownership_type</span>, <span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -1389,7 +1393,7 @@ you should first ask:<br><strong>Is this because they are co-owners, or because 
 </ul>
 <p>This is exactly why descriptive visualization is essential before any formal modelling:<br>
 it shows <em>who is in each group</em> and prevents misleading interpretations later.</p>
-<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_complete</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">behaviour_elec_scaled</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">30</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
@@ -1415,7 +1419,7 @@ Sometimes, we want a more compact summary: <strong>“What is the average behavi
 <ul>
 <li>mean ± 1 standard error (SE)</li>
 </ul>
-<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mean_se</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span></span>
 <span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
@@ -1493,7 +1497,7 @@ This could help us answer questions like:</div>
 </li>
 <li>Plot these proportions with bars and percentage labels.</li>
 </ol>
-<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://forcats.tidyverse.org/">forcats</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
@@ -1573,7 +1577,7 @@ For example:</p>
 </li>
 <li>but give each subgroup its <strong>own panel</strong>.</li>
 </ul>
-<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_extended</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income_range</span>, y <span class="op">=</span> <span class="va">behaviour_heat_scaled</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>outlier.alpha <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">ownership_type</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1600,7 +1604,7 @@ You can visually scan across panels and ask:</p>
 <h2>8. Stacked vs. Dodged vs. 100% Bars: Which Composition View?<a class="anchor" aria-label="anchor" href="#stacked-vs.-dodged-vs.-100-bars-which-composition-view"><i class="fas fa-link"></i></a>
 </h2>
 <p>The same underlying data (e.g., <strong>counts of men and women in each prosumer type</strong>) can be shown in three main ways.</p>
-<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">base_tab</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html">recode_factor</a></span><span class="op">(</span></span>
@@ -1617,7 +1621,7 @@ You can visually scan across panels and ask:</p>
 <div id="stacked-counts" class="section level3 unnumbered">
 <h3>8.1 Stacked Counts<a class="anchor" aria-label="anchor" href="#stacked-counts"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">base_tab</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>, <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1643,7 +1647,7 @@ You can visually scan across panels and ask:</p>
 <div id="dodged-side-by-side-counts" class="section level3 unnumbered">
 <h3>8.2 Dodged (Side-by-Side) Counts<a class="anchor" aria-label="anchor" href="#dodged-side-by-side-counts"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">base_tab</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span> <span class="op">=</span> <span class="st">"#1F78B4"</span>, <span class="st">"Female"</span> <span class="op">=</span> <span class="st">"#E31A1C"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1669,7 +1673,7 @@ You can visually scan across panels and ask:</p>
 <div id="standardized-bars" class="section level3 unnumbered">
 <h3>8.3 100% (Standardized) Bars<a class="anchor" aria-label="anchor" href="#standardized-bars"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">base_tab</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ownership_type</span>, y <span class="op">=</span> <span class="va">p</span>, fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1719,7 +1723,7 @@ In energy research, a more meaningful order often exists, for example:</p>
 <li>If you order prosumer types from lowest to highest mean electricity behaviour,<br>
 the left-to-right progression matches the idea of an <strong>increasing gradient</strong>.</li>
 </ul>
-<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#1. Compute order as a simple character vector</span></span>
 <span><span class="va">ord</span> <span class="op">&lt;-</span> <span class="va">data_extended</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ownership_type</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
